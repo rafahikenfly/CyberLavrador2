@@ -13,8 +13,12 @@ O objetivo deste documento é descrever o desenvolvimento previsto do projeto do
   - Possuir uma saída de corrente contínua para alimentar motores (12V/15A)
   - Possuir uma saída de corrente contínua para alimentar outros acessórios (12V/15A) 
   - Possuir uma saída de corrente alternada controlada para alimentar motor rotativo (110V/60Hz) Até 31/01/25
-- <b>Fase 3: Câmera</b>. Esta fase envolve a instalação, do sistema de visão computacional.
-- <b> Fase 
+- <b>Fase 3: Câmera</b>. Esta fase envolve a instalação, do sistema de visão computacional e o inicio da montagem do dataset de treinamento. Até 28/02/25.
+- <b>Fase 4: Ferramentas Magneticas</b>. Até 31/03/25.
+- <b>Fase 5: Motor Rotativo</b>. Até 30/04/25.
+- <b>Fase 6: Irrigação</b>. Até 31/05/25.
+- <b>Fase 7: Identificacao de especies</b>. Até 30/06/25.
+- <b>Fase 8: Laser</b>
 
 - 15/12/24 Montagem da estrutura mecânica de 3 eixos (Aproveitando as peças já disponíveis)
 - 31/12/24 Montagem da caixa de controle dos motores (Arduino + GRBL)
@@ -27,12 +31,14 @@ O objetivo deste documento é descrever o desenvolvimento previsto do projeto do
 
 <h2>Premissas do projeto</h2>
 - Os motores da versão anterior do robô serão capazes de movimentar a nova estrutura mecânica (mais pesada) sem prejuízo significativo para a velocidade do robô.
-- Um motor adequado para roçada será alimentado por corrente alternada para 
+- Um motor adequado para roçada será alimentado por corrente alternada e será leve o suficiente para ser carregado pelo cabeçote. Espera-se que um motor ventoinha de geladeira seja adequado.
+- Já estão disponiveis os arduinos, o raspberry pi e 90% do material da estrutura mecânica.
 
 <h2>Restrições do projeto</h2>
 - O sistema de controle de motores desta versão utilizará comunicação serial com um Arduíno utilizando GRBL.
 - Portanto, não é possível duplicar o motor do eixo Z.
 - a UPC será baseada em um Raspberry Pi 5.
+- O orcamento do projeto para equipamentos, componentes e materiais para impressão é de R$1.500,00. Mais recursos dependerão de outras fontes de financiamento.
 
 <h2>Requisitos</h2>
 - A caixa de controle dos motores deverá ser alimentado com 15A para suportar upgrade de motores futuramente.
