@@ -1,0 +1,40 @@
+O objetivo deste documento é descrever o desenvolvimento previsto do projeto do projeto CyberLavrador 2. Leia o arquive Readme para compreender melhor o caso de negócio por trás do projeto.
+<h2>EAP, Fases e Prazos</h2>
+- <b>Fase 1: Montagem</b>. Esta fase envolve a montagem dos eixos X, Y e Z a partir das peças disponíveis da versão anterior do robô. Os eixos estarão funcionando com uma comunicação USB serial disponível até a UPC (unidade de processamento central). O final desta fase será considerado quando a estrutura mecânica for capaz de interpretar comandos GCODE enviados por qualquer dispositivo. Até 31/12/2024.
+- <b>Fase 2: Cabeçote e UPC</b>. Esta fase envolve a montagem de um cabeçote de ferramentas que seja capaz de realizar as seguintes tarefas:
+  - Trocar de ferramenta leve (ferramenta magnética).
+  - Acoplar uma ferramenta pesada (ferramenta fixa).
+  - Bombear três tipos diferentes de fluídos de forma independente.
+  - Acomodar uma câmera para o sistema de visão computacional com câmera e sensor de distância TOF.
+  - Acomodar um motor rotativo com potência adequada para atividade de roçada.
+  - Identificar distância nos quatro sentidos para previnir colisões.
+  Além da montagem do cabeçote, nesta fase deve estar montada a UPC, que terá as seguintes características:
+  - Acomodar uma placa raspberry pi 5 com cooler ativo
+  - Possuir uma saída de corrente contínua para alimentar motores (12V/15A)
+  - Possuir uma saída de corrente contínua para alimentar outros acessórios (12V/15A) 
+  - Possuir uma saída de corrente alternada controlada para alimentar motor rotativo (110V/60Hz) Até 31/01/25
+- <b>Fase 3: Câmera</b>. Esta fase envolve a instalação, do sistema de visão computacional.
+- <b> Fase 
+
+- 15/12/24 Montagem da estrutura mecânica de 3 eixos (Aproveitando as peças já disponíveis)
+- 31/12/24 Montagem da caixa de controle dos motores (Arduino + GRBL)
+- 31/01/25 Montagem da caixa da central de processamento (Raspberry Pi 5)
+- 28/02/25 Implantação do sistema de câmeras para a visão computacional
+- 31/03/25 Upgrade do sistema mecânico para o tamanho definitivo (X: 4500mm; Y: 3000mm; Z: 1000mm)
+- 30/07/25 Conclusão do dataset de imagens de alface e cenouras
+- 31/12/25 Ferramenta de capinagem a laser
+<h2>Estrutura Analítica do Projeto</h2>
+
+<h2>Premissas do projeto</h2>
+- Os motores da versão anterior do robô serão capazes de movimentar a nova estrutura mecânica (mais pesada) sem prejuízo significativo para a velocidade do robô.
+- Um motor adequado para roçada será alimentado por corrente alternada para 
+
+<h2>Restrições do projeto</h2>
+- O sistema de controle de motores desta versão utilizará comunicação serial com um Arduíno utilizando GRBL.
+- Portanto, não é possível duplicar o motor do eixo Z.
+- a UPC será baseada em um Raspberry Pi 5.
+
+<h2>Requisitos</h2>
+- A caixa de controle dos motores deverá ser alimentado com 15A para suportar upgrade de motores futuramente.
+- A caixa de controle dos motores deverá ter um ventilador de refrigeração para assegurar a confiabilidade do equipamento mesmo com correntes maiores.
+- O sistema de vicão computacional deve ser capaz de produzir fotos padronizadas à 30cm das plantas
