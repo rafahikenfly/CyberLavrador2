@@ -1,0 +1,5 @@
+1. instalar o nginx
+2. instalar o pi-apps
+3. instalar o node.js
+4. instalar o next.js
+5. instalar o github desktop
