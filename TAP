@@ -1,7 +1,8 @@
 O objetivo deste documento é descrever o desenvolvimento previsto do projeto do projeto CyberLavrador 2. Leia o arquive Readme para compreender melhor o caso de negócio por trás do projeto.
-<h2>EAP, Fases e Prazos</h2>
-- <b>Fase 1: Montagem</b>. Esta fase envolve a montagem dos eixos X, Y e Z a partir das peças disponíveis da versão anterior do robô. Os eixos estarão funcionando com uma comunicação USB serial disponível até a UPC (unidade de processamento central). O final desta fase será considerado quando a estrutura mecânica for capaz de interpretar comandos GCODE enviados por qualquer dispositivo. Até 31/12/2024.
-- <b>Fase 2: Cabeçote e UPC</b>. Esta fase envolve a montagem de um cabeçote de ferramentas que seja capaz de realizar as seguintes tarefas:
+<h2>Fases</h2>
+O projeto está estruturado em 10 fases mensais:
+- Dez 2024 <b>Fase 1: Montagem</b>. Esta fase envolve a montagem dos eixos X, Y e Z a partir das peças disponíveis da versão anterior do robô. Os eixos estarão funcionando com uma comunicação USB serial disponível até a UPC (unidade de processamento central). O final desta fase será considerado quando a estrutura mecânica for capaz de interpretar comandos GCODE enviados por qualquer dispositivo.
+- Jan 2025 <b>Fase 2: Cabeçote e UPC</b>. Esta fase envolve a montagem de um cabeçote de ferramentas que seja capaz de realizar as seguintes tarefas:
   - Trocar de ferramenta leve (ferramenta magnética).
   - Acoplar uma ferramenta pesada (ferramenta fixa).
   - Bombear três tipos diferentes de fluídos de forma independente.
@@ -13,34 +14,93 @@ O objetivo deste documento é descrever o desenvolvimento previsto do projeto do
   - Possuir uma saída de corrente contínua para alimentar motores (12V/15A)
   - Possuir uma saída de corrente contínua para alimentar outros acessórios (12V/15A) 
   - Possuir uma saída de corrente alternada controlada para alimentar motor rotativo (110V/60Hz) Até 31/01/25
-- <b>Fase 3: Câmera</b>. Esta fase envolve a instalação, do sistema de visão computacional e o inicio da montagem do dataset de treinamento. Até 28/02/25.
-- <b>Fase 4: Ferramentas Magneticas</b>. Até 31/03/25.
-- <b>Fase 5: Motor Rotativo</b>. Até 30/04/25.
-- <b>Fase 6: Irrigação</b>. Até 31/05/25.
-- <b>Fase 7: Identificacao de especies</b>. Até 30/06/25.
-- <b>Fase 8: Laser</b>
+- Fev 2025 <b>Fase 3: Interface</b>. Esta fase envolve a publicação de 
+- Mar 2025 <b>Fase 4: Câmera</b>. Esta fase envolve a instalação, do sistema de visão computacional e o inicio da montagem do dataset de treinamento. Até 28/02/25.
+- Abr 2025 <b>Fase 5: Estação Meteorológica</b>. Até 31/03/25
+- Mai 2025 <b>Fase 6: Ferramentas Magneticas</b>. Até 31/03/25.
+- Jun 2025 <b>Fase 7: Motor Rotativo</b>. Até 30/04/25.
+- Jul 2025 <b>Fase 8: Irrigação</b>. Até 31/05/25.
+- Ago 2025<b>Fase 9: Update</b>. Essa fase envolve a publicação de nova versão da interface (final) e a finalização do quadro do robô. Até
+- Set 2025 <b>Fase 9: Identificacao de especies</b>. Até 30/06/25.
+- Out 2025 <b>Fase 10: Laser</b>
 
-- 15/12/24 Montagem da estrutura mecânica de 3 eixos (Aproveitando as peças já disponíveis)
-- 31/12/24 Montagem da caixa de controle dos motores (Arduino + GRBL)
-- 31/01/25 Montagem da caixa da central de processamento (Raspberry Pi 5)
-- 28/02/25 Implantação do sistema de câmeras para a visão computacional
-- 31/03/25 Upgrade do sistema mecânico para o tamanho definitivo (X: 4500mm; Y: 3000mm; Z: 1000mm)
-- 30/07/25 Conclusão do dataset de imagens de alface e cenouras
-- 31/12/25 Ferramenta de capinagem a laser
 <h2>Estrutura Analítica do Projeto</h2>
+1 Infraestrutura
+1.1. Obtenção de insumos para impressão/usinagem
+1.2. Configuração das impressoras
+1.3. Montagem da Roteadora
+
+2. Estrutura mecânica
+2.1. Trilhos X
+2.2. Desenvolvimento das placas e conexões
+2.3. Eixo Z
+2.4. Guindaste Y
+2.5. Correias
+2.6. Chaves de fim de curso
+2.7. Caixa de controle
+2.9. Instalação de motores
+2.8. Cabeamento
+
+3. Interface (em desenvolvimento)
+3.1 Dashboard administrativo
+3.3 Interface Operação Web
+3.4 Interface Operação Móvel
+
+4. Visão computacional
+4.1. Hardware
+4.2. Montagem dataset cenoura/alface
+4.3. Treinamento
+4.4. Sistema de processamento em lote
+4.5. Sistema de processamento em tempo real
+4.6. Planejamento de ampliação do dataset
+
+5. Software (em desenvolvimento)
+5.1. ROS
+5.2. Ubuntu 24
+5.3. React
+5.4. SSH
+
+6. Energia
+6.1. Alimentação CPU
+6.2. Alimentação periféricos
+6.3. Alimentação ferramenta
+6.4. Alimentação rotor
+6.5. Alimentação periférico(laser)
+6.6. Bateria/Placa solar
+
+7. Ferramentas magnéticas (em desenvolvimento)
+7.1. Sensor Umidade do Solo
+7.2. Sensor pH
+7.3. Sensor Temperatura Solo
+7.4. LiDar
+
+8. Ferramentas rotativas (em desenvolvimento)
+8.1 Roçadeira
+8.2 Arado
+
+9. Laser (em desenvolvimento)
+
+10. Estação meteorológica
+10.1. Vento (direção/velocidade)
+10.2. Pressão
+10.3. Temperatura/Umidade
+10.4. UV
+10.5. Precipitação (ocorrência/volume)
 
 <h2>Premissas do projeto</h2>
 - Os motores da versão anterior do robô serão capazes de movimentar a nova estrutura mecânica (mais pesada) sem prejuízo significativo para a velocidade do robô.
 - Um motor adequado para roçada será alimentado por corrente alternada e será leve o suficiente para ser carregado pelo cabeçote. Espera-se que um motor ventoinha de geladeira seja adequado.
 - Já estão disponiveis os arduinos, o raspberry pi e 90% do material da estrutura mecânica.
+- 2025 não será um ano bom para o voo livre e, assim, vou ter muito tempo para trabalhar no projeto.
+- Estarão disponíveis uma impressora 3D de extrusão, uma de resina e uma router CNC de pequeno porte.
 
 <h2>Restrições do projeto</h2>
 - O sistema de controle de motores desta versão utilizará comunicação serial com um Arduíno utilizando GRBL.
 - Portanto, não é possível duplicar o motor do eixo Z.
-- a UPC será baseada em um Raspberry Pi 5.
+- A UPC será baseada em um Raspberry Pi 5.
 - O orcamento do projeto para equipamentos, componentes e materiais para impressão é de R$1.500,00. Mais recursos dependerão de outras fontes de financiamento.
 
 <h2>Requisitos</h2>
 - A caixa de controle dos motores deverá ser alimentado com 15A para suportar upgrade de motores futuramente.
 - A caixa de controle dos motores deverá ter um ventilador de refrigeração para assegurar a confiabilidade do equipamento mesmo com correntes maiores.
-- O sistema de vicão computacional deve ser capaz de produzir fotos padronizadas à 30cm das plantas
+- O sistema de visão computacional deve ser capaz de produzir fotos padronizadas à 30cm das plantas
