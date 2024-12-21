@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../../../../Library/Caches/arduino/sketches/16218CA2CCB5CD7D10A351A99F050C25/ferramenta.ino.hex'
+elf = '../../../../Library/Caches/arduino/sketches/16218CA2CCB5CD7D10A351A99F050C25/ferramenta.ino.elf'
