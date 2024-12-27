@@ -2,6 +2,7 @@ from firebase import initialize_firebase
 from firebase import read_fitered_realtime_db
 from firebase import read_realtime_db
 from grbl import connect_to_grbl
+from grbl import unlock_grbl
 from grbl import enviaGCode
 
 from taskManager import filtrarPorHora
@@ -16,7 +17,7 @@ from taskManager import anotaTarefa
 
 import time
 
-verbose = False
+verbose = True
 
 terrain = "-OEy62gRLp6VMWWHs7Kt"
 pathTarefas = "/loteamento/"+ terrain + "/tarefas"
@@ -52,6 +53,8 @@ if __name__ == "__main__":
     initialize_firebase()
     #conecta com o GRBL
     GRBL = connect_to_grbl(GRBLport, baudrate)
+    print(enviaGCode(GRBL,"?"))
+    unlock_grbl(GRBL)
 
     #obtem a base de conhecimento atualizada
     BOK = read_realtime_db(pathBOK)
@@ -88,43 +91,43 @@ if __name__ == "__main__":
 
             # comandos G vão sempre ser enviados para o GRBL
             if instrucao.startswith("G"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} GRBL -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL -->{instrucao}")
                 resposta = enviaGCode(GRBL, instrucao)
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} GRBL <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
                 else:  comando["estado"] = "erro"
 
             # comandos MOTOR, LASER, VACUO, BOMBA são enviados para a FERRAMENTA
             elif instrucao.startswith("MOTOR"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
                 resposta = "Motor não instalado"
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
-                else:  comando["estado"] = "erro"
+                else:  comando["estado"] = "enviado"
             elif instrucao.startswith("LASER"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
                 resposta = "Laser não instalado"
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
                 else:  comando["estado"] = "erro"
             elif instrucao.startswith("VACUO"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
                 resposta = "Vácuo não instalado"
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
                 else:  comando["estado"] = "erro"
             elif instrucao.startswith("BOMBA"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERAMENTA -->{instrucao}")
                 resposta = "Bomba não instalado"
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} FERRAMENTA <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
                 else:  comando["estado"] = "erro"
 
             # comandos VALVULA são enviados para válvulas
             elif instrucao.startswith("VALVULA"):
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} VALVULA -->{instrucao}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} VALVULA -->{instrucao}")
                 resposta = "Válvula não instalada"
-                verbose and print(f"{time.strftime("%H:%M:%S")} {time.time() % 1:.6f} VALVULA <--{resposta}")
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} VALVULA <--{resposta}")
                 if resposta == "ok": comando["estado"] = "enviado"
                 else:  comando["estado"] = "erro"
             else:
@@ -149,6 +152,9 @@ if __name__ == "__main__":
             elif i == len(filaComandos) - 1 or filaComandos[i+1]["tarefa"] != tarefaID:
                 print(f"Tarefa {tarefaID} executada.")
                 concluiTarefa(tarefaID)
+                
+            #avanca
+            i = i + 1
         #limpa a fila
         print("Fim da lista de comandos")
         for x in filaComandos:

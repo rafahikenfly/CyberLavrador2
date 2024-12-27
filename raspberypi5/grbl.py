@@ -10,10 +10,35 @@ def connect_to_grbl(port, baudrate=115200):
         time.sleep(2)  # Aguarde para o GRBL inicializar
         ser.flushInput()  # Limpa o buffer de entrada
         print(f"Conectado ao GRBL na porta {port}")
+        
         return ser
     except Exception as e:
         print(f"Erro ao conectar ao GRBL: {e}")
         return None
+
+def unlock_grbl(ser):
+    """
+    Destrava o GRBL enviando o comando $X.
+    :param ser: porta serial para envio
+    """
+    if not ser:
+        return "Conexao serial não estabelecida."
+
+    try:
+        # Envia o comando para destravar
+        comando = "$X"
+        comando  = comando.strip() + '\n'
+        ser.write(comando.encode('utf-8'))
+        print("Comando $X enviado para destravar o GRBL.")
+
+        # Le a resposta do GRBL
+        resposta = ser.readline().decode('utf-8').strip() #ok
+        resposta = ser.readline().decode('utf-8').strip()      
+        print("Resposta do GRBL:")
+        print(resposta)
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+
 
 def enviaGCode(ser, gcode):
     """
@@ -39,7 +64,7 @@ def enviaGCode(ser, gcode):
             # Extrai os dados de uma resposta de estado
             return interpret_grbl_state(response)
         else:
-            return {response}
+            return response
     except Exception as e:
         return "Erro ao enviar gcode: " + gcode[:-1] + ": " + {e}
 

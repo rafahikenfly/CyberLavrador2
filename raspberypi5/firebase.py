@@ -4,8 +4,8 @@ from firebase_admin import db
 
 # Configuração inicial
 def initialize_firebase():
-    cred_path = "/Users/rcmachado/Documents/GitHub/microagricultura-firebase-key.json"
-    # cred_path = "../../microagricultura-firebase-key.json"
+    # cred_path = "/Users/rcmachado/Documents/GitHub/microagricultura-firebase-key.json"
+    cred_path = "../../microagricultura-firebase-key.json"
     cred = credentials.Certificate(cred_path)
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://microagricultura-fbdc5-default-rtdb.firebaseio.com/'
