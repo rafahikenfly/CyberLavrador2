@@ -1,0 +1,25 @@
+**Escopo**
+As capacidades de visão computacional do Cyber Lavrador 2.0 são:
+    - Detecção de objeto
+	A partir de uma imagem capturada pela câmera, processada em lote, ele será capaz de detectar diferentes variedades de hortaliças (como alface, cenoura, beterraba, couve, etc.), após treinamento do modelo realizado em outro dispositivo.
+	A partir de uma imagem capturada pela câmera, processada em tempo real, ele será capaz de detectar diferentes pragas e insetos relevantes para o cultivo de hortaliças (como formigas, lesmas, caramujos, pulgões, etc.)
+	- Segmentação de imagem
+	A partir de uma imagem de uma planta conhecida capturada pela câmera, ele será capaz de identificar as diferentes partes da variedades (folha, flor, fruto, etc), contá-las e especificar a espécie a partir de características morfológicas dela.
+	A partir de uma imagem de uma planta conhecida capturada pela câmera, ele será capaz de identificar algumas condições específicas das hortaliças (como se está sob estresse hídrico, se tem alguma doença com característica visual, se está sob ataque de alguma praga, etc.)
+	- Produção de imagens
+	O sistema deverá ser capaz de produzir, arquivar e organizar imagens de variedades e condições de cultivo conhecidas (como umidade do solo, incidência de sol, etc.) de forma automatizada, a partir do mapa da horta.
+
+A visão em tempo real será realizada em uma segunda fase do projeto. Na primeira fase apenas a visão em lote e a produção de imagens será realizada.
+
+**Recursos**
+O sistema será processado localmente, utilizando um Raspberry Pi 5 com 8Gb de RAM. Este recurso é compartilhado com o processamento central do robô (ainda que este processo seja bastante barato em termos de custos computacionais). Recursos adicionais de processamento podem ser incluídos no projeto futuramente. (Ex https://www.sparkfun.com/products/27248 // https://www.sparkfun.com/products/27249)
+O sistema dispõe de um módulo câmera USB tipo OV2640 2MP montado na cabeça de ferramenta, o que permite que sejam feitas fotos de posições específicas conhecidas em relação a plantas conhecidas. Recursos óticos adicionais podem ser incluídos no projeto futuramente.
+
+**Equipe**
+Drayan
+Diretor de Inteligência Artificial
+Remuneração Z$2 milhões/semana
+Bônus de produtividade: 2 ovos
+
+Estagiário: Rafael
+Remuneração: um "bom trabalho"/semana

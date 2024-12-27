@@ -3,3 +3,6 @@
 3. instalar o node.js
 4. instalar o next.js
 5. instalar o github desktop
+6. instalar o pacote firebase-admin
+7. instalar o pacote pyserial
+8. instalar o pacote time

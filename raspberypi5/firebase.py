@@ -1,18 +1,16 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-import time
 
 # Configuração inicial
 def initialize_firebase():
     cred_path = "/Users/rcmachado/Documents/GitHub/microagricultura-firebase-key.json"
     # cred_path = "../../microagricultura-firebase-key.json"
     cred = credentials.Certificate(cred_path)
-    
-    # Para Realtime Database
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://microagricultura-fbdc5-default-rtdb.firebaseio.com/'
     })
+    print("Firebase iniciado")
     
 # Função para interagir com o Realtime Database
 def push_realtime_db(path, data):
@@ -30,6 +28,39 @@ def write_realtime_db(path, data):
     ref.set(data)
     print("Dados sobreescritos no Realtime Database:", data)
 
+def read_fitered_realtime_db(path, filter, value, limit):
+    """
+    Le o valor de uma chave especifica do Firebase.
+    :param path: Caminho da chave no banco de dados.
+    :param filter: chave para filtrar a busca.
+    :param value: valor para a busca.
+    :param limit: limite de resultados.
+    :return: Valor da chave ou None se nao existir.
+    """
+    try:
+        ref = db.reference(path)
+        consulta = ref.order_by_child(filter).equal_to(value).limit_to_first(limit).get() or {}
+        return consulta
+    except Exception as e:
+        print(f"Erro ao ler a chave '{path}': {e}")
+        return None
+
+def read_ordered_realtime_db(path, order, limit):
+    """
+    Le o valor de uma chave especifica do Firebase.
+    :param path: Caminho da chave no banco de dados.
+    :param order: chave para ordenar a busca.
+    :param limit: limite de resultados.
+    :return: Valor da chave ou None se nao existir.
+    """
+    try:
+        ref = db.reference(path)
+        consulta = ref.order_by_child(order).limit_to_first(limit).get()
+        return consulta
+    except Exception as e:
+        print(f"Erro ao ler a chave '{path}': {e}")
+        return None
+
 def read_realtime_db(path):
     """
     Le o valor de uma chave especifica do Firebase.
@@ -39,11 +70,11 @@ def read_realtime_db(path):
     try:
         ref = db.reference(path)
         value = ref.get()
-        print(f"Valor da chave '{path}': {value}")
         return value
     except Exception as e:
         print(f"Erro ao ler a chave '{path}': {e}")
         return None
+
 
 def listen_realtime_db(path):
     """
@@ -59,18 +90,3 @@ def listen_realtime_db(path):
     # Adiciona o listener para a referencia
     print(f"Monitorando alteracoes na chave: {path}")
     ref.listen(listener)
-
-if __name__ == "__main__":
-    initialize_firebase()
-    # Enviar dados para o Realtime Database
-    push_realtime_db("testes/raspberry/push", time.time())
-    # Le dados do Realtime Database
-    read_realtime_db("testes/raspberry/read")
-    # Atualiza os dados do Realtime Database
-    dados = { "agora": time.time() }    
-    update_realtime_db("testes/raspberry/read", dados)
-    # Sobreescreve os dados do Realtime Database
-    dados = { "sobreescrito": 0}
-    write_realtime_db("testes/raspberry/read", dados)
-    # Escuta uma chave do Realtime Database
-    listen_realtime_db("testes/raspberry/listen")

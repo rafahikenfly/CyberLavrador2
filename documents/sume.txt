@@ -1,0 +1,65 @@
+Sumé é a linguagem de programação de rotinas do robô jardineiro Cyberlavrador
+
+Abaixo estão descritas as tags permitidas em Sumé:
+<Xmax> - posição X máxima do objeto alvo da tarefa
+<Xmin> - posição X mínima do objeto alvo da tarefa
+<Ymax> - posição Y máxima do objeto alvo da tarefa
+<Ymin> - posição Y mínima do objeto alvo da tarefa
+<Zmax> - posição Z máxima do objeto alvo da tarefa
+<Zmin> - posição Z mínima do objeto alvo da tarefa
+LOOP x y - retorna para a linha x do código, repetindo y vezes
+
+GCodes (GRBL 1.1)
+F Set Feed rate in Units/min (See G20/G21).
+G0 A Rapid positioning move at the Rapid Feed Rate. In Laser mode Laser will be turned off.
+G1 A Cutting move in a straight line. At the Current F rate.
+G2 Cut a Clockwise arc.
+G3 Cut an Anti-Clockwise arc.
+G4 Pause command execution for the time in Pnnn. P specifies the time in seconds. Other systems use milliseconds as the pause time, if used unchanged this can result in VERY long pauses.
+G10L2 Sets the offset for a saved origin using absolute machine coordinates.
+G10L20 As G10 L2 but the XYZ parameters are offsets from the current position.
+G17 Draw Arcs in the XY plane, default.
+G18 Draw Arcs in the ZX plane.
+G19 Draw Arcs in the YZ plane.
+G20 All distances and positions are in Inches
+G21 All distances and positions are in mm
+G28 Go to safe position. NOTE: If you have not run a homing cycle and have set the safe position this is very ‘unsafe’ to use.
+G28.1 Set Safe position using absolute machine coordinates.
+G30 Go to the saved G30 position.
+G30.1 Set Predefined position using absolute machine coordinates, a rapid G0 move to that position will be performed before the coordinates are saved.
+G38.2 Probe towards the stock, error on a failure
+G38.3 As G38.2, no error on failure
+G38.4 As G38.2 but move away, stop on a loss of contact.
+G38.5 As G38.4, no error on failure.
+G40 Cutter Compensation off. Grbl does not support cutter compensation.
+G43.1 Dynamic Tool length offset, offsets Z end of tool position for subsequent moves.
+G49 Cancel Tool length Offset.
+G53 Use machine coordinates in this command.
+G54 Activate the relevant saved origin.
+G55-59 As G54, activates a different saved position
+G61 Exact Path mode. Grbl does not support any other modes.
+G80 Canned Cycle Cancel. Grbl does not support any of the canned cycle modes which this cancels so it does nothing.
+G90 All distances and positions are Absolute values from the current origin.
+G91 All distances and positions are Relative values from the current position.
+G91.1 Sets Arc incremental position mode
+G92 Sets the current coordinate point, used to set an origin point of zero, commonly known as the home position.
+G92.1 Reset any G92 offsets in effect to zero and zero any saved values
+G93 Inverse time motion mode.
+G94 Units/min mode at the current F rate.
+M0 Pause.
+M1 As M0 but only pauses if an optional stop switch is on.
+M2 Program End, turn off spindle/laser and stops the machine.
+M3 Start spindle clockwise. In Laser mode sets Constant power.
+M4 As M3, In Laser Mode sets Dynamic power.
+M5 Stop the Spindle
+M8 Coolant on as a flood. (Same as M7)
+M9 Coolant off.
+M30 Same as M2.
+S Set Spindle speed in RPM or Laser Power.
+
+Comandos específicos
+MOTOR - comando de motor
+LASER - comando de laser
+BOMBA - comando de bomba
+VACUO - comando de vacuo
+VALVULA - comando de válvulas
