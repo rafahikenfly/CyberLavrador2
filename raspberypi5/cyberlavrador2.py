@@ -5,8 +5,8 @@ from grbl import connect_to_grbl
 from grbl import unlock_grbl
 from grbl import enviaGCode
 
-from taskManager import filtrarPorHora
-from taskManager import filtrarPorAcessorios
+from taskManager import filtrarPorPrazo
+from taskManager import filtrarPorFerramenta
 from taskManager import filtrarPorCondicao
 from taskManager import ordenarListaPorChave
 from taskManager import preparaComandos
@@ -21,18 +21,27 @@ verbose = True
 
 terrain = "-OEy62gRLp6VMWWHs7Kt"
 pathTarefas = "/loteamento/"+ terrain + "/tarefas"
+pathCanteiros = "/loteamento/"+ terrain + "/canteiros"
 pathBOK = "/bok/classes"
+
 
 GRBLport = "/dev/ttyACM0"
 baudrate = 115200  # Velocidade padrao do GRBL
 
-acessorios = {
-    "manual": False,
-#    "motor": True,
-#    "laser": False,
-#    "vacuum": False,
-#    "pump": False,
-    }
+FERRAMENTAS = {
+    "SensorDistancia": False,
+    "Rocadeira": True,
+    "Laser": False,
+    "Camera": False,
+    "Agua": True,
+    "Fertilizante": True,
+    "Medicamento": False,
+    "Vacuo": False,
+    "SensorUmidade": False,
+    "SensorTemperatura": False,
+    "SensorPH": False,
+    "Arado": False,
+}
 
 intervaloFila = 3600
 tamanhoLoteConsulta = 100
@@ -57,24 +66,25 @@ if __name__ == "__main__":
     unlock_grbl(GRBL)
 
     #obtem a base de conhecimento atualizada
-    BOK = read_realtime_db(pathBOK)
+    classes = read_realtime_db(pathBOK)
+    canteiros = read_realtime_db(pathCanteiros)
 
     while True:
         #busca tarefas
-        tarefasAguardando = read_fitered_realtime_db(pathTarefas, "estado", "aguardando", tamanhoLoteConsulta)
+        tarefasAguardando = read_fitered_realtime_db(pathTarefas, "estado", "Aguardando", tamanhoLoteConsulta)
         verbose and print("Há", len(tarefasAguardando), "tarefa(s) aguardando realização.")
 
-        #filtra aquelas que podem ser realizadas pelo robo e pelas condições da classe, ordenando por hora
-        estaVencida = filtrarPorHora(tarefasAguardando,time.time())
-        tenhoRecursos = filtrarPorAcessorios(tarefasAguardando,acessorios)
-        verbose and print("Encontrei", len(tenhoRecursos), "tarefa(s) que sou capaz de realizar.")
-        possoFazer = filtrarPorCondicao(tenhoRecursos,BOK)
-        print("Há", len(possoFazer[1]), "tarefa(s) disponíveis para realização.")
-        possoFazerOrdenado = ordenarListaPorChave(possoFazer[1],"hora")
+        #filtra aquelas que podem ser realizadas pelo robo e pelas condições da classe, ordenando por prazo
+        tarefasVencidas = filtrarPorPrazo(tarefasAguardando,time.time())
+        tarefasComFerramenta = filtrarPorFerramenta(tarefasAguardando,classes,FERRAMENTAS)
+        verbose and print("Encontrei", len(tarefasComFerramenta), "tarefa(s) que sou capaz de realizar.")
+        tarefasComCondicao = filtrarPorCondicao(tarefasComFerramenta,classes)
+        print("Há", len(tarefasComCondicao[1]), "tarefa(s) disponíveis para realização.")
+        listaDeTarefas = ordenarListaPorChave(tarefasComCondicao[1],"prazo")
 
         #para as tarefas da lista, prepara os comandos e marca a tarefa como processada
-        for tarefa in possoFazerOrdenado[:tamanhoLoteProcessamento]:
-            for instrucao in preparaComandos(BOK.get(tarefa.get("classe")), objetoTeste):
+        for tarefa in listaDeTarefas[:tamanhoLoteProcessamento]:
+            for instrucao in preparaComandos(classes.get(tarefa.get("classe")).get("manejo").get(tarefa.get("manejo")), canteiros.get(tarefa.get("objeto"))):
                 filaComandos.append({
                     "tarefa": tarefa.get("chave"),
                     "instrucao": instrucao,
