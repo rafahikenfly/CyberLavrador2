@@ -1,7 +1,9 @@
 import time
 from firebase import push_realtime_db
 from firebase import update_realtime_db
-
+from firebase import read_filtered_realtime_db
+from config import QUEUE
+from config import FERRAMENTAS
 terrain = "-OEy62gRLp6VMWWHs7Kt"
 pathTarefas = "/loteamento/"+ terrain + "/tarefas"
 
@@ -27,13 +29,14 @@ def filtrarPorFerramenta(dictTarefas, dictClasses, dictAcessorios):
     :param acessorios: Dicionário com os acessorios de filtragem ({campo: bool}).
     :return: Um novo dicionário contendo apenas os itens que podem ser atendidos com os acessorios.
     """
+    tarefasDisponiveis = {}
+    
     for chave, tarefa in dictTarefas.items():
-        ferramentas = dictClasses.get(tarefa.get("classe")).get("ferramenta")
+        ferramentas = dictClasses[tarefa["classe"]]["ferramenta"]
         
-        tarefasDisponiveis = {}
         disponivel = True
         for ferramenta, necessaria in ferramentas.items():
-            if necessaria and not dictAcessorios.get(ferramenta):
+            if necessaria and not dictAcessorios[ferramenta]["instalada"]:
                 disponivel = False
                 break
         if disponivel:
@@ -107,6 +110,23 @@ def ordenarListaPorChave(lista, chave, reverso=False):
     except KeyError:
         raise KeyError(f"A chave '{chave}' não existe em algum dos dicionários fornecidos.")
 
+def obtemFila(dictClasses, verbose=False):
+        try:
+            #busca tarefas
+            tarefasAguardando = read_filtered_realtime_db(pathTarefas, "estado", "Aguardando", QUEUE["loteConsulta"])
+            verbose and print("Há", len(tarefasAguardando), "tarefa(s) aguardando realização.")
+
+            #filtra aquelas que podem ser realizadas pelo robo e pelas condições da classe, ordenando por prazo
+            tarefasComFerramenta = filtrarPorFerramenta(filtrarPorPrazo(tarefasAguardando,time.time()),dictClasses,FERRAMENTAS)
+            verbose and print("Encontrei", len(tarefasComFerramenta), "tarefa(s) que sou capaz de realizar.")
+            tarefasComCondicao = filtrarPorCondicao(tarefasComFerramenta,dictClasses)
+            verbose and print("Há", len(tarefasComCondicao[1]), "tarefa(s) disponíveis para realização.")
+            listaTarefas = ordenarListaPorChave(tarefasComCondicao[1],"prazo")
+            return listaTarefas
+        except Exception as e:
+            print(f"Erro ao obter fila de tarefas: {e}")
+            return []
+
 # Funções de processamento de tarefas
 def preparaComandos(manejo, objeto):
     """
@@ -151,14 +171,14 @@ def postergaTarefa(strChave, intNovaHora, motivo):
     anotaTarefa(strChave, "Tarefa adiada para " + datetime.fromtimestamp(intNovaHora).strftime("%H:%M:%S %d/%m/%y") + ": " + motivo)
 
 def processaTarefa(strChave):
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "processada"})
+    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Processada"})
     anotaTarefa(strChave, "Tarefa processada pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y"))
 
 def falhaTarefa(strChave):
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "falha"})
+    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Falha"})
     anotaTarefa(strChave, "Tarefa falhou pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y"))
 
 def concluiTarefa(strChave):
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "concluida"})
+    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Concluida"})
     anotaTarefa(strChave, "Tarefa concluida pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y"))
 

@@ -1,7 +1,10 @@
 import serial
 import time
 
-def connect_to_grbl(port, baudrate=115200):
+# GRBLStatus = ["Idle", "Run", "Hold", "Jog", "Alarm", "Door", "Check", "Home", "Sleep"]
+
+# Conexão
+def conectaPorta(port, baudrate=115200):
     """
     Conecta ao Arduino GRBL via porta serial.
     """
@@ -9,47 +12,32 @@ def connect_to_grbl(port, baudrate=115200):
         ser = serial.Serial(port, baudrate)
         time.sleep(2)  # Aguarde para o GRBL inicializar
         ser.flushInput()  # Limpa o buffer de entrada
-        print(f"Conectado ao GRBL na porta {port}")
+        print(f"Conectado a porta {port}")
         
         return ser
     except Exception as e:
-        print(f"Erro ao conectar ao GRBL: {e}")
+        print(f"Erro ao conectar: {e}")
         return None
 
-def unlock_grbl(ser):
+def fechaConexaoGRBL(ser):
     """
-    Destrava o GRBL enviando o comando $X.
-    :param ser: porta serial para envio
+    Fecha a conexao serial.
     """
-    if not ser:
-        return "Conexao serial não estabelecida."
+    if ser:
+        ser.close()
+        print("Conexao encerrada.")
 
-    try:
-        # Envia o comando para destravar
-        comando = "$X"
-        comando  = comando.strip() + '\n'
-        ser.write(comando.encode('utf-8'))
-        print("Comando $X enviado para destravar o GRBL.")
-
-        # Le a resposta do GRBL
-        resposta = ser.readline().decode('utf-8').strip() #ok
-        resposta = ser.readline().decode('utf-8').strip()      
-        print("Resposta do GRBL:")
-        print(resposta)
-    except Exception as e:
-        print(f"Ocorreu um erro: {e}")
-
-
+# Comunicação e interpretação
 def enviaGCode(ser, gcode):
     """
     Envia comandos G-code ao GRBL.
 
     :param ser: porta serial para envio
     :param gcode: string a ser enviada
-    :return resposta
+    :return [ok?, resposta]
     """
     if not ser:
-        return "Conexao serial não estabelecida."
+        return False, "Conexao serial não estabelecida."
 
     try:
         gcode = gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
@@ -59,24 +47,17 @@ def enviaGCode(ser, gcode):
         # Verificar se a resposta contem um erro
         if response.startswith("error:"):
             # Extrai o codigo do erro e retorna a descricao do erro
-            return "erro "+ interpret_grbl_error(response)
+            return False, "erro "+ interpretaErroGRBL(response)
         elif response.startswith("<"):
             # Extrai os dados de uma resposta de estado
-            return interpret_grbl_state(response)
+            return True, interpretaStatusGRBL(response)
         else:
             return response
     except Exception as e:
-        return "Erro ao enviar gcode: " + gcode[:-1] + ": " + {e}
+        return False, "Erro ao enviar gcode: " + gcode[:-1] + ": " + {e}
 
-def close_connection(ser):
-    """
-    Fecha a conexao serial.
-    """
-    if ser:
-        ser.close()
-        print("Conexao encerrada.")
 
-def interpret_grbl_error(message):
+def interpretaErroGRBL(message):
     # Mapeamento de codigos de erro do GRBL
     error_codes = {
         1: "G-code words consist of a letter and a value. Letter was not found.",
@@ -119,7 +100,7 @@ def interpret_grbl_error(message):
     error_code = int(message.split(":")[1])
     return (f"{error_code}: {error_codes.get(error_code)}")
     
-def interpret_grbl_state(message):
+def interpretaStatusGRBL(message):
     """
     Interpreta uma mensagem de estado do GRBL.
 
@@ -140,7 +121,7 @@ def interpret_grbl_state(message):
 
     try:
         # O primeiro elemento e o estado da maquina (Idle, Run, etc.)
-        state["status"] = parts[0]
+        state["estado"] = parts[0]
 
         # Processa os demais componentes
         for part in parts[1:]:
@@ -169,3 +150,27 @@ def interpret_grbl_state(message):
 
     except Exception as e:
         return {"error": f"Erro ao interpretar a mensagem: {str(e)}"}
+
+# Alto nível
+def destravaGRBL(ser):
+    """
+    Destrava o GRBL enviando o comando $X.
+    :param ser: porta serial para envio
+    """
+    if not ser:
+        return "Conexao serial não estabelecida."
+
+    try:
+        # Envia o comando para destravar
+        comando = "$X"
+        comando  = comando.strip() + '\n'
+        ser.write(comando.encode('utf-8'))
+        print("Comando $X enviado para destravar o GRBL.")
+
+        # Le a resposta do GRBL
+        resposta = ser.readline().decode('utf-8').strip() #ok
+        resposta = ser.readline().decode('utf-8').strip()      
+        print("Resposta do GRBL:")
+        print(resposta)
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")

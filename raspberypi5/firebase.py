@@ -28,7 +28,7 @@ def write_realtime_db(path, data):
     ref.set(data)
     print("Dados sobreescritos no Realtime Database:", data)
 
-def read_fitered_realtime_db(path, filter, value, limit):
+def read_filtered_realtime_db(path, filter, value, limit):
     """
     Le o valor de uma chave especifica do Firebase.
     :param path: Caminho da chave no banco de dados.
