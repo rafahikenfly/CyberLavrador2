@@ -54,53 +54,70 @@ QUEUE = {
 COMANDOS_SUPORTADOS = {
     "M0": {
         "periferico": "HEAD",
-        "descricao": "SHADOW OFF",
+        "descricao": "SHADOW ON",
         "elemento": "RELAY",
         "indice": 0,
     },
     "M1": {
         "periferico": "HEAD",
+        "descricao": "SHADOW OFF",
         "elemento": "RELAY",
         "indice": 1,
     },
-    "VACUO": {
+    "M2": {
         "periferico": "HEAD",
+        "descricao": "STOP FLUID",
         "elemento": "RELAY",
         "indice": 2,
     },
-    "SOMBR": {
+    "M3": {
         "periferico": "HEAD",
+        "descricao": "MOTOR ON",
         "elemento": "RELAY",
         "indice": 3
     },
-    "VALVU": {
-        "periferico": "PUMP",
+    "M4": {
+        "periferico": "HEAD",
+        "descricao": "LASER ON",
         "elemento": "MOSFET",
         "indice": 0
     },
-    "CAMER": {
-        "periferico": "CAME",
+    "M5": {
+        "periferico": "HEAD",
+        "descricao": "MOTOR OFF",
         "elemento": "CAMERA",
         "indice": 0
     },
-    "DISTA": {
+    "M6": {
         "periferico": "HEAD",
+        "descricao": "LASER OFF",
         "elemento": "FERRAMENTA",
         "indice": 1
     },
-    "UMIDA": {
-        "periferico": "HEAD",
+    "M7": {
+        "periferico": "PUMP",
+        "descricao": "FLUD 1 ON",
         "elemento": "FERRAMENTA",
         "indice": 2
     },
-    "TEMPE": {
-        "periferico": "HEAD",
-        "elemento": "FERRAMENTA",
+    "M8": {
+        "periferico": "PUMP",
+        "descricao": "FLUD 2 ON",
         "indice": 3
     },
-    "PHSOL": {
+    "M9": {
+        "periferico": "PUMP",
+        "descricao": "FLUD 3 ON",
+        "indice": 4
+    },
+    "M10": {
         "periferico": "HEAD",
-        "elemento": "FERRAMENTA",
+        "descricao": "VACUUM ON",
+        "indice": 4
+    },
+    "M11": {
+        "periferico": "HEAD",
+        "descricao": "VACUUM OFF",
         "indice": 4
     },
 }

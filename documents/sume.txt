@@ -60,7 +60,7 @@ M8 Start fluid 2
 M9 Start fluid 3
 M10 Start Vacuum
 M11 Stop Vacuum
-*M12 Analog read
-*M13 Digital read
+*M12 Analog read  --> Preciso condicionar à ferramenta
+*M13 Digital read --> Preciso condicionar à ferramenta
 
 S Set timeout (0 = disabled)
