@@ -92,36 +92,40 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         # o que acontece quando ele fica em estado "Idle". Caso o robô esteja muito lento, é possível implementar
         # um protocolo que verifica a posição do GRBL antes de enviar comandos para a ferramenta.
         # Se não estiver parado, sai do loop e tenta novamente na próxima iteração.
-        resposta = enviaGCode(GRBL, "?")
-        if not resposta[0] or resposta[1]["estado"] != "Idle": break
-
-        # Todos os demais comandos são strings de cinco letras.
-        # 
-        # Primeiro verifica se o comando é suportado.
-        # Se não for, registra o erro e passa para o próximo comando.
-        if COMANDOS_SUPORTADOS[instrucao] == None:
-            processaErroComando ("Instrução desconhecida", filaComandos, historicoComandos, 0, verbose)
-            continue
-        
-        # Se o comando for suportado, envia para o destino e registra a resposta.
-        periferico = COMANDOS_SUPORTADOS[instrucao][periferico]
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
-
-        # Comandos para a HEAD são enviados apenas se ela estiver disponível e com a ferramenta em posição.
-        # Se não estiver parado, sai do loop e tenta novamente na próxima iteração.
-        if periferico == "HEAD":
-            resposta = enviaGCode(HEAD, "?")
+        elif instrucao.startswith("G"):
+            resposta = enviaGCode(GRBL, "?")
             if not resposta[0] or resposta[1]["estado"] != "Idle": break
-            # TODO: Pode estar parada e com a ferramenta errada. Nesse caso, deve haver uma rotina de troca de ferramenta.
-            comando["resposta"] = "ok" #TODO: implementar head enviaGCode(HEAD, interpretaHCode(instrucao))
+            # Primeiro verifica se o comando é suportado.
+            # Se não for, registra o erro e passa para o próximo comando.
+            if COMANDOS_SUPORTADOS[instrucao] == None:
+                processaErroComando ("Comando M desconhecido", filaComandos, historicoComandos, 0, verbose)
+                continue
+            # Se o comando for suportado, envia para o destino e registra a resposta.
+            periferico = COMANDOS_SUPORTADOS[instrucao]["periferico"]
+            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
 
-        # Não está implementada a verificação de estado do destino de câmera e válvula. A premissa é que não é 
-        # necessário verificar o estado do destino, pois todos os comandos são do tipo real-time.
-        elif periferico == "CAME":
-            comando["resposta"] = "ok" #TODO implementar câmera
-        elif periferico == "PUMP":
-            comando["resposta"] = "ok" #TODO implementar bomba enviaGCode(PUMP, interpretaHCode(instrucao))
-        
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
-        if resposta == "ok": processaSucessoComando(filaComandos, historicoComandos, 0, verbose)
-        else: processaErroComando(comando["resposta"], filaComandos, historicoComandos, 0, verbose)
+            if periferico == "HEAD":
+                # Comandos M12 e M13 para a HEAD são enviados apenas se ela estiver com a ferramenta correta montada.
+                if instrucao == "M12" or instrucao == "M13":
+                    processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
+                    #TODO implementar verificação de ferramenta
+                    #resposta = enviaGCode(HEAD, instrucao)
+                else:
+                    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
+                    resposta = enviaGCode(HEAD, instrucao)
+                    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
+                    if not resposta[0]: processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                    else: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+            elif periferico == "CAME":
+                    processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
+                    #TODO implementar comandos de camera
+                    #resposta = enviaGCode(CAME, instrucao)
+            elif periferico == "PUMP":
+                    processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
+                    #TODO implementar comandos de bombeamento
+                    #resposta = enviaGCode(PUMP, instrucao)
+            else:
+                processaErroComando("Periférico desconhecido", filaComandos, historicoComandos, 0, verbose)
+        # Se não começa com G ou com M, é um comando suportado, registra o erro e passa para o próximo comando.
+        else:
+            processaErroComando("Comando não suportado", filaComandos, historicoComandos, 0, verbose)

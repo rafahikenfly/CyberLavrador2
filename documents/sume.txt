@@ -50,7 +50,7 @@ G94 Units/min mode at the current F rate.
 MCodes (Adaptados para o contexto)
 *M0 Shadow on
 *M1 Shadow off
-*M2
+*M2 Stop fluid
 M3 Start Motor
 M4 Start Laser
 M5 Stop Motor
