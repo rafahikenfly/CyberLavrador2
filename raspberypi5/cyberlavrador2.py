@@ -22,7 +22,7 @@ pathBOK = "/bok/classes"
 pathDispositivo = "/loteamento/"+ terrain + "/dispositivos" + "/-cyberlavrador"
 
 GRBLport = "/dev/ttyACM0"
-HEADport = "/dev/ttyACM1"
+HEADport = "/dev/ttyUSB0"
 PUMPport = "/dev/ttyACM2"
 baudrate = 115200  # Velocidade padrao do GRBL
 
@@ -59,6 +59,7 @@ if __name__ == "__main__":
         verbose and print(agora, "Loop principal iniciado.")
         # verifica o estado dos periféricos
         estado = reportaEstado(GRBL, HEAD, filaComandos, historicoComandos)
+        verbose and print("Estado", estado)
 
         #TODO: verificar se algum periférico está em estado de alarme
         if estado['GRBL']['estado'] == "Alarm":

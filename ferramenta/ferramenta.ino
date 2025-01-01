@@ -26,11 +26,27 @@ Ultrasonic clearanceD(trigger[3],echo[3]);             //Configura os pinos sens
 #define relayCount 4
 #define laserChannel 0
 #define motorChannel 1
+#define shadowChannel 2
+#define vacuumChanel 3
+
 int relayPin[relayCount] = {2,3,4,5};
 bool relayState[relayCount];
 
+int digitalReadTool() {
+  return digitalRead(toolPin[0]);
+}
+int analogReadTool() {
+  return analogRead(toolPin[0]);
+}
+void relay(int channel, bool status, int timeout = 0) {
+  relayState[channel] = status;
+  digitalWrite(relayPin[channel], status ? LOW : HIGH);
+  toolState = status ? 2 : getTool();
+}
+
+
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   for (int i=0; i<relayCount;i++) {
     relayState[i] = false;
     pinMode(relayPin[i], OUTPUT);
@@ -44,12 +60,13 @@ void setup() {
 
 void loop() {
   getClearance();
+  int timeout = 0;
   while (Serial.available()) {
     int incoming;
     int error = 0;
+    bool analogRequest = false;
+    bool digitalRequest = false;
     incoming = Serial.read();
-    //Serial.print("Received: ");
-    //Serial.println(incoming);
     switch (incoming) {
       case 10:
       case 13:
@@ -57,25 +74,41 @@ void loop() {
           Serial.print ("error:");
           Serial.println (error);
         }
-        else Serial.println("ok");
+        else {
+          Serial.println("ok");
+          analogRequest && analogReadTool();
+          digitalRequest && digitalReadTool();
+          error = 0;
+          analogRequest = false;
+          digitalRequest = false;
+        }
         break;
       case '?': reportStatus(); break;
-      case 'G':
-      case 'g':
+      case 'M':
+      case 'm':
         int command;
-        command = Serial.read();
-        if (command == '1') relay(laserChannel, true);
-        if (command == '2') relay(laserChannel, false);
-        if (command == '3') relay(motorChannel, true);
-        if (command == '4') relay(motorChannel, false);
-        if (command == '5') relay(2, true);
-        if (command == '6') relay(2, false);
-        if (command == '7') relay(3, true);
-        if (command == '8') relay(3, false);
+        command = Serial.parseInt();
+        
+        switch (command) {
+          case 0: relay(shadowChannel, true, timeout); break;
+          case 1: relay(shadowChannel, false, timeout); break;
+
+          case 3: relay(motorChannel, true, timeout); break;
+          case 4: relay(laserChannel, true, timeout); break;
+          case 5: relay(motorChannel, false, timeout); break;
+          case 6: relay(laserChannel, false, timeout); break;
+          case 10: relay(vacuumChanel, true, timeout); break;
+          case 11: relay(vacuumChanel, false, timeout); break;
+          case 12: analogRequest = true; break;
+          case 13: digitalRequest = true; break;
+          default: error = 20;
+        }
         break;
+      case 'S':
+      case 's':
+        timeout = Serial.parseInt();
       default:
-        Serial.print("Received: ");
-        Serial.println(incoming);
+        error = 21;
     }
   }
   delay(1000);
@@ -113,7 +146,10 @@ void reportStatus() {
   //Fecha mensagem
   Serial.println(">");
 }
-
+void reportError(int error) {
+  Serial.println("error: 20");
+  Serial.println(error);
+}
 void getClearance() {
   clearance[0] = clearanceA.read();
   if (clearance[0] < 5) alarm();
@@ -124,24 +160,13 @@ void getClearance() {
   clearance[3] = clearanceD.read();
   if (clearance[3] < 5) alarm();
 }
-
 int getTool() {
   int tool = 0;
   // Le o ID da ferramenta
   for (int i=0; i<toolIDBits; i++) {
    if(digitalRead(toolID[i])) tool += pow(2,i);
-//    Serial.println();
-//    Serial.print(i);
-//    Serial.print("/");
-//    Serial.print(digitalRead(toolID[i]));
-//    Serial.print("/");
-//    Serial.println(tool);
   }
   return tool;
-}
-void relay(int channel, bool status) {
-  relayState[channel] = status;
-  digitalWrite(relayPin[channel], status ? LOW : HIGH);toolState = status ? 2 : getTool();
 }
 void alarm() {
   for (int i=0; i<relayCount; i++) {

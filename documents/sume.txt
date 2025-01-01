@@ -46,20 +46,21 @@ G92 Sets the current coordinate point, used to set an origin point of zero, comm
 G92.1 Reset any G92 offsets in effect to zero and zero any saved values
 G93 Inverse time motion mode.
 G94 Units/min mode at the current F rate.
-M0 Pause.
-M1 As M0 but only pauses if an optional stop switch is on.
-M2 Program End, turn off spindle/laser and stops the machine.
-M3 Start spindle clockwise. In Laser mode sets Constant power.
-M4 As M3, In Laser Mode sets Dynamic power.
-M5 Stop the Spindle
-M8 Coolant on as a flood. (Same as M7)
-M9 Coolant off.
-M30 Same as M2.
-S Set Spindle speed in RPM or Laser Power.
 
-Comandos específicos
-MOTOR - comando de motor
-LASER - comando de laser
-BOMBA - comando de bomba
-VACUO - comando de vacuo
-VALVULA - comando de válvulas
+MCodes (Adaptados para o contexto)
+*M0 Shadow on
+*M1 Shadow off
+*M2
+M3 Start Motor
+M4 Start Laser
+M5 Stop Motor
+*M6 Stop Laser
+M7 Start fluid 1
+M8 Start fluid 2
+M9 Start fluid 3
+M10 Start Vacuum
+M11 Stop Vacuum
+*M12 Analog read
+*M13 Digital read
+
+S Set timeout (0 = disabled)

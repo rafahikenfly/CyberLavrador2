@@ -52,12 +52,13 @@ QUEUE = {
     "loteProcessamento": 5
 }
 COMANDOS_SUPORTADOS = {
-    "MOTOR": {
+    "M0": {
         "periferico": "HEAD",
+        "descricao": "SHADOW OFF",
         "elemento": "RELAY",
         "indice": 0,
     },
-    "LASER": {
+    "M1": {
         "periferico": "HEAD",
         "elemento": "RELAY",
         "indice": 1,

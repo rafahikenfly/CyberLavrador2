@@ -4,12 +4,6 @@ from taskManager import concluiTarefa
 from config import COMANDOS_SUPORTADOS
 import time
 
-def interpretaHCode(comando):
-    """
-    Interpreta um HCode e retorna o string a ser enviado à HEAD.
-    """
-    return comando
-
 def processaErroComando(erro, filaComandos = [], historicoComandos = [], i = 0, verbose = False):
     """
     Processa um erro de comando, pulando para a próxima tarefa da fila (se existente) e registrando a falha.
@@ -80,7 +74,6 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
 
         comando = filaComandos[0]
         instrucao = comando["instrucao"]
-        tarefa = comando["tarefa"]
 
         # Comandos G vão sempre ser enviados para o GRBL
         # Está implementado um protocolo simples de Send-Response. Por isso não é preciso verificar se
@@ -106,12 +99,12 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         # 
         # Primeiro verifica se o comando é suportado.
         # Se não for, registra o erro e passa para o próximo comando.
-        if COMANDOS_SUPORTADOS.get(instrucao[:5]) == None:
+        if COMANDOS_SUPORTADOS[instrucao] == None:
             processaErroComando ("Instrução desconhecida", filaComandos, historicoComandos, 0, verbose)
             continue
         
         # Se o comando for suportado, envia para o destino e registra a resposta.
-        periferico = COMANDOS_SUPORTADOS.get(instrucao[:5]).get("periferico")
+        periferico = COMANDOS_SUPORTADOS[instrucao][periferico]
         verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
 
         # Comandos para a HEAD são enviados apenas se ela estiver disponível e com a ferramenta em posição.
