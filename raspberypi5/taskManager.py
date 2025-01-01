@@ -158,7 +158,7 @@ def preparaComandos(manejo, objeto):
                 if loopCount < loopTotal:
                     i = loopGoto
                     loopCount = loopCount + 1
-            else: 
+            else:
                 comandos.append(instrucao[i])
             i = i + 1
     return (comandos)

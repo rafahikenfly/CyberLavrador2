@@ -44,7 +44,7 @@ def processaSucessoComando(resposta, filaComandos = [], historicoComandos = [], 
     """
     
     #Reporta conclusão na fila
-    filaComandos[1]["resposta"] = resposta
+    filaComandos[i]["resposta"] = resposta
     filaComandos[i]["estado"] = "Concluido"
     tarefa = filaComandos[i]["tarefa"]
     
@@ -82,7 +82,7 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         if instrucao.startswith("G"):
             verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL -->{instrucao}")
             resposta = enviaGCode(GRBL, instrucao)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta[1]}")
+            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta}")
             if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             continue
@@ -92,7 +92,7 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         # o que acontece quando ele fica em estado "Idle". Caso o robô esteja muito lento, é possível implementar
         # um protocolo que verifica a posição do GRBL antes de enviar comandos para a ferramenta.
         # Se não estiver parado, sai do loop e tenta novamente na próxima iteração.
-        elif instrucao.startswith("G"):
+        elif instrucao.startswith("M"):
             resposta = enviaGCode(GRBL, "?")
             if not resposta[0] or resposta[1]["estado"] != "Idle": break
             # Primeiro verifica se o comando é suportado.
@@ -111,7 +111,7 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
                     #TODO implementar verificação de ferramenta
                     #resposta = enviaGCode(HEAD, instrucao)
                 else:
-                    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
+                    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
                     resposta = enviaGCode(HEAD, instrucao)
                     verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
                     if not resposta[0]: processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
@@ -128,4 +128,4 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
                 processaErroComando("Periférico desconhecido", filaComandos, historicoComandos, 0, verbose)
         # Se não começa com G ou com M, é um comando suportado, registra o erro e passa para o próximo comando.
         else:
-            processaErroComando("Comando não suportado", filaComandos, historicoComandos, 0, verbose)
+            processaErroComando(f"Comando não suportado: {instrucao}", filaComandos, historicoComandos, 0, verbose)

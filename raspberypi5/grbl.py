@@ -42,7 +42,7 @@ def enviaGCode(ser, gcode):
     try:
         if gcode != '?': gcode = gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
         ser.write(gcode.encode('utf-8'))  # Envia o comando
-        # time.sleep(0.002) #delay da resposta
+        time.sleep(0.5) #delay da resposta
         response = ser.readline().decode('utf-8').strip()  # Le a resposta
         # Verificar se a resposta contem um erro
         if response.startswith("error:"):
@@ -54,7 +54,7 @@ def enviaGCode(ser, gcode):
         else:
             return response
     except Exception as e:
-        return False, "Erro ao enviar gcode: " + gcode[:-1] + ": " + {e}
+        return False, "Erro ao enviar gcode: " + gcode[:-1]
 
 
 def interpretaErroGRBL(message):

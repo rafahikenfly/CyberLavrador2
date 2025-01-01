@@ -26,7 +26,7 @@ HEADport = "/dev/ttyUSB0"
 PUMPport = "/dev/ttyACM2"
 baudrate = 115200  # Velocidade padrao do GRBL
 
-intervaloConsultaTarefas = 15
+intervaloConsultaTarefas = 30
 intervaloReporteEstado = 5
 frequencia = 1
 
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     #conecta com o GRBL
     GRBL = conectaPorta(GRBLport, baudrate)
-    HEAD = conectaPorta(HEADport, baudrate)
+    HEAD = conectaPorta(HEADport, 9600)
     PUMP = conectaPorta(PUMPport, baudrate)
 
     #obtem a base de conhecimento atualizada
