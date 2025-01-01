@@ -2,6 +2,7 @@ from config import QUEUE
 from firebase import initialize_firebase
 from firebase import read_realtime_db, update_realtime_db
 from grbl import conectaPorta
+from grbl import destravaGRBL
 
 from taskManager import obtemFila
 from taskManager import preparaComandos
@@ -60,7 +61,9 @@ if __name__ == "__main__":
         estado = reportaEstado(GRBL, HEAD, filaComandos, historicoComandos)
 
         #TODO: verificar se algum periférico está em estado de alarme
-        #destravaGRBL(GRBL)
+        if estado['GRBL']['estado'] == "Alarm":
+            verbose and print("Destravando alarme GRBL")
+            destravaGRBL(GRBL)
 
         # verifica se é hora de reportar o estado e reporta, se for o caso
         if proximoReporteEstado <= agora:

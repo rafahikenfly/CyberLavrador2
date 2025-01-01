@@ -129,6 +129,6 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         elif periferico == "PUMP":
             comando["resposta"] = "ok" #TODO implementar bomba enviaGCode(PUMP, interpretaHCode(instrucao))
         
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando["resposta"]}")
+        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
         if resposta == "ok": processaSucessoComando(filaComandos, historicoComandos, 0, verbose)
         else: processaErroComando(comando["resposta"], filaComandos, historicoComandos, 0, verbose)

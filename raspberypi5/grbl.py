@@ -40,7 +40,7 @@ def enviaGCode(ser, gcode):
         return False, "Conexao serial não estabelecida."
 
     try:
-        gcode = gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
+        if gcode != '?': gcode = gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
         ser.write(gcode.encode('utf-8'))  # Envia o comando
         # time.sleep(0.002) #delay da resposta
         response = ser.readline().decode('utf-8').strip()  # Le a resposta
