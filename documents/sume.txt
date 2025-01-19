@@ -7,7 +7,10 @@ Abaixo estão descritas as tags permitidas em Sumé:
 <Ymin> - posição Y mínima do objeto alvo da tarefa
 <Zmax> - posição Z máxima do objeto alvo da tarefa
 <Zmin> - posição Z mínima do objeto alvo da tarefa
-LOOP x y - retorna para a linha x do código, repetindo y vezes
+<Xdim> - dimensao X do objeto alvo da tarefa
+<Ydim> - dimensao Y do objeto alvo da tarefa
+<Zdim> - dimensao Z do objeto alvo da tarefa
+LOOP x y - retorna para a linha y do código, repetindo x vezes
 
 GCodes (GRBL 1.1)
 F Set Feed rate in Units/min (See G20/G21).

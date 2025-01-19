@@ -16,23 +16,25 @@ import time
 verbose = True
 
 terrain = "-OEy62gRLp6VMWWHs7Kt"
-pathTarefas = "/loteamento/"+ terrain + "/tarefas"
-pathCanteiros = "/loteamento/"+ terrain + "/canteiros"
-pathBOK = "/bok/classes"
-pathDispositivo = "/loteamento/"+ terrain + "/dispositivos" + "/-cyberlavrador"
+pathTarefas = "/cartografia/"+ terrain + "/tarefas"
+pathCanteiros = "/cartografia/"+ terrain + "/canteiros"
+pathPlantas = "/cartografia/"+ terrain + "/plantas"
+pathManejos = "/conhecimento/manejos"
+pathDispositivo = "/cartografia/"+ terrain + "/dispositivos" + "/-cyberlavrador"
 
 GRBLport = "/dev/ttyACM0"
 HEADport = "/dev/ttyUSB0"
 PUMPport = "/dev/ttyACM2"
 baudrate = 115200  # Velocidade padrao do GRBL
 
-intervaloConsultaTarefas = 30
-intervaloReporteEstado = 5
+intervaloConsultaTarefas = 3600
+intervaloReporteEstadoAtivo = 5
+intervaloReporteEstadoInativo = 55
 frequencia = 1
 
 filaComandos = []
 historicoComandos = []
-objetoTeste = { "posicao": {
+objetoDefault = { "posicao": {
     "X": 100,
     "Y": 90,
     "Z": 80,
@@ -48,8 +50,9 @@ if __name__ == "__main__":
     PUMP = conectaPorta(PUMPport, baudrate)
 
     #obtem a base de conhecimento atualizada
-    classes = read_realtime_db(pathBOK)
+    manejos = read_realtime_db(pathManejos)
     canteiros = read_realtime_db(pathCanteiros)
+    plantas = read_realtime_db(pathPlantas)
 
     proximaConsultaTarefas = 0
     proximoReporteEstado = 0
@@ -57,8 +60,15 @@ if __name__ == "__main__":
     while True:
         agora = time.time()
         verbose and print(agora, "Loop principal iniciado.")
-        # verifica o estado dos periféricos
-        estado = reportaEstado(GRBL, HEAD, filaComandos, historicoComandos)
+        # Verifica o estado dos periféricos e a atividade do robô. O robô está ativo
+        # se algum dos periféricos não está em estado Idle. Se todos estiverem, ou
+        # se nenhum periférico estiver instalado, ele está inativo
+        estado = reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos)
+        ativo = False
+        if GRBL: ativo = estado[GRBL][estado] != "Idle"
+        if HEAD: ativo = estado[HEAD][estado] != "Idle"
+        if PUMP: ativo = estado[HEAD][estado] != "Idle"
+
         verbose and print("Estado", estado)
 
         #TODO: verificar se algum periférico está em estado de alarme
@@ -68,29 +78,45 @@ if __name__ == "__main__":
 
         # verifica se é hora de reportar o estado e reporta, se for o caso
         if proximoReporteEstado <= agora:
-            verbose and print("Estado", reportaEstado(GRBL, HEAD, filaComandos, historicoComandos))
+            verbose and print("Estado", reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos))
             update_realtime_db(pathDispositivo+"/estado", estado)
-            proximoReporteEstado = agora + intervaloReporteEstado
+            proximoReporteEstado = agora + intervaloReporteEstadoAtivo + (0 if ativo else intervaloReporteEstadoInativo)
         # verifica se é hora de consultar a fila de tarefas e processa fila se for o caso
         if proximaConsultaTarefas <= agora:
-            listaDeTarefas = obtemFila(classes, verbose) #TODO: considerar que o GRBL ou HEAD podem estar offline
+            listaDeTarefas = obtemFila(manejos, verbose) #TODO: considerar que o GRBL ou HEAD podem estar offline
             proximaConsultaTarefas = agora + intervaloConsultaTarefas
-            # processa a consulta, reiniciando o loop caso não haja novas tarefas
+            # processa a consulta, reiniciando o loop principal caso não haja novas tarefas
             if len(listaDeTarefas) == 0:
                 print("Nenhuma tarefa disponível.")
                 continue
-            #para as tarefas da lista, prepara os comandos e marca a tarefa como processada
-            for tarefa in listaDeTarefas[:QUEUE.get("loteProcessamento")]:
-                for instrucao in preparaComandos(classes.get(tarefa.get("classe")).get("manejo").get(tarefa.get("manejo")), canteiros.get(tarefa.get("objeto"))):
+
+            # já se há tarefas, para cada tarefa,
+            # prepara os comandos e marca a tarefa como processada
+            for tarefa in listaDeTarefas[:QUEUE["loteProcessamento"]]:
+                # recupera dados da variante da tarefa
+                varianteTarefa = manejos[tarefa["acao"]["manejoVinculado"]]["variante"][tarefa["acao"]["varianteVinculada"]]
+                # recupera dados do objeto da tarefa
+                objetoTarefa = {}
+                if tarefa["objeto"]["tipo"] == "planta":
+                    objetoTarefa = plantas[tarefa["objeto"]["chave"]]
+                elif tarefa["objeto"]["tipo"] == "canteiro": 
+                    objetoTarefa = canteiros[tarefa["objeto"]["chave"]]
+                else:
+                    objetoTarefa = objetoDefault
+                    #objetoTarefa é a planta[tarefa["objeto"]["chave"]]
+
+                # para cada instrucao na variante, inclui um comando na fila.
+                # Ao incluir um comando, as tags do código são processadas.
+                for instrucao in preparaComandos(varianteTarefa, objetoTarefa):
                     filaComandos.append({
-                        "tarefa": tarefa.get("chave"),
+                        "tarefa": tarefa["key"],
                         "instrucao": instrucao,
                         "resposta": "",
                         "estado": "fila",
                     })
-                processaTarefa(tarefa.get("chave"))
+                processaTarefa(tarefa["key"])
 
         #se houver periferico disponível, processa a fila de comandos
         if True: #estado["GRBL"]["estado"] == "Idle" or estado["HEAD"]["estado"] == "Idle":
             processaFilaComandos(GRBL, HEAD, PUMP, filaComandos, historicoComandos, True)
-        time.sleep(min(intervaloConsultaTarefas, intervaloReporteEstado,frequencia))
+        time.sleep(min(intervaloConsultaTarefas, intervaloReporteEstadoAtivo + (0 if ativo else intervaloReporteEstadoInativo), frequencia))

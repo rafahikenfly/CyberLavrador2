@@ -17,7 +17,7 @@ def conectaPorta(port, baudrate=115200):
         return ser
     except Exception as e:
         print(f"Erro ao conectar: {e}")
-        return None
+        return False
 
 def fechaConexaoGRBL(ser):
     """

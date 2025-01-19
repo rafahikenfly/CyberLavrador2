@@ -1,56 +1,70 @@
 
 """
 Configurações do sistema
+"""
 
+
+"""
 FERRAMENTAS: Dicionário com as ferramentas disponíveis para o CyberLavrador.
+"""
+FERRAMENTAS = {
+    "agua": {
+        "instalada": True,
+    },
+    "arado": {
+        "instalada": True,
+    },
+    "camera": {
+        "instalada": True,
+    },
+    "fertilizante": {
+        "instalada": True,
+    },
+    "laser": {
+        "instalada": True,
+    },
+    "manual": {
+        "instalada": True,
+    },
+    "medicamento": {
+        "instalada": True,
+    },
+    "rocadeira": {
+        "instalada": True,
+    },
+    "sensordistancia": {
+        "instalada": True,
+    },
+    "sensorph": {
+        "instalada": True,
+    },
+    "sensortemperatura": {
+        "instalada": True,
+    },
+    "sensorumidade": {
+        "instalada": True,
+    },
+    "vacuo": {
+        "instalada": True,
+    },
+}
+
+
+"""
 QUEUE: Dicionário com as configurações de fila do CyberLavrador.
+"""
+QUEUE = {
+    "loteConsulta": 100,
+    "loteProcessamento": 5
+}
+
+
+"""
 COMANDOS_SUPORTADOS: Lista com os comandos suportados pelo CyberLavrador. Cada comando é um dicionário com as seguintes chaves:
     - periferico: Periférico de destino do comando (HEAD, PUMP, CAME). Esta chave determina para quem o comando será enviado pelo gerenciador de comandos.
     - elemento: Elemento de destino do comando (RELAY, MOSFET, CAMERA, FERRAMENTA). Esta chave é interpretada para enviar o comando correto para o periférico.
     - indice: Índice do elemento de destino do comando. Esta chave é interpretada para enviar o comando correto para o periférico.
 """
-FERRAMENTAS = {
-    "SensorDistancia": {
-        "instalada": False,
-    },
-    "Rocadeira": {
-        "instalada": True,
-    },
-    "Laser": {
-        "instalada": False,
-    },
-    "Camera": {
-        "instalada": False,
-    },
-    "Agua": {
-        "instalada": True,
-    },
-    "Fertilizante": {
-        "instalada": True,
-    },
-    "Medicamento": {
-        "instalada": False,
-    },
-    "Vacuo": {
-        "instalada": False,
-    },
-    "SensorUmidade": {
-        "instalada": False,
-    },
-    "SensorTemperatura": {
-        "instalada": False,
-    },
-    "SensorPH": {
-        "instalada": False,
-    },
-    "Arado": {
-        "instalada": False,
-    },
-}
-QUEUE = {
-    "loteConsulta": 100,
-    "loteProcessamento": 5
-}
 COMANDOS_SUPORTADOS = {
     "M0": {
         "periferico": "HEAD",

@@ -46,7 +46,7 @@ void relay(int channel, bool status, int timeout = 0) {
 
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   for (int i=0; i<relayCount;i++) {
     relayState[i] = false;
     pinMode(relayPin[i], OUTPUT);

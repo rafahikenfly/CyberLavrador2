@@ -81,28 +81,38 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         # implementar um protocolo que utiliza o buffer serial do GRBL.
         if instrucao.startswith("G"):
             verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL -->{instrucao}")
-            resposta = enviaGCode(GRBL, instrucao)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta}")
-            if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-            else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-            continue
-        
+            if GRBL: 
+                resposta = enviaGCode(GRBL, instrucao)
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta}")
+                if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                continue
+            else:
+                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL desconectado")
+                processaSucessoComando("GRBL desconectado", filaComandos, historicoComandos, 0, verbose)
+
         # Outros comandos  são enviados para o periférico de destino apenas se o GRBL estiver parado.
         # Isso acontece porque as operações de ferramenta devem iniciar apenas quando o GRBL estiver em posição,
         # o que acontece quando ele fica em estado "Idle". Caso o robô esteja muito lento, é possível implementar
         # um protocolo que verifica a posição do GRBL antes de enviar comandos para a ferramenta.
         # Se não estiver parado, sai do loop e tenta novamente na próxima iteração.
         elif instrucao.startswith("M"):
-            resposta = enviaGCode(GRBL, "?")
-            if not resposta[0] or resposta[1]["estado"] != "Idle": break
-            # Primeiro verifica se o comando é suportado.
-            # Se não for, registra o erro e passa para o próximo comando.
-            if COMANDOS_SUPORTADOS[instrucao] == None:
-                processaErroComando ("Comando M desconhecido", filaComandos, historicoComandos, 0, verbose)
-                continue
-            # Se o comando for suportado, envia para o destino e registra a resposta.
-            periferico = COMANDOS_SUPORTADOS[instrucao]["periferico"]
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
+            if GRBL and HEAD:
+                # Antes de se preocupar com o comando em si, precisa verificar se o GRBL está em posiçao.
+                # Isso significa que ele está respondendo e com estado "Idle". Nesse caso, encerra o processamento
+                # da fila de comandos, pois não sabemos quanto tempo vai levar para concluir a operação sendo realizada
+                # pelo GRBL.
+                resposta = enviaGCode(GRBL, "?")
+                if not resposta[0] or resposta[1]["estado"] != "Idle": break
+
+                # Primeiro verifica se o comando é suportado.
+                # Se não for, registra o erro e passa para o próximo comando.
+                if COMANDOS_SUPORTADOS[instrucao] == None:
+                    processaErroComando ("Comando M desconhecido", filaComandos, historicoComandos, 0, verbose)
+                    continue
+
+                # Se o comando for suportado, envia para o destino e registra a resposta.
+                periferico = COMANDOS_SUPORTADOS[instrucao]["periferico"]
 
             if periferico == "HEAD":
                 # Comandos M12 e M13 para a HEAD são enviados apenas se ela estiver com a ferramenta correta montada.
@@ -112,10 +122,14 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
                     #resposta = enviaGCode(HEAD, instrucao)
                 else:
                     verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} -->{instrucao}")
-                    resposta = enviaGCode(HEAD, instrucao)
-                    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{comando['resposta']}")
-                    if not resposta[0]: processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-                    else: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                    if HEAD:
+                        resposta = enviaGCode(HEAD, instrucao)
+                        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {periferico} <--{resposta}")
+                        if not resposta[0]: processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                        else:               processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                    else:
+                        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} HEAD desconectado")
+                    
             elif periferico == "CAME":
                     processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
                     #TODO implementar comandos de camera
