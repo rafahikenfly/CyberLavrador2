@@ -1,6 +1,6 @@
 from config import QUEUE
 from firebase import initialize_firebase
-from firebase import read_realtime_db, update_realtime_db
+from firebase import read_realtime_db, update_realtime_db, listen_realtime_db
 from grbl import conectaPorta
 from grbl import destravaGRBL
 
@@ -12,25 +12,24 @@ from commandManager import processaFilaComandos
 
 from statusManager import reportaEstado
 import time
+import json
 
 verbose = True
 
-terrain = "-OEy62gRLp6VMWWHs7Kt"
-pathTarefas = "/cartografia/"+ terrain + "/tarefas"
-pathCanteiros = "/cartografia/"+ terrain + "/canteiros"
-pathPlantas = "/cartografia/"+ terrain + "/plantas"
+pathTerreno = "-OEy62gRLp6VMWWHs7Kt"
+pathTarefas = "/cartografia/" + pathTerreno + "/tarefas"
+pathCanteiros = "/cartografia/" + pathTerreno + "/canteiros"
+pathPlantas = "/cartografia/" + pathTerreno + "/plantas"
 pathManejos = "/conhecimento/manejos"
-pathDispositivo = "/cartografia/"+ terrain + "/dispositivos" + "/-cyberlavrador"
+pathDispositivo = "/cartografia/" + pathTerreno + "/dispositivos" + "/-OGxBHAFHCtr8V3P0-5F"
+pathConfiguracao = pathDispositivo + "/configuracao"
 
 GRBLport = "/dev/ttyACM0"
 HEADport = "/dev/ttyUSB0"
 PUMPport = "/dev/ttyACM2"
 baudrate = 115200  # Velocidade padrao do GRBL
 
-intervaloConsultaTarefas = 3600
-intervaloReporteEstadoAtivo = 5
-intervaloReporteEstadoInativo = 55
-frequencia = 1
+config = {}
 
 filaComandos = []
 historicoComandos = []
@@ -48,6 +47,20 @@ if __name__ == "__main__":
     GRBL = conectaPorta(GRBLport, baudrate)
     HEAD = conectaPorta(HEADport, 9600)
     PUMP = conectaPorta(PUMPport, baudrate)
+
+    # Listen to the "configuracoes" key in the realtime database
+    def listener(event):
+        if isinstance(event.data, dict):
+            config.update(event.data)
+        elif isinstance(event.data, str):
+            config[event.path[1:]] = event.data
+        elif isinstance(event.data, int):
+            config[event.path[1:]] = event.data
+        
+        verbose and print("Configurações atualizadas:", config)
+
+    # Set up the listener for the "configuracoes" key
+    listen_realtime_db(pathConfiguracao, listener)
 
     #obtem a base de conhecimento atualizada
     manejos = read_realtime_db(pathManejos)
@@ -69,7 +82,7 @@ if __name__ == "__main__":
         if HEAD: ativo = estado[HEAD][estado] != "Idle"
         if PUMP: ativo = estado[HEAD][estado] != "Idle"
 
-        verbose and print("Estado", estado)
+#        verbose and print("Estado", estado)
 
         #TODO: verificar se algum periférico está em estado de alarme
         if estado['GRBL']['estado'] == "Alarm":
@@ -80,11 +93,11 @@ if __name__ == "__main__":
         if proximoReporteEstado <= agora:
             verbose and print("Estado", reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos))
             update_realtime_db(pathDispositivo+"/estado", estado)
-            proximoReporteEstado = agora + intervaloReporteEstadoAtivo + (0 if ativo else intervaloReporteEstadoInativo)
+            proximoReporteEstado = agora + config["intervaloReporteEstadoAtivo"] + (0 if ativo else config["intervaloReporteEstadoInativo"])
         # verifica se é hora de consultar a fila de tarefas e processa fila se for o caso
         if proximaConsultaTarefas <= agora:
             listaDeTarefas = obtemFila(manejos, verbose) #TODO: considerar que o GRBL ou HEAD podem estar offline
-            proximaConsultaTarefas = agora + intervaloConsultaTarefas
+            proximaConsultaTarefas = agora + config["intervaloConsultaTarefas"]
             # processa a consulta, reiniciando o loop principal caso não haja novas tarefas
             if len(listaDeTarefas) == 0:
                 print("Nenhuma tarefa disponível.")
@@ -116,7 +129,9 @@ if __name__ == "__main__":
                     })
                 processaTarefa(tarefa["key"])
 
-        #se houver periferico disponível, processa a fila de comandos
-        if True: #estado["GRBL"]["estado"] == "Idle" or estado["HEAD"]["estado"] == "Idle":
+        # se houver periferico disponível, processa a fila de comandos
+        if not ativo:
             processaFilaComandos(GRBL, HEAD, PUMP, filaComandos, historicoComandos, True)
-        time.sleep(min(intervaloConsultaTarefas, intervaloReporteEstadoAtivo + (0 if ativo else intervaloReporteEstadoInativo), frequencia))
+        
+        # espera o intervalo de frequencia do loop princiapl.
+        time.sleep(min(config["intervaloConsultaTarefas"], config["intervaloReporteEstadoAtivo"] + (0 if ativo else config["intervaloReporteEstadoInativo"]), config["frequencia"]))

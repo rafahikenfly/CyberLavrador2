@@ -76,17 +76,13 @@ def read_realtime_db(path):
         return None
 
 
-def listen_realtime_db(path):
+def listen_realtime_db(path, listener):
     """
     Monitora mudancas em uma chave especifica no Firebase.
+    :param path: Caminho da chave no banco de dados para monitorar.
     :param path: Caminho da chave no banco de dados para monitorar.
     """
     ref = db.reference(path)
 
-    def listener(event):
-        # Imprime o novo valor quando ha mudanaas
-        print(f"Alteracao {event.event_type} em {event.path} para {event.data}")
-
-    # Adiciona o listener para a referencia
     print(f"Monitorando alteracoes na chave: {path}")
     ref.listen(listener)
