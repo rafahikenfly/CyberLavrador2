@@ -78,9 +78,9 @@ if __name__ == "__main__":
         # se nenhum periférico estiver instalado, ele está inativo
         estado = reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos)
         ativo = False
-        if GRBL: ativo = estado[GRBL][estado] != "Idle"
-        if HEAD: ativo = estado[HEAD][estado] != "Idle"
-        if PUMP: ativo = estado[HEAD][estado] != "Idle"
+        if GRBL: ativo = estado["GRBL"]["estado"] != "Idle"
+        if HEAD: ativo = estado["HEAD"]["estado"] != "Idle"
+        if PUMP: ativo = estado["PUMP"]["estado"] != "Idle"
 
 #        verbose and print("Estado", estado)
 
