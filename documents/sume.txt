@@ -2,15 +2,18 @@ Sumé é a linguagem de programação de rotinas do robô jardineiro Cyberlavrad
 
 Abaixo estão descritas as tags permitidas em Sumé:
 <Xmax> - posição X máxima do objeto alvo da tarefa
+<Xcen> - posição X central do objeto alvo da tarefa
 <Xmin> - posição X mínima do objeto alvo da tarefa
-<Ymax> - posição Y máxima do objeto alvo da tarefa
-<Ymin> - posição Y mínima do objeto alvo da tarefa
-<Zmax> - posição Z máxima do objeto alvo da tarefa
-<Zmin> - posição Z mínima do objeto alvo da tarefa
 <Xdim> - dimensao X do objeto alvo da tarefa
+<Ymax> - posição Y máxima do objeto alvo da tarefa
+<Ycen> - posição Y central do objeto alvo da tarefa
+<Ymin> - posição Y mínima do objeto alvo da tarefa
 <Ydim> - dimensao Y do objeto alvo da tarefa
+<Zmax> - posição Z máxima do objeto alvo da tarefa
+<Zcen> - posição Z central do objeto alvo da tarefa
+<Zmin> - posição Z mínima do objeto alvo da tarefa
 <Zdim> - dimensao Z do objeto alvo da tarefa
-LOOP x y - retorna para a linha y do código, repetindo x vezes
+LOOP x y z - retorna para a linha x do código, repetindo y vezes, com passo z
 
 GCodes (GRBL 1.1)
 F Set Feed rate in Units/min (See G20/G21).
