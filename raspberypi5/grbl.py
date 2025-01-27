@@ -4,7 +4,7 @@ import time
 # GRBLStatus = ["Idle", "Run", "Hold", "Jog", "Alarm", "Door", "Check", "Home", "Sleep"]
 
 # Conexão
-def conectaPorta(port, baudrate=115200):
+def conectaPorta(port, baudrate=115200, nome = ""):
     """
     Conecta ao Arduino GRBL via porta serial.
     """
@@ -12,11 +12,11 @@ def conectaPorta(port, baudrate=115200):
         ser = serial.Serial(port, baudrate)
         time.sleep(2)  # Aguarde para o GRBL inicializar
         ser.flushInput()  # Limpa o buffer de entrada
-        print(f"Conectado a porta {port}")
+        print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {nome} Conectado a porta {port}")
         
         return ser
     except Exception as e:
-        print(f"Erro ao conectar: {e}")
+        print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Erro ao conectar {nome}: {e}")
         return False
 
 def fechaConexaoGRBL(ser):
@@ -52,7 +52,7 @@ def enviaGCode(ser, gcode):
             # Extrai os dados de uma resposta de estado
             return True, interpretaStatusGRBL(response)
         else:
-            return response
+            return True, response
     except Exception as e:
         return False, "Erro ao enviar gcode: " + gcode[:-1]
 
@@ -152,7 +152,7 @@ def interpretaStatusGRBL(message):
         return {"error": f"Erro ao interpretar a mensagem: {str(e)}"}
 
 # Alto nível
-def destravaGRBL(ser):
+def destravaGRBL(ser, verbose):
     """
     Destrava o GRBL enviando o comando $X.
     :param ser: porta serial para envio
@@ -165,12 +165,11 @@ def destravaGRBL(ser):
         comando = "$X"
         comando  = comando.strip() + '\n'
         ser.write(comando.encode('utf-8'))
-        print("Comando $X enviado para destravar o GRBL.")
+        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL --> $X")
 
         # Le a resposta do GRBL
         resposta = ser.readline().decode('utf-8').strip() #ok
         resposta = ser.readline().decode('utf-8').strip()      
-        print("Resposta do GRBL:")
-        print(resposta)
+        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <-- {resposta}")
     except Exception as e:
         print(f"Ocorreu um erro: {e}")

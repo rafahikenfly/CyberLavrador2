@@ -1,7 +1,7 @@
 from grbl import enviaGCode
 import time
 
-def reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos):
+def reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos, sleep):
     estadoGRBL = {"estado": "Desligado"}
     estadoHEAD = {"estado": "Desligado"}
     estadoPUMP = {"estado": "Desligado"}
@@ -16,7 +16,8 @@ def reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos):
         estadoHEAD = resposta[1] if resposta[0] else {"estado": "Offline"}
 
     estado = {
-        "hora": time.time(),
+        "dormindo": sleep,
+        "hora": round(time.time()*1000),
         "GRBL": estadoGRBL,
         "HEAD": estadoHEAD,
         "PUMP": estadoPUMP,

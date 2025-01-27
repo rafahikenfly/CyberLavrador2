@@ -2,6 +2,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+import time
+
 # Configuração inicial
 def initialize_firebase():
     # cred_path = "/Users/rcmachado/Documents/GitHub/microagricultura-firebase-key.json"
@@ -10,25 +12,26 @@ def initialize_firebase():
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://microagricultura-fbdc5-default-rtdb.firebaseio.com/'
     })
-    print("Firebase iniciado")
+    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Firebase iniciado")
     
 # Função para interagir com o Realtime Database
 def push_realtime_db(path, data):
     ref = db.reference(path)
-    ref.push(data)
-    print("Dados enviados para o Realtime Database:", data)
+    newRef = ref.push(data)
+    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados enviados para o Realtime Database:", data)
+    return newRef.key
 
 def update_realtime_db(path, data):
     ref = db.reference(path)
     ref.update(data)
-    print("Dados atualizados no Realtime Database:", data)
+    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados atualizados no Realtime Database:", data)
 
 def write_realtime_db(path, data):
     ref = db.reference(path)
     ref.set(data)
-    print("Dados sobreescritos no Realtime Database:", data)
+    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados sobreescritos no Realtime Database:", data)
 
-def read_filtered_realtime_db(path, filter, value, limit):
+def read_filtered_realtime_db(path, filterProp, value, limit = 100):
     """
     Le o valor de uma chave especifica do Firebase.
     :param path: Caminho da chave no banco de dados.
@@ -39,7 +42,7 @@ def read_filtered_realtime_db(path, filter, value, limit):
     """
     try:
         ref = db.reference(path)
-        consulta = ref.order_by_child(filter).equal_to(value).limit_to_first(limit).get() or {}
+        consulta = ref.order_by_child(filterProp).equal_to(value).limit_to_first(limit).get() or {}
         return consulta
     except Exception as e:
         print(f"Erro ao ler a chave '{path}': {e}")
@@ -84,5 +87,5 @@ def listen_realtime_db(path, listener):
     """
     ref = db.reference(path)
 
-    print(f"Monitorando alteracoes na chave: {path}")
+    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Monitorando alteracoes na chave: {path}")
     ref.listen(listener)
