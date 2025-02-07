@@ -3,13 +3,20 @@ from firebase import read_realtime_db, update_realtime_db, listen_realtime_db
 from grbl import conectaPorta
 from grbl import destravaGRBL
 
+from config import logDebug
+from config import logInfo
+from config import logError
+from config import logWarning
 
 from taskManager import obtemFila
 from taskManager import falhaTarefa
 from taskManager import preparaComandos
 from taskManager import processaTarefa
+from taskManager import otimizaOrdemFila
 
 from commandManager import processaFilaComandos
+from commandManager import recuperaComandos
+from commandManager import processaErroComando
 
 from statusManager import reportaEstado
 import time
@@ -18,11 +25,13 @@ import json
 verbose = True
 sleep = False
 proximaConsultaTarefas = 0
+GRBLBuffer = 16
 
 pathTerreno = "-OEy62gRLp6VMWWHs7Kt"
-pathTarefas = "/cartografia/" + pathTerreno + "/tarefas"
-pathCanteiros = "/cartografia/" + pathTerreno + "/canteiros"
-pathPlantas = "/cartografia/" + pathTerreno + "/plantas"
+pathTarefas = "/tarefas/" + pathTerreno
+pathCanteiros = "/canteiros/" + pathTerreno
+pathPlantas = "/plantas/" + pathTerreno
+
 pathManejos = "/conhecimento/manejos"
 pathDispositivo = "/cartografia/" + pathTerreno + "/dispositivos" + "/-OGxBHAFHCtr8V3P0-5F"
 pathConfiguracao = pathDispositivo + "/configuracao"
@@ -45,8 +54,21 @@ objetoDefault = { "posicao": {
 }}
 
 if __name__ == "__main__":
-    #inicializa firebase
+    # inicializa o robo, comecando pelo firebase e depois verificando se
+    # houve alguma falha que deixou comandos pendentes (ex. falha de energia)
+    # se ha algum comando pendente, processa um erro na primeira tarefa da
+    # fila de comandos. O loop principal dara sequencia nas proximas.
     initialize_firebase()
+
+
+    filaComandos = recuperaComandos("fila_comandos.pkl")
+    if len(filaComandos):
+        logInfo(f"Recuperados {len(filaComandos)} comandos pendentes da ultima execucao")
+        historicoComandos = recuperaComandos("hitorico_comandos.pkl")
+        if len(historicoComandos):
+            logInfo(f"Recuperados {len(historicoComandos)} comandos executados na ultima execucao")
+        processaErroComando("Robo reiniciado", filaComandos, historicoComandos, 0, True)
+
 
     #conecta com os perifericos
     GRBL = conectaPorta(GRBLport, baudrate, "GRBL")
@@ -61,8 +83,7 @@ if __name__ == "__main__":
             config[event.path[1:]] = event.data
         elif isinstance(event.data, int):
             config[event.path[1:]] = event.data
-        
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Configurações atualizadas.")
+        logInfo("Configurações atualizadas do RTDB.")
         
     # Listen to the "ferramentas" key in the realtime database
     def listenerFerramentas(event):
@@ -70,8 +91,7 @@ if __name__ == "__main__":
             ferramenta.update(event.data)
         else:
             ferramenta[event.path[1:]] = event.data
-
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Ferramentas atualizadas.")
+        logInfo("Ferramentas atualizadas do RTDB.")
 
     def listenerTarefas(event):
         """
@@ -81,7 +101,7 @@ if __name__ == "__main__":
         a funcao desperta o script
         """
         global proximaConsultaTarefas
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Tarefa {event.path} atualizada")
+        logInfo(f"Tarefa atualizada: {event.path}")
         acordar = False
         
         # no caso de um event.data que seja um dicionario,
@@ -106,7 +126,7 @@ if __name__ == "__main__":
         # acorda, se for o caso
         if acordar:
             proximaConsultaTarefas = 0
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Acordando...")
+            logInfo("Acordando para verificar tarefas...")
 
     # Configura os listeners
     listen_realtime_db(pathConfiguracao, listenerConfig)
@@ -133,7 +153,7 @@ if __name__ == "__main__":
         # acao de recuperacao
         recuperar = False
         if estado['GRBL']['estado'] == "Alarm":
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Destravando alarme GRBL")
+            logWarning( "GRBL em estado de alarme. Destravando alarme GRBL")
             destravaGRBL(GRBL, verbose)
             recuperar = True
 
@@ -149,42 +169,39 @@ if __name__ == "__main__":
         # Verifica se deve dormir
         # Se ha atividade em andamento,comandos na fila, ou reporte de
         # estado necessario, deve ficar acordado.
-        sleep = not (ativo or len(filaComandos)>0 or proximoReporteEstado <= agora)
+        sleep = not (ativo or len(filaComandos)>0)
 
-        verbose and print(f"{time.strftime('%H:%M:%S')} {agora % 1:.6f} Loop principal iniciado. Ativo: {ativo}. Dormindo: {sleep}")
-        
+        logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {sleep}")
+
+        # Reporta o estado, se for necessario
+        if proximoReporteEstado <= agora:
+            logInfo("Enviando estado para o banco de dados")
+            update_realtime_db(pathDispositivo + "/estado", estado)
+            proximoReporteEstado = min((agora + config["intervaloReporteEstadoInativo"]) if sleep else (agora + config["intervaloReporteEstadoAtivo"]), proximaConsultaTarefas)
+
         if not sleep:
         # Se nao estiver dormindo, quer dizer que ha comandos na fila
-        # ou alguma atividade em andamento ou, no minimo, deve reportar
-        # o estado. Reportar o estado tem prioridade sobre o processamento
-        # da fila
-            
-            # Reporta o estado se for necessario
-            if proximoReporteEstado <= agora:
-                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Enviando estado para o banco de dados")
-                update_realtime_db(pathDispositivo + "/estado", estado)
-                proximoReporteEstado = (agora + config["intervaloReporteEstadoAtivo"]) if ativo else (agora + config["intervaloReporteEstadoInativo"])
-            
-            # Processa a fila de comandos
-            processaFilaComandos(GRBL, HEAD, PUMP, filaComandos, historicoComandos, True)
+        # ou alguma atividade em andamento. Portanto, deve processar a
+        # fila de comandos
+            processaFilaComandos(GRBL, HEAD, PUMP, filaComandos, historicoComandos, True, estado["GRBL"]["lookahead_buffer"])
         
         else:
         # Se estiver dormindo, quer dizer que nao ha comandos na fila
-        # nem alguma atividade em andamento. Vai dormir ate obter a,
+        # nem alguma atividade em andamento e deve dormir ate obter a,
         # tarefa da fila. Isso acontece por decurso de intervalo da
         # consulta, ou por acao do listener da chave de tarefas, que
         # adianta a proxima consulta
 
             # Consultar a fila de tarefas se for necessario
             if proximaConsultaTarefas <= agora:
-                proximoReporteEstado = agora
                 listaDeTarefas = obtemFila(manejos, config["loteConsulta"], ferramenta, verbose) #TODO: considerar que o GRBL ou HEAD podem estar offline
                 proximaConsultaTarefas = agora + config["intervaloConsultaTarefas"]
                 
                 # Se a consulta retornar alguma tarefa, processa as instrucoes
                 # e inclui na fila de comandos
                 if len(listaDeTarefas):
-                    for tarefa in listaDeTarefas[:config["loteProcessamento"]]:
+                    listaOtimizada = otimizaOrdemFila(listaDeTarefas, config["lookahead_buffer"])
+                    for tarefa in listaOtimizada:
                         # recupera dados da variante e objeto da tarefa
                         # em caso de objeto nao encontrado, marca falha na tarefa
                         # e continua o loop na prxima tarefa

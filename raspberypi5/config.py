@@ -1,4 +1,3 @@
-
 """
 COMANDOS_SUPORTADOS: Lista com os comandos suportados pelo CyberLavrador. Cada comando é um dicionário com as seguintes chaves:
     - periferico: Periférico de destino do comando (HEAD, PUMP, CAME). Esta chave determina para quem o comando será enviado pelo gerenciador de comandos.
@@ -152,3 +151,41 @@ COMANDOS_SUPORTADOS = {
         "idleMotor": True,   
     }    
 }
+
+
+import logging
+from logging.handlers import TimedRotatingFileHandler
+import os
+from datetime import datetime
+
+# Create a directory for logs if it doesn't exist
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+
+# Define log file with a timestamp
+log_file = os.path.join(log_dir, "cyberLavrador.log")
+handler = TimedRotatingFileHandler(log_file, when="h", interval=12, backupCount=14)
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the minimum logging level
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_file),  # Log to file
+        logging.StreamHandler()         # Log to console
+    ]
+)
+
+logger = logging.getLogger("CyberLavrador 2.0")
+
+def logDebug (mensagem):
+    logger.debug(mensagem)
+
+def logError (mensagem):
+    logger.error(mensagem)
+
+def logInfo (mensagem):
+    logger.info(mensagem)
+    
+def logWarning (mensagem):
+    logger.warning(mensagem)

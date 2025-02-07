@@ -3,7 +3,14 @@ from taskManager import falhaTarefa
 from taskManager import concluiTarefa
 from config import COMANDOS_SUPORTADOS
 import time
+import pickle
 import cv2
+import os
+
+from config import logDebug
+from config import logInfo
+from config import logError
+from config import logWarning
 
 def processaErroComando(erro, filaComandos = [], historicoComandos = [], i = 0, verbose = False):
     """
@@ -20,16 +27,15 @@ def processaErroComando(erro, filaComandos = [], historicoComandos = [], i = 0, 
     # Reporta erro na fila, debug e banco de dados
     filaComandos[i]["estado"] = "Erro"
     filaComandos[i]["resposta"] = erro
-    verbose and print(f"Erro na execução da tarefa {tarefaErro}: : {erro}")
+    logWarning(f"Erro na execução da tarefa {tarefaErro}, executando {filaComandos[i]['instrucao']}: {erro}")
     falhaTarefa(tarefaErro, erro)
 
     # Move comando para histórico
     avancaFila(i, filaComandos, historicoComandos)
 
     # Cancela comandos da tarefa
-    while filaComandos[i]["tarefa"] == tarefaErro:
-        if i + 1 == len(filaComandos): break # Se for o último comando, sai do loop
-        verbose and print(f"Pulando comando {filaComandos[i]} por falha na tarefa relacionada.")
+    while i<len(filaComandos) and filaComandos[i]["tarefa"] == tarefaErro:
+        logDebug(f"Pulando comando {filaComandos[i]} por falha na tarefa relacionada.")
         filaComandos[i]["resposta"] = "Falha na tarefa relacionada."
         filaComandos[i]["estado"] = "Cancelado"
         avancaFila(i, filaComandos, historicoComandos)
@@ -51,10 +57,18 @@ def processaSucessoComando(resposta, filaComandos = [], historicoComandos = [], 
     
     # Se for o último comando da tarefa, registra a conclusão
     if i == len(filaComandos) - 1 or filaComandos[i+1]["tarefa"] != tarefa:
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Tarefa {tarefa} concluida.")
+        logInfo(f"Tarefa {tarefa} concluida.")
         concluiTarefa(tarefa)
     avancaFila(i, filaComandos, historicoComandos)
     return filaComandos, historicoComandos
+
+def recuperaComandos(filename): 
+    try: 
+        with open(filename, 'rb') as file:
+            loaded_array = pickle.load(file)
+            return loaded_array
+    except:
+        return []
 
 def avancaFila(i, filaComandos, historicoComandos):
     """
@@ -66,6 +80,14 @@ def avancaFila(i, filaComandos, historicoComandos):
     """
     historicoComandos.append(filaComandos[i])
     filaComandos.pop(i)
+    
+    
+    with open("fila_comandos.pkl", 'wb') as file:
+        pickle.dump(filaComandos, file)
+    with open("historico_comandos.pkl", 'wb') as file:
+        pickle.dump(historicoComandos, file)
+    logDebug(f"Fila e historico de comandos salvos.")   
+    
     return filaComandos, historicoComandos
 
 def parseComando(comando):
@@ -75,7 +97,7 @@ def parseComando(comando):
 
 def trocaFerramenta(indexFerramenta = 0, filaComandos = [], verbose = False):
     
-    verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Trocando ferramenta: {indexFerramenta}")
+    logInfo(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Trocando ferramenta: {indexFerramenta}")
     # TODO
 
 
@@ -92,10 +114,10 @@ def tiraFoto(verbose):
     if ret:
         timestamp = int(time.time() * 1000)  # Get current time in milliseconds
         filename = f"captured_image_{timestamp}.jpg" # Set the filename
-        save_dir = os.path.abspath(os.path.join(os.getcwd(), '../../Pictures')) # Get the folder
+        save_dir = os.path.abspath("/home/cyberlavrador2/Pictures") # Get the folder
         image_path = os.path.join(save_dir, filename) # Set the path
         cv2.imwrite(image_path, frame)  # Save the captured image
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Imagem salva.")
+        logInfo(f"Imagem salva.")
         # Release the camera resource
         cap.release()
         return True, "ok"
@@ -104,10 +126,9 @@ def tiraFoto(verbose):
         cap.release()
         return False, "Failed to capture image"
 
-def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos = [], verbose = False):
+def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos = [], verbose = False, GRBLBuffer = 16):
     """
     Processa todos os comandos de um array, movendo-os para o array de historico.
-    @return: boolean, indicando se chegou ao fim da fila.
     @param GRBL: conexao serial
     @param HEAD: conexao serial
     @param PUMP: conexao serial
@@ -117,10 +138,9 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
     """
     # Enquanto há comandos na fila...
     while len(filaComandos) > 0:
-
+        
         instrucao = filaComandos[0]["instrucao"]
-        GRBLBuffer = 16
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Instrucao em processamento: {instrucao}")
+        logInfo(f"Instrucao em processamento: {instrucao}")
         
         # Consulta dicionario de comandos suportados
         parsed = parseComando(filaComandos[0]["instrucao"])
@@ -145,7 +165,7 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
         if COMANDOS_SUPORTADOS[parsed[0]]['idleMotor'] or not GRBLBuffer:
             resposta = enviaGCode(GRBL, "?")
             if not resposta[0] or resposta[1]["estado"] != "Idle":
-                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Aguardando motores ate a proxima chamada.")
+                logInfo(f"Aguardando motores ate a proximo loop.")
                 break
         elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "GRBL":
             GRBLBuffer = GRBLBuffer - 1
@@ -160,9 +180,9 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
             # Está implementado um protocolo simples de Send-Response. Por isso não é preciso verificar se
             # o GRBL está disponível para receber comandos. Caso o robô esteja muito lento, é possível
             # implementar um protocolo que utiliza o buffer serial do GRBL.
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL -->{instrucao}")
+            logDebug(f"GRBL -->{instrucao}")
             resposta = enviaGCode(GRBL, instrucao)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <--{resposta[1]}")
+            logDebug(f"GRBL <--{resposta[1]}")
             if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             continue
@@ -178,26 +198,26 @@ def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos 
                 if not estado["HEAD"]["Tool"] == parsed[1][1:]:
                     trocaFerramenta(parsed[1][1:], filaComandos, verbose)
 
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} HEAD -->{instrucao}")
+            logDebug(f"HEAD -->{instrucao}")
             resposta = enviaGCode(HEAD, instrucao)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} HEAD <--{resposta[1]}")
+            logDebug(f"HEAD <--{resposta[1]}")
             if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
             continue
                     
         elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "CAMERA":
             if parsed[0] == "M240":
-                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} CAMERA -->{instrucao}")
+                logDebug(f"CAMERA -->{instrucao}")
                 resposta = tiraFoto(verbose)
-                verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} CAMERA <--{resposta[1]}")
+                logDebug(f"CAMERA <--{resposta[1]}")
                 if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
                 else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
                 continue
 
         elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "PUMP":
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} PUMP -->{instrucao}")
+            logDebug(f"PUMP -->{instrucao}")
             resposta = [True, "bypass"]
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} PUMP <--{resposta[1]}")
+            logDebug(f"PUMP <--{resposta[1]}")
             processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
             #TODO implementar comandos de bombeamento
             #resposta = enviaGCode(PUMP, instrucao)

@@ -21,6 +21,7 @@ def reportaEstado(GRBL, HEAD, PUMP, filaComandos, historicoComandos, sleep):
         "GRBL": estadoGRBL,
         "HEAD": estadoHEAD,
         "PUMP": estadoPUMP,
+        "tarefaAtual": filaComandos[0]["tarefa"] if len(filaComandos) else "",
         "filaAtual": len(filaComandos),
         "comandosExecutados": len(historicoComandos),
     }

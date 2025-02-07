@@ -1,10 +1,16 @@
 import serial
 import time
 
+from config import logDebug
+from config import logInfo
+from config import logError
+from config import logWarning
+
+
 # GRBLStatus = ["Idle", "Run", "Hold", "Jog", "Alarm", "Door", "Check", "Home", "Sleep"]
 
 # Conexão
-def conectaPorta(port, baudrate=115200, nome = ""):
+def conectaPorta(port, baudrate=115200, nome = "Periferico desconhecido"):
     """
     Conecta ao Arduino GRBL via porta serial.
     """
@@ -12,11 +18,11 @@ def conectaPorta(port, baudrate=115200, nome = ""):
         ser = serial.Serial(port, baudrate)
         time.sleep(2)  # Aguarde para o GRBL inicializar
         ser.flushInput()  # Limpa o buffer de entrada
-        print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {nome} Conectado a porta {port}")
+        logInfo (f"{nome} conectado a porta {port}")
         
         return ser
     except Exception as e:
-        print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Erro ao conectar {nome}: {e}")
+        logError(f"Erro ao estabelecer conexao serial para {nome}: {e}")
         return False
 
 def fechaConexaoGRBL(ser):
@@ -25,7 +31,7 @@ def fechaConexaoGRBL(ser):
     """
     if ser:
         ser.close()
-        print("Conexao encerrada.")
+        logInfo("Conexao encerrada.")
 
 # Comunicação e interpretação
 def enviaGCode(ser, gcode):
@@ -145,6 +151,11 @@ def interpretaStatusGRBL(message):
             elif part.startswith("A:"):
                 # Alarmes
                 state["alarm"] = part[2:]
+            elif part.startswith("Bf:"):
+                # Buffer
+                values = list(map(int, part[3:].split(",")))
+                state["lookahead_buffer"] = values[0]
+                state["rx_buffer"] = values[1]
         
         return state
 
@@ -165,11 +176,11 @@ def destravaGRBL(ser, verbose):
         comando = "$X"
         comando  = comando.strip() + '\n'
         ser.write(comando.encode('utf-8'))
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL --> $X")
+        logDebug(f"GRBL --> $X")
 
         # Le a resposta do GRBL
         resposta = ser.readline().decode('utf-8').strip() #ok
         resposta = ser.readline().decode('utf-8').strip()      
-        verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} GRBL <-- {resposta}")
+        logDebug(f"GRBL <-- {resposta}")
     except Exception as e:
-        print(f"Ocorreu um erro: {e}")
+        logError(f"Erro ao destravar GRBL: {e}")

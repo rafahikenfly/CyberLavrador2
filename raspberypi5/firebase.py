@@ -2,6 +2,11 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
+from config import logDebug
+from config import logInfo
+from config import logError
+from config import logWarning
+
 import time
 
 # Configuração inicial
@@ -12,24 +17,27 @@ def initialize_firebase():
     firebase_admin.initialize_app(cred, {
         'databaseURL': 'https://microagricultura-fbdc5-default-rtdb.firebaseio.com/'
     })
-    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Firebase iniciado")
+    logInfo("Firebase iniciado.")
     
 # Função para interagir com o Realtime Database
-def push_realtime_db(path, data):
+def push_realtime_db(path, data, verbose = False):
     ref = db.reference(path)
     newRef = ref.push(data)
-    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados enviados para o Realtime Database:", data)
+    logInfo("Dados enviados para o Realtime Database")
+    if verbose: logDebug(data)
     return newRef.key
 
-def update_realtime_db(path, data):
+def update_realtime_db(path, data, verbose = False):
     ref = db.reference(path)
     ref.update(data)
-    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados atualizados no Realtime Database:", data)
+    logInfo("Dados enviados para o Realtime Database")
+    if verbose: logDebug(data)
 
-def write_realtime_db(path, data):
+def write_realtime_db(path, data, verbose):
     ref = db.reference(path)
     ref.set(data)
-    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Dados sobreescritos no Realtime Database:", data)
+    logInfo("Dados enviados para o Realtime Database")
+    if verbose: logDebug(data)
 
 def read_filtered_realtime_db(path, filterProp, value, limit = 100):
     """
@@ -45,7 +53,7 @@ def read_filtered_realtime_db(path, filterProp, value, limit = 100):
         consulta = ref.order_by_child(filterProp).equal_to(value).limit_to_first(limit).get() or {}
         return consulta
     except Exception as e:
-        print(f"Erro ao ler a chave '{path}': {e}")
+        logError(f"Erro ao ler a chave '{path}': {e}")
         return None
 
 def read_ordered_realtime_db(path, order, limit):
@@ -61,7 +69,7 @@ def read_ordered_realtime_db(path, order, limit):
         consulta = ref.order_by_child(order).limit_to_first(limit).get()
         return consulta
     except Exception as e:
-        print(f"Erro ao ler a chave '{path}': {e}")
+        logError(f"Erro ao ler a chave '{path}': {e}")
         return None
 
 def read_realtime_db(path):
@@ -75,7 +83,7 @@ def read_realtime_db(path):
         value = ref.get()
         return value
     except Exception as e:
-        print(f"Erro ao ler a chave '{path}': {e}")
+        logError(f"Erro ao ler a chave '{path}': {e}")
         return None
 
 
@@ -87,5 +95,5 @@ def listen_realtime_db(path, listener):
     """
     ref = db.reference(path)
 
-    print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Monitorando alteracoes na chave: {path}")
+    logInfo(f"Monitorando alteracoes na chave: {path}")
     ref.listen(listener)

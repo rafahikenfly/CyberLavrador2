@@ -4,8 +4,16 @@ from firebase import read_realtime_db
 from firebase import update_realtime_db
 from firebase import read_filtered_realtime_db
 
-terrain = "-OEy62gRLp6VMWWHs7Kt"
-pathTarefas = "/cartografia/"+ terrain + "/tarefas"
+from config import logDebug
+from config import logInfo
+from config import logError
+from config import logWarning
+
+
+
+terreno = "-OEy62gRLp6VMWWHs7Kt"
+pathTarefas = "/tarefas/" + terreno
+pathHistorico = "/historicos/" + terreno
 
 from datetime import datetime
 
@@ -44,7 +52,7 @@ def filtrarViaveis(dictTarefas, dictManejos, dictFerramental):
                 viaveis[chave] = tarefa
         return viaveis
     except Exception as e:
-        print(f"Erro ao filtrar ferramentas: {e}")
+        logError(f"Erro ao filtrar tarefas viaveis com ferramentas disponiveis: {e}")
     return []
 
 
@@ -77,19 +85,19 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
             disponivel = True
             if not tarefa["acao"]["forcar"]:
                 if condicaoForaDoLimite(time.localtime().tm_hour, condicoes["hora"]): 
-                    print("Tarefa", chave, "não pode ser realizada no horário atual:", time.strftime("%H:%M:%S"), ".")
+                    logInfo("Tarefa", chave, "não pode ser realizada no horário atual:", time.strftime("%H:%M:%S"), ".")
                     postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa fora de horário permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 if condicaoForaDoLimite(300, condicoes["luminosidade"]):
-                    print("Tarefa", chave, "não pode ser realizada com a luminosidade atual: 300.") #TODO definir como a condicao é obtida.
+                    logInfo("Tarefa", chave, "não pode ser realizada com a luminosidade atual: 300.") #TODO definir como a condicao é obtida.
                     postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de luminosidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 if condicaoForaDoLimite(30, condicoes["temperatura"]):
-                    print("Tarefa", chave, "não pode ser realizada com a temperatura atual: 300.") #TODO definir como a condicao é obtida.
+                    logInfo("Tarefa", chave, "não pode ser realizada com a temperatura atual: 300.") #TODO definir como a condicao é obtida.
                     postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de temperatura permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 if condicaoForaDoLimite(300, condicoes["umidade"]):
-                    print("Tarefa", chave, "não pode ser realizada com a umidade de solo atual: 300.") #TODO definir como a condicao é obtida.
+                    logInfo("Tarefa", chave, "não pode ser realizada com a umidade de solo atual: 300.") #TODO definir como a condicao é obtida.
                     postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de umidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 ## outras condições conhecidas vão aqui
@@ -97,7 +105,7 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
             if disponivel: tarefasDisponiveis.append(tarefa)
         return tarefasDisponiveis
     except Exception as e:
-        print(f"Erro ao filtrar condição: {e}")
+        logError(f"Erro ao filtrar tarefas por condição: {e}")
     return []
 
 
@@ -128,22 +136,24 @@ def obtemFila(dictManejos, tamanho = 100, dictFerramental = {}, verbose=False):
             #Busca a lista de tarefas, respeitando o lote de consulta
             #Apenas as tarefas com estado Aguardando interessam
             aguardando = read_filtered_realtime_db(pathTarefas, "estado", "Aguardando", tamanho)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {len(aguardando)} tarefa(s) com estado Aguardando no lote.")
+            logDebug(f"{len(aguardando)} tarefa(s) com estado Aguardando no lote.")
 
             #Filtra aquelas que podem ser realizadas pelo robo com suas ferramentase pelas condições da classe, ordenando por prazo
             vencidas = filtrarVencidas(aguardando, round(time.time()*1000))
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {len(vencidas)} tarefa(s) vencidas.")
+            logDebug(f"{len(vencidas)} tarefa(s) vencidas.")
             if len(vencidas) == 0: return []
             viaveis = filtrarViaveis(vencidas,dictManejos,dictFerramental)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {len(viaveis)} tarefa(s) que podem ser realizadas com meu ferramental.")
+            logDebug(f"{len(viaveis)} tarefa(s) que podem ser realizadas com meu ferramental.")
             if len(viaveis) == 0: return []
             oportunas = filtrarPorCondicao(viaveis,dictManejos)
-            verbose and print(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} {len(oportunas)} tarefa(s) em condição de execução.")
-            listaTarefas = ordenarListaPorChave(oportunas,"programa","prazo")
-            return listaTarefas
+            logInfo(f"{len(oportunas)} tarefa(s) em condição de execução.")
+            return oportunas
         except Exception as e:
-            print(f"Erro ao obter fila de tarefas: {e}")
+            logError(f"Erro ao obter fila de tarefas: {e}")
             return []
+
+def otimizaOrdemFila(listaTarefas, bufferSize = 5):
+    return ordenarListaPorChave(listaTarefas[:bufferSize],"programa","prazo")
 
 # Funções de processamento de tarefas
 def preparaComandos(variante, objeto):
@@ -193,10 +203,11 @@ def preparaComandos(variante, objeto):
     return (comandos)
 
 def anotaTarefa(strChave, strAnotacao):
-    push_realtime_db(pathTarefas + "/" + strChave + "/historico", {
+    push_realtime_db(pathHistorico, {
         "autor": "Cyberlavrador 2.0",
         "hora": round(time.time()*1000),
         "anotacao": strAnotacao,
+        "objetoKey": strChave,
     })
 
 def postergaTarefa(strChave, intNovaHora, motivo):
