@@ -20,23 +20,26 @@ def initialize_firebase():
     logInfo("Firebase iniciado.")
     
 # Função para interagir com o Realtime Database
-def push_realtime_db(path, data, verbose = False):
+def push_realtime_db(path, data, updateKey = True, verbose = False):
     ref = db.reference(path)
     newRef = ref.push(data)
     logInfo("Dados enviados para o Realtime Database")
     if verbose: logDebug(data)
+    if updateKey:
+        data['key'] = newRef.key
+        update_realtime_db(path, data)
     return newRef.key
 
 def update_realtime_db(path, data, verbose = False):
     ref = db.reference(path)
     ref.update(data)
-    logInfo("Dados enviados para o Realtime Database")
+    logInfo("Dados atualizados no Realtime Database")
     if verbose: logDebug(data)
 
 def write_realtime_db(path, data, verbose):
     ref = db.reference(path)
     ref.set(data)
-    logInfo("Dados enviados para o Realtime Database")
+    logInfo("Dados sobreescritos no Realtime Database")
     if verbose: logDebug(data)
 
 def read_filtered_realtime_db(path, filterProp, value, limit = 100):

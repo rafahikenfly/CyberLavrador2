@@ -1,6 +1,7 @@
-from grbl import enviaGCode
-from taskManager import falhaTarefa
-from taskManager import concluiTarefa
+from comunicacao import enviaGCode
+from grbl import obterEstadoGRBL
+from taskManager import marcaFalhaTarefa
+from taskManager import marcaTarefaConcluida
 from config import COMANDOS_SUPORTADOS
 import time
 import pickle
@@ -12,55 +13,53 @@ from config import logInfo
 from config import logError
 from config import logWarning
 
-def processaErroComando(erro, filaComandos = [], historicoComandos = [], i = 0, verbose = False):
+def processaErroGCode(erro, filaGCode, historicoGCode, i = 0):
     """
     Processa um erro de comando, pulando para a próxima tarefa da fila (se existente) e registrando a falha.
-    :param erro: string com a descrição do erro
-    :param i: índice do comando que falhou
-    :param filaComandos: lista de comandos a serem processados
-    :param historicoComandos: lista de comandos já processados
-    :param verbose: flag para exibir mensagens de debug
+    
+    :param string erro: string com a descrição do erro
+    :param array filaGCode: lista de comandos a serem processados
+    :param array historicoGCode: lista de comandos já processados
+    :param int i=0: índice do comando que falhou
     """
     # Salva os dados do erro
-    tarefaErro = filaComandos[i]["tarefa"]
+    tarefaErro = filaGCode[i]["tarefa"]
     
     # Reporta erro na fila, debug e banco de dados
-    filaComandos[i]["estado"] = "Erro"
-    filaComandos[i]["resposta"] = erro
-    logWarning(f"Erro na execução da tarefa {tarefaErro}, executando {filaComandos[i]['instrucao']}: {erro}")
-    falhaTarefa(tarefaErro, erro)
+    filaGCode[i]["estado"] = "Erro"
+    filaGCode[i]["resposta"] = erro
+    logError(f"Erro na execução da tarefa {tarefaErro}, executando {filaGCode[i]['instrucao']}: {erro}")
+    marcaFalhaTarefa(tarefaErro, erro)
 
     # Move comando para histórico
-    avancaFila(i, filaComandos, historicoComandos)
+    avancaFila(i, filaGCode, historicoGCode)
 
     # Cancela comandos da tarefa
-    while i<len(filaComandos) and filaComandos[i]["tarefa"] == tarefaErro:
-        logDebug(f"Pulando comando {filaComandos[i]} por falha na tarefa relacionada.")
-        filaComandos[i]["resposta"] = "Falha na tarefa relacionada."
-        filaComandos[i]["estado"] = "Cancelado"
-        avancaFila(i, filaComandos, historicoComandos)
-    return filaComandos, historicoComandos
+    while i<len(filaGCode) and filaGCode[i]["tarefa"] == tarefaErro:
+        logDebug(f"Cancelando comando {filaGCode[i]} por falha na tarefa relacionada.")
+        filaGCode[i]["resposta"] = "Cancelado por falha na tarefa relacionada."
+        avancaFila(i, filaGCode, historicoGCode)
+    return filaGCode, historicoGCode
 
-def processaSucessoComando(resposta, filaComandos = [], historicoComandos = [], i = 0, verbose = False):
+def processaSucessoGCode(resposta, filaGCode, historicoGCode, i = 0):
     """
     Processa um sucesso de comando, registrando a conclusão da tarefa.
-    :param filaComandos: lista de comandos a serem processados
-    :param i: índice do comando que falhou
-    :param verbose: flag para exibir mensagens de debug
+    :param filaGCode: lista de comandos a serem processados
+    :param historicoGCode: lista de comandos já processados
+    :param int i=0: índice do comando que falhou
     :return Null
     """
     
-    #Reporta conclusão na fila
-    filaComandos[i]["resposta"] = resposta
-    filaComandos[i]["estado"] = "Concluido"
-    tarefa = filaComandos[i]["tarefa"]
+    #Reporta conclusão na fila de comandos
+    filaGCode[i]["resposta"] = resposta
     
     # Se for o último comando da tarefa, registra a conclusão
-    if i == len(filaComandos) - 1 or filaComandos[i+1]["tarefa"] != tarefa:
+    tarefa = filaGCode[i]["tarefa"]
+    if i == len(filaGCode) - 1 or filaGCode[i+1]["tarefa"] != tarefa:
         logInfo(f"Tarefa {tarefa} concluida.")
-        concluiTarefa(tarefa)
-    avancaFila(i, filaComandos, historicoComandos)
-    return filaComandos, historicoComandos
+        marcaTarefaConcluida(tarefa)
+    avancaFila(i, filaGCode, historicoGCode)
+    return filaGCode, historicoGCode
 
 def recuperaComandos(filename): 
     try: 
@@ -90,15 +89,53 @@ def avancaFila(i, filaComandos, historicoComandos):
     
     return filaComandos, historicoComandos
 
-def parseComando(comando):
-    # Split the string at the first blank space
-    code = comando.split(' ', 1)[0]
-    return [code, ""]
+def parseGCode(gcode):
+    """
+    Processa um gcode em seus elementos e verifica se está correto
+    :param string gcode: gcode a ser processado
+    """
+    # Limpa, quebra os parâmtros e identifica o comando
+    gcode = gcode.strip()
+    logInfo(f"GCode em processamento: {gcode}")
+    params = gcode.split()
+    comando = params[0]
 
-def trocaFerramenta(indexFerramenta = 0, filaComandos = [], verbose = False):
+    # Verifica se o comando é suportado.
+    if COMANDOS_SUPORTADOS[comando] == None:
+        logError(f"Comando {comando} não suportado.")
+        return False, f"Comando {comando} não suportado."
     
-    logInfo(f"{time.strftime('%H:%M:%S')} {time.time() % 1:.6f} Trocando ferramenta: {indexFerramenta}")
+    # Verifica os parametros do comando
+    elif COMANDOS_SUPORTADOS[comando]["numParams"] > len(params):
+        logError(f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]["numParams"]}).")
+        return False, f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]["numParams"]})."
+
+    ## TODO: verificar se os parametros obrigatorios estao presentes nos mcodes
+#                if parsedGCode[0] == "M12" or parsedGCode[0] == "M13":
+#                if not parsedGCode[1].startswith("T"):
+#                    processaErro("Ferramenta nao especificada", filaGCode, historico, 0, verbose)
+
+    ## TODO: verificar se é necessario trocar ferramenta
+    ## TODO: verificar se é necessário rota de deslocamento
+    ## TODO: verificar se o periferico necessario esta disponivel
+    # ...
+
+
+
+    # Tudo certo, retorna
+    return True, {
+        'comando': comando,
+        'gcode': gcode,
+        'periferico': COMANDOS_SUPORTADOS[comando]['periferico'],
+        'idleMotor': COMANDOS_SUPORTADOS[comando]['idleMotor']
+    }
+
+def trocaFerramenta(indexFerramenta, filaGCode):
+    """
+    Inclui no início da fila de gcodes uma sequencia de troca de ferramenta para um índice definido
+    """
     # TODO
+    return False
 
 
 def tiraFoto(verbose):
@@ -126,101 +163,114 @@ def tiraFoto(verbose):
         cap.release()
         return False, "Failed to capture image"
 
-def processaFilaComandos(GRBL, HEAD, PUMP, filaComandos = [], historicoComandos = [], verbose = False, GRBLBuffer = 16):
+def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, ):
     """
     Processa todos os comandos de um array, movendo-os para o array de historico.
-    @param GRBL: conexao serial
-    @param HEAD: conexao serial
-    @param PUMP: conexao serial
-    @param filaComandos: []
-    @param historicoComandos: []
-    @param verbose 
-    """
-    # Enquanto há comandos na fila...
-    while len(filaComandos) > 0:
-        
-        instrucao = filaComandos[0]["instrucao"]
-        logInfo(f"Instrucao em processamento: {instrucao}")
-        
-        # Consulta dicionario de comandos suportados
-        parsed = parseComando(filaComandos[0]["instrucao"])
 
-        # Primeiro verifica se o comando é suportado.
-        # Se não for, registra o erro e passa para o próximo comando.
-        if COMANDOS_SUPORTADOS[parsed[0]] == None:
-            processaErroComando ("Comando desconhecido: " + parsed[0], filaComandos, historicoComandos, 0, verbose)
+    :param array filaGCode: fila de gcodes a serem processados 
+    :param array historicoGCode: historico de gcodes processados
+    :param serial GRBL: conexao serial com GRBL
+    :param int GRBLBuffer: tamanho do buffer do GRBL disponivel
+    :param serial HEAD: conexao serial com HEAD
+    :param serial PUMP: conexao serial com PUMP
+    """
+    while len(filaGCode) > 0:
+    # Enquanto há comandos na fila...
+
+        # Verifica se o comando é compreensível. Se não for, processa o erro
+        # e continua com o próximo comando (da próxima tarefa, pois processar
+        # o erro pula os comandos restantes da tarefa)
+        parsedGCode = parseGCode(filaGCode[0]["instrucao"])
+        if not parsedGCode[0]:
+            processaErroGCode (parsedGCode[1], filaGCode, historicoGCode)
             continue
 
-
-        # Antes de se preocupar com o comando em si, precisa verificar se ele exije motores parados.
-        # Comandos com processamento muito longo ou comandos que precisam ser executados em uma posicao exata
-        # tem essa caracteristica. Isso se verifica com o GRBL respondendo com estado "Idle".
-        # Se os motores nao estao parados, encerra o processamento da fila de comandos, pois não sabemos quanto
-        # tempo vai levar para concluir a operação sendo realizada pelo GRBL.
-        
-        # No caso de mais de 15 comandos enviados para o GRBL em sequencia, para manter o reporte de estado,
-        # Forca uma parada para motores assim que 15 comandos em sequencia sao enviados para o GRBL
-        # TODO: sera possivel verificar qual o tamanho do buffer disponivel?
-        
-        if COMANDOS_SUPORTADOS[parsed[0]]['idleMotor'] or not GRBLBuffer:
-            resposta = enviaGCode(GRBL, "?")
-            if not resposta[0] or resposta[1]["estado"] != "Idle":
-                logInfo(f"Aguardando motores ate a proximo loop.")
+        # Verificar se o comando exige motores parados. Isso é necessário pois há gcodes
+        # que precisam ser executados em uma posicao exata, o que se verifica com o GRBL
+        # respondendo com estado "Idle". Portanto, se os motores não estao parados, encerra
+        # o processamento da fila de comandos, pois não sabemos quanto tempo vai levar para
+        # concluir a operação sendo realizada pelo GRBL.
+        estadoGRBL = obterEstadoGRBL(GRBL)
+        if not estadoGRBL: processaErroGCode(f"Falha na comunicacao com GRBL", filaGCode, historicoGCode)
+        if parsedGCode[1]['idleMotor']:
+            if estadoGRBL['estado'] != 'Idle':
+                logInfo(f"Aguardando motores...")
                 break
-        elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "GRBL":
-            GRBLBuffer = GRBLBuffer - 1
 
         # Se o comando pode ser enviado, manda para o periferico de destino
-        # TODO: aprimorar para um codigo tipo function dispatch
-        if COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "GRBL":
-            if not GRBL: 
-                processaErroComando("GRBL desconectado", filaComandos,historicoComandos, 0, verbose)
-                continue
-            
-            # Está implementado um protocolo simples de Send-Response. Por isso não é preciso verificar se
-            # o GRBL está disponível para receber comandos. Caso o robô esteja muito lento, é possível
-            # implementar um protocolo que utiliza o buffer serial do GRBL.
-            logDebug(f"GRBL -->{instrucao}")
-            resposta = enviaGCode(GRBL, instrucao)
+        elif parsedGCode[1]['periferico'] == 'GRBL':
+            # No caso dos comandos que são enviados para o GRBL, as condições que são verificadas
+            # são:
+            # - GRBL desconectado --> aguarda o próximo loop (espera reestabelecer conexão)
+            # - GRBL em alarme    --> aguarda o próximo loop (espera destravar GRBL)
+            # - buffer GRBL cheio --> aguarda o próximo loop (espera liberar buffer)
+            if not GRBL or not estadoGRBL: 
+                logInfo(f"Aguardando conexão com GRBL...")
+                break
+            if not GRBLBuffer:
+                logInfo(f"Buffer de comandos do GRBL cheio...")
+                break
+            if estadoGRBL == "Alarm":
+                logInfo(f"Aguardando resolução do alarme do GRBL...")
+                break
+
+            # Está implementado um protocolo simples de Send-Response, baseado no estado
+            # do buffer de comandos do GRBL.
+            logDebug(f"GRBL -->{parsedGCode[1]['gcode']}")
+            resposta = enviaGCode(GRBL, parsedGCode[1]['gcode'])
             logDebug(f"GRBL <--{resposta[1]}")
-            if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-            else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+            GRBLBuffer = GRBLBuffer - 1
+            if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
+            else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
             continue
 
-        elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "HEAD":
-            if not HEAD:
-                processaErroComando("HEAD desconectado", filaComandos,historicoComandos, 0, verbose)
-                continue
-            if parsed[0] == "M12" or parsed[0] == "M13":
-                if not parsed[1].startswith("T"):
-                    processaErro("Ferramenta nao especificada", filaComandos, historico, 0, verbose)
-                    continue
-                if not estado["HEAD"]["Tool"] == parsed[1][1:]:
-                    trocaFerramenta(parsed[1][1:], filaComandos, verbose)
+        elif parsedGCode[1]['periferico'] == "HEAD":
+            # No caso dos comandos que são enviados para o GRBL, as condições que são verificadas
+            # são:
+            # - HEAD desconectado      --> aguarda o próximo loop (espera reestabelecer conexão)
+            # - HEAD TOOL incompativel --> inclui uma rotina de troca de ferramenta
 
-            logDebug(f"HEAD -->{instrucao}")
-            resposta = enviaGCode(HEAD, instrucao)
+            if not HEAD:
+                logInfo(f"Aguardando conexão com GRBL...")
+                break
+#            if not resposta["HEAD"]["Tool"] == parsedGCode[1][1:]:
+#                logInfo(f"Trocando ferramenta...")
+#                trocaFerramenta(0, filaGCode)
+
+            # Está implementado um protocolo simples de Send-Response. Como o HEAD
+            # não suporta, atualmente, nenhum comando que não seja realizado de imediato
+            # não houve preocupação com o buffer de comandos.
+            logDebug(f"HEAD -->{parsedGCode[1]['gcode']}")
+            resposta = enviaGCode(HEAD, parsedGCode[1]['gcode'])
             logDebug(f"HEAD <--{resposta[1]}")
-            if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-            else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+            if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
+            else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
             continue
                     
-        elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "CAMERA":
-            if parsed[0] == "M240":
-                logDebug(f"CAMERA -->{instrucao}")
-                resposta = tiraFoto(verbose)
+        elif parsedGCode[1]['periferico'] == "CAMERA":
+            # Está implementado um protocolo simples de Send-Response. Como a CAMERA
+            # não suporta, atualmente, nenhum comando que não seja realizado de imediato
+            # não houve preocupação com o buffer de comandos.
+            if parsedGCode[0] == "M240":
+                logDebug(f"CAMERA -->{parsedGCode[1]['gcode']}")
+                resposta = tiraFoto()
                 logDebug(f"CAMERA <--{resposta[1]}")
-                if resposta[0]: processaSucessoComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
-                else:           processaErroComando(resposta[1], filaComandos, historicoComandos, 0, verbose)
+                if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
+                else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
                 continue
 
-        elif COMANDOS_SUPORTADOS[parsed[0]]['periferico'] == "PUMP":
-            logDebug(f"PUMP -->{instrucao}")
+        elif parsedGCode[1]['periferico'] == "PUMP":
+            # Está implementado um protocolo simples de Send-Response. Como o PUMP
+            # não suporta, atualmente, nenhum comando que não seja realizado de imediato
+            # não houve preocupação com o buffer de comandos.
+            logDebug(f"PUMP -->{parsedGCode[1]['gcode']}")
             resposta = [True, "bypass"]
             logDebug(f"PUMP <--{resposta[1]}")
-            processaSucessoComando("ok: não implementado", filaComandos, historicoComandos, 0, verbose)
+            if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
+            else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
             #TODO implementar comandos de bombeamento
             #resposta = enviaGCode(PUMP, instrucao)
-        # Se não é um comando suportado, registra o erro e passa para o próximo comando.
+
+        # Se não é conhecido o periférico, registra o erro e passa para a próxima tarefa.
         else:
-            processaErroComando("Periferico " + COMANDOS_SUPORTADOS[parsed[0]] + " associado a " + instrucao + "desconhecido.", filaComandos, historicoComandos, 0, verbose)
+            processaErroGCode(f"Periferico {COMANDOS_SUPORTADOS[parsedGCode[0]]['periferico']} desconhecido.", filaGCode, historicoGCode)

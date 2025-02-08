@@ -41,11 +41,12 @@ def filtrarViaveis(dictTarefas, dictManejos, dictFerramental):
     try:
         viaveis = {}
         for chave, tarefa in dictTarefas.items():
-            ferramentas = dictManejos[tarefa["acao"]["manejoVinculado"]]["ferramenta"]
+            ferramentas = dictManejos[tarefa['acao']['manejoVinculado']]['ferramenta']
             
             disponivel = True
             for ferramenta, necessaria in ferramentas.items():
-                if necessaria and not dictFerramental[ferramenta]["instalada"]:
+                logInfo(ferramenta)
+                if necessaria and not dictFerramental[ferramenta]['instalada']:
                     disponivel = False
                     break
             if disponivel:
@@ -81,24 +82,28 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
     try:
         tarefasDisponiveis = []
         for chave, tarefa in dictTarefas.items():
-            condicoes = dictManejos[tarefa["acao"]["manejoVinculado"]]["condicao"]
+            condicoes = dictManejos[tarefa["acao"]["manejoVinculado"]]["condicoes"]
             disponivel = True
-            if not tarefa["acao"]["forcar"]:
+            if not tarefa['acao']['forcar']:
                 if condicaoForaDoLimite(time.localtime().tm_hour, condicoes["hora"]): 
-                    logInfo("Tarefa", chave, "não pode ser realizada no horário atual:", time.strftime("%H:%M:%S"), ".")
-                    postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa fora de horário permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
+                    logInfo(f"Tarefa {chave} não pode ser realizada no horário atual: {time.strftime("%H:%M:%S")}.")
+                    postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora de horário permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
-                if condicaoForaDoLimite(300, condicoes["luminosidade"]):
-                    logInfo("Tarefa", chave, "não pode ser realizada com a luminosidade atual: 300.") #TODO definir como a condicao é obtida.
-                    postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de luminosidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
+                if condicaoForaDoLimite(300, condicoes['luminosidade']):
+                    logInfo(f"Tarefa {chave} não pode ser realizada com luminosidade atual: {300}.") #TODO definir como a condicao é obtida.
+                    postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora do intervalo de luminosidade permitido.")
                     disponivel = False
-                if condicaoForaDoLimite(30, condicoes["temperatura"]):
-                    logInfo("Tarefa", chave, "não pode ser realizada com a temperatura atual: 300.") #TODO definir como a condicao é obtida.
-                    postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de temperatura permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
+                if condicaoForaDoLimite(30, condicoes['temperatura']):
+                    logInfo(f"Tarefa {chave} não pode ser realizada com temperatura atual: {30}.") #TODO definir como a condicao é obtida.
+                    postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora do intervalo de temperatura permitido.")
                     disponivel = False
-                if condicaoForaDoLimite(300, condicoes["umidade"]):
-                    logInfo("Tarefa", chave, "não pode ser realizada com a umidade de solo atual: 300.") #TODO definir como a condicao é obtida.
-                    postergaTarefa(chave, round(time.time()*1000)+3600000, "Tarefa do intervalo de umidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
+                if condicaoForaDoLimite(300, condicoes['umidadeSolo']):
+                    logInfo(f"Tarefa {chave} não pode ser realizada com umidade de solo atual: {300}.") #TODO definir como a condicao é obtida.
+                    postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora do intervalo de umidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
+                    disponivel = False
+                if condicaoForaDoLimite(50, condicoes['umidadeAr']):
+                    logInfo(f"Tarefa {chave} não pode ser realizada no horário atual: {50}%.") #TODO definir como a condicao é obtida.
+                    postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora do intervalo de umidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 ## outras condições conhecidas vão aqui
             tarefa["chave"] = chave
@@ -131,7 +136,7 @@ def ordenarListaPorChave(lista, chave, subchave, reverso=False):
     except KeyError:
         raise KeyError(f"A chave '{chave}' não existe em algum dos dicionários fornecidos.")
 
-def obtemFila(dictManejos, tamanho = 100, dictFerramental = {}, verbose=False):
+def obterFilaTarefas(dictManejos, tamanho = 100, dictFerramental = {}):
         try:
             #Busca a lista de tarefas, respeitando o lote de consulta
             #Apenas as tarefas com estado Aguardando interessam
@@ -152,20 +157,59 @@ def obtemFila(dictManejos, tamanho = 100, dictFerramental = {}, verbose=False):
             logError(f"Erro ao obter fila de tarefas: {e}")
             return []
 
-def otimizaOrdemFila(listaTarefas, bufferSize = 5):
+def otimizaFilaTarefas(listaTarefas, bufferSize = 5):
     return ordenarListaPorChave(listaTarefas[:bufferSize],"programa","prazo")
 
+def obterInformacoesTarefa (tarefa, variantes, plantas, canteiros):
+    """
+    Obtem as informações necessárias para o processamento da tarefa
+
+    :param dict tarefa: dicionário com a tarefa
+    :param dict variantes: dicionário das variantes de manejo
+    :param dict plantas: dicionário das plantas do terreno
+    :param dict canteiros: dicionário dos canteiros do terreno
+
+    :return list: [True, dict Variante, dict Objeto] ou [False, str erro]
+    """
+    # Obtém a variante da tarefa, caso exista.
+    varianteTarefa = None
+    try:
+        varianteTarefa = variantes[tarefa['acao']['manejoVinculado']][tarefa['acao']['varianteVinculada']]
+    except KeyError:
+        logError(f"Variante vinculada não encontrada para a tarefa: {tarefa['acao']['varianteVinculada']}")
+        return False, f"Variante vinculada {tarefa['acao']['varianteVinculada']} não encontrada."
+    
+    # Obtém o objeto da tarefa, caso exista
+    objetoTarefa = None
+    objetoTipo = tarefa['objeto']['tipo']
+    objetoChave = tarefa['objeto']['chave']
+    
+    if objetoTipo == "planta":
+        try: objetoTarefa = plantas[objetoChave]
+        except KeyError:
+            logError(f"Planta vinculada a tarefa {tarefa['key']} não encontrada: {objetoChave}")
+            return False, f"Planta vinculada {objetoChave} não encontrada."
+    elif objetoTipo == "canteiro":
+        try: objetoTarefa = canteiros[objetoChave]
+        except KeyError:
+            logError(f"Canteiro vinculado a tarefa {tarefa['key']} não encontrado: {objetoChave}")
+            return False, f"Canteiro vinculado {objetoChave} não encontrado."
+    else:
+        logError(f"Tipo de objeto desconhecido: {objetoTipo}")
+        return False, f"Tipo de objeto {objetoTipo} desconhecido."
+
+    return True, varianteTarefa, objetoTarefa
+
 # Funções de processamento de tarefas
-def preparaComandos(variante, objeto):
+def interpretarInstrucoes(variante, objeto):
     """
     Prepara os comandos de uma tarefa
 
-    :param tarefa: Dicionário com a tarefa a ser realizada.
     :param variante: Dicionário com a variante vinculada da tarefa.
     :param objeto: Dicionário com o objeto alvo da tarefa.
-    :return: Um novo dicionário contendo apenas as tarefas que podem ser realizadas com as condições exigidas.
+    :return: Um dicionário contendo gcodes processados.
     """
-    comandos = []
+    esteiraGCode = []
     i = 0
     loopCount = 0
     loopTotal = 0
@@ -198,42 +242,39 @@ def preparaComandos(variante, objeto):
                     i = loopGoto - 1 #o loop volta para o indice anterior, pois no final do loop passa para a proxima instrucao
                     loopCount = loopCount + loopStep
             else:
-                comandos.append(instrucao[i])
+                esteiraGCode.append(instrucao[i])
             i = i + 1
-    return (comandos)
+    return (esteiraGCode)
 
-def anotaTarefa(strChave, strAnotacao):
-    push_realtime_db(pathHistorico, {
+def anotarHistoricoTarefa(strChave, strAnotacao):
+    push_realtime_db(f"{pathHistorico}/{strChave}", {
         "autor": "Cyberlavrador 2.0",
-        "hora": round(time.time()*1000),
+        "carimboHora": round(time.time()*1000),
         "anotacao": strAnotacao,
-        "objetoKey": strChave,
     })
 
 def postergaTarefa(strChave, intNovaHora, motivo):
-    update_realtime_db(pathTarefas + "/" + strChave + "/programa", {"prazo": intNovaHora})
-    anotaTarefa(strChave, "Tarefa adiada para " + datetime.fromtimestamp(intNovaHora/1000).strftime("%H:%M:%S %d/%m/%y") + ": " + motivo)
+    update_realtime_db(f"pathTarefas/{strChave}/programa", {'prazo': intNovaHora})
+    anotarHistoricoTarefa(strChave, f"Tarefa adiada para {datetime.fromtimestamp(intNovaHora/1000).strftime("%H:%M:%S %d/%m/%y")}: {motivo}")
 
-def processaTarefa(strChave):
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Processada"})
-    anotaTarefa(strChave, "Tarefa processada pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y"))
+def marcaTarefaProcessada(strChave):
+    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'processada'})
+    anotarHistoricoTarefa(strChave, f"Tarefa processada pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}")
 
-def falhaTarefa(strChave, erro):
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Falha"})
-    anotaTarefa(strChave, "Tarefa falhou pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y") + ": " + erro)
+def marcaFalhaTarefa(strChave, erro):
+    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'falha'})
+    anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}: {erro}")
 
-def concluiTarefa(strChave):
+def marcaTarefaConcluida(strChave):
     # Anota a conclusao da tarefa
-    update_realtime_db(pathTarefas + "/" + strChave, {"estado": "Concluida"})
-    anotaTarefa(strChave, "Tarefa concluida pelo CyberLavrador em " + time.strftime("%H:%M:%S %d/%m/%y"))
+    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'concluida'})
+    anotarHistoricoTarefa(strChave, f"Tarefa concluida pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}")
     
     # Caso a tarefa tenha repeticoes, replica a tarefa para o proximo intervalo
-    tarefa = read_realtime_db(pathTarefas + "/" + strChave)
-    if tarefa["programa"]["repeticoes"]:
-        tarefa["programa"]["repeticoes"] = tarefa["programa"]["repeticoes"] - 1
-        tarefa["programa"]["prazo"] = round(time.time()*1000) + 86400000 * tarefa["programa"]["intervalo"]
-        tarefa["estado"] = "Aguardando"
-        del tarefa["historico"]
-        tarefa["key"] = push_realtime_db(pathTarefas,tarefa)
-        update_realtime_db(pathTarefas + "/" + tarefa["key"], {"key": tarefa["key"]})
-        anotaTarefa(tarefa["key"], "Repeticao de tarefa criada pelo CyberLavrador 2.0 em " + time.strftime("%H:%M:%S %d/%m/%y"))
+    tarefa = read_realtime_db(f"{pathTarefas}/{strChave}")
+    if tarefa['programa']['repeticoes']:
+        tarefa['programa']['repeticoes'] = tarefa['programa']['repeticoes'] - 1
+        tarefa['programa']['prazo'] = round(time.time()*1000) + 86400000 * tarefa['programa']['intervalo']
+        tarefa['estado'] = 'aguardando'
+        push_realtime_db(pathTarefas, tarefa)
+        anotarHistoricoTarefa(tarefa['key'], f"Repeticao de tarefa criada pelo CyberLavrador 2.0 em {time.strftime("%H:%M:%S %d/%m/%y")}")

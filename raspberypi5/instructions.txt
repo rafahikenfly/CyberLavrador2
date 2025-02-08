@@ -6,3 +6,4 @@
 6. instalar o pacote firebase-admin
 7. instalar o pacote pyserial
 8. instalar o pacote time
+9. instalar o pacote opencv-python-headless

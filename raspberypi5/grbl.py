@@ -1,67 +1,11 @@
-import serial
-import time
-
 from config import logDebug
 from config import logInfo
 from config import logError
 from config import logWarning
 
+from comunicacao import obterEstado
 
 # GRBLStatus = ["Idle", "Run", "Hold", "Jog", "Alarm", "Door", "Check", "Home", "Sleep"]
-
-# Conexão
-def conectaPorta(port, baudrate=115200, nome = "Periferico desconhecido"):
-    """
-    Conecta ao Arduino GRBL via porta serial.
-    """
-    try:
-        ser = serial.Serial(port, baudrate)
-        time.sleep(2)  # Aguarde para o GRBL inicializar
-        ser.flushInput()  # Limpa o buffer de entrada
-        logInfo (f"{nome} conectado a porta {port}")
-        
-        return ser
-    except Exception as e:
-        logError(f"Erro ao estabelecer conexao serial para {nome}: {e}")
-        return False
-
-def fechaConexaoGRBL(ser):
-    """
-    Fecha a conexao serial.
-    """
-    if ser:
-        ser.close()
-        logInfo("Conexao encerrada.")
-
-# Comunicação e interpretação
-def enviaGCode(ser, gcode):
-    """
-    Envia comandos G-code ao GRBL.
-
-    :param ser: porta serial para envio
-    :param gcode: string a ser enviada
-    :return [ok?, resposta]
-    """
-    if not ser:
-        return False, "Conexao serial não estabelecida."
-
-    try:
-        if gcode != '?': gcode = gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
-        ser.write(gcode.encode('utf-8'))  # Envia o comando
-        time.sleep(0.5) #delay da resposta
-        response = ser.readline().decode('utf-8').strip()  # Le a resposta
-        # Verificar se a resposta contem um erro
-        if response.startswith("error:"):
-            # Extrai o codigo do erro e retorna a descricao do erro
-            return False, "erro "+ interpretaErroGRBL(response)
-        elif response.startswith("<"):
-            # Extrai os dados de uma resposta de estado
-            return True, interpretaStatusGRBL(response)
-        else:
-            return True, response
-    except Exception as e:
-        return False, "Erro ao enviar gcode: " + gcode[:-1]
-
 
 def interpretaErroGRBL(message):
     # Mapeamento de codigos de erro do GRBL
@@ -105,7 +49,7 @@ def interpretaErroGRBL(message):
     }
     error_code = int(message.split(":")[1])
     return (f"{error_code}: {error_codes.get(error_code)}")
-    
+
 def interpretaStatusGRBL(message):
     """
     Interpreta uma mensagem de estado do GRBL.
@@ -162,8 +106,25 @@ def interpretaStatusGRBL(message):
     except Exception as e:
         return {"error": f"Erro ao interpretar a mensagem: {str(e)}"}
 
+def obterEstadoGRBL(ser):
+    status = obterEstado(ser)
+    if status: return interpretaStatusGRBL(status[1])
+    else: return False
+
+def interpretaRespostaGRBL(message):
+    # Verificar se a resposta contem um erro
+    if message.startswith("error:"):
+        # Extrai o codigo do erro e retorna a descricao do erro
+        return False, f"erro: {interpretaErroGRBL(message)}"
+    elif message.startswith("ok"):
+        # resposta ok
+        return True, f"ok"
+    else:
+        # Resposta incompreendida
+        return False, f"erro: Resposta não compreendida: {message}"
+    
 # Alto nível
-def destravaGRBL(ser, verbose):
+def desativaAlarme(ser):
     """
     Destrava o GRBL enviando o comando $X.
     :param ser: porta serial para envio
@@ -173,8 +134,7 @@ def destravaGRBL(ser, verbose):
 
     try:
         # Envia o comando para destravar
-        comando = "$X"
-        comando  = comando.strip() + '\n'
+        comando = '$X' + '\n'
         ser.write(comando.encode('utf-8'))
         logDebug(f"GRBL --> $X")
 

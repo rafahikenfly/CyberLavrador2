@@ -1,0 +1,2108 @@
+2025-02-08 01:17:48,585 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:17:48,585 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:17:48,586 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:17:48,586 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:17:48,586 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:17:48,586 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:17:48,587 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:17:48,589 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:17:48,600 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:17:48,797 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:17:48,801 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:17:49,230 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:17:49,235 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:17:49,236 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:17:49,237 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:17:49,239 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:17:49,590 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:17:49,591 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:17:49,597 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:17:49,600 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:17:49,602 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:17:49,981 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:17:49,983 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:17:49,983 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:17:49,986 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:17:50,386 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:17:50,403 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:17:50,731 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23946
+2025-02-08 01:17:50,751 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:17:50,758 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:17:50,769 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: '-OGnlSgAHEgn4F038jDI'
+2025-02-08 01:17:50,780 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:17:50,792 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:17:50,905 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:18:05,802 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:18:05,803 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:18:05,993 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:18:05,994 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:18:20,999 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:18:36,002 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:18:51,004 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:19:06,008 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:19:21,013 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:19:36,035 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:19:51,044 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:20:06,051 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:20:21,056 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:20:36,060 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:20:51,065 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:21:06,070 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:21:21,074 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:21:36,075 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:21:51,083 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:22:06,086 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:22:21,088 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:22:36,093 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:22:51,096 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:23:06,097 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:23:06,097 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:23:06,101 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 01:23:06,693 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:23:06,695 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:23:21,698 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:23:35,986 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:23:35,987 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:23:35,987 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:23:35,987 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:23:35,988 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:23:35,988 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:23:35,988 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:23:35,993 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:23:36,012 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:23:36,188 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:23:36,193 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:23:36,660 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:23:36,663 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:23:36,663 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:23:36,663 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:23:36,665 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:23:37,038 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:23:37,046 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:23:37,052 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:23:37,053 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:23:37,055 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:23:37,428 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:23:37,430 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:23:37,430 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:23:37,434 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:23:37,883 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:23:37,890 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:23:38,206 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23946
+2025-02-08 01:23:38,213 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:23:38,214 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:23:38,214 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:23:38,214 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: logInfo() takes 1 positional argument but 2 were given
+2025-02-08 01:23:38,214 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:23:38,214 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:23:53,218 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:23:53,219 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:23:53,402 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:23:53,404 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:24:08,407 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:24:23,412 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:25:05,994 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:25:05,994 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:25:05,994 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:25:05,994 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:25:05,995 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:25:05,995 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:25:05,995 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:25:05,998 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:25:06,006 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:25:06,249 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:25:06,255 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:25:06,864 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:25:06,872 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:25:06,873 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:25:06,874 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:25:06,876 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:25:07,402 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:25:07,410 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:25:07,413 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:25:07,414 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:25:07,416 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:25:07,786 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:25:07,793 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:25:07,799 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:25:07,818 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:25:08,233 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:25:08,233 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:25:08,528 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23946
+2025-02-08 01:25:08,547 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:25:08,552 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:25:08,552 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:25:08,553 - CyberLavrador 2.0 - INFO - -OHKXSdpttAiG8DnqJPO
+2025-02-08 01:25:08,553 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: '-OGnlSgAHEgn4F038jDI'
+2025-02-08 01:25:08,553 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:25:08,553 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:25:23,558 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:25:23,558 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:25:23,747 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:25:23,748 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:25:38,752 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:25:53,756 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:26:08,759 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:26:23,764 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:26:27,153 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSdpttAiG8DnqJPO/acao/path
+2025-02-08 01:26:38,768 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:26:53,770 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:27:08,776 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:27:33,619 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:27:33,619 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:27:33,619 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:27:33,619 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:27:33,620 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:27:33,620 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:27:33,620 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:27:33,624 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:27:33,635 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:27:33,813 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:27:33,817 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:27:34,213 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:27:34,216 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:27:34,217 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:27:34,217 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:27:34,219 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:27:34,582 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:27:34,590 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:27:34,594 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:27:34,595 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:27:34,598 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:27:35,083 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:27:35,084 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:27:35,085 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:27:35,104 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:27:35,538 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:27:35,539 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:27:35,857 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:27:35,870 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:27:35,871 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:27:35,872 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:27:35,872 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: '-OGnlSgAHEgn4F038jDI'
+2025-02-08 01:27:35,872 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:27:35,872 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:27:50,875 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:27:50,875 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:27:51,061 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:27:51,063 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:28:06,066 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:28:21,071 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:28:36,076 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:28:51,080 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:29:06,081 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:29:21,083 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:29:52,966 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:29:52,966 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:29:52,967 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:29:52,967 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:29:52,968 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:29:52,968 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:29:52,968 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:29:52,972 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:29:52,984 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:29:53,150 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:29:53,155 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:29:53,528 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:29:53,535 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:29:53,537 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:29:53,538 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:29:53,541 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:29:54,008 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:29:54,015 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:29:54,016 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:29:54,017 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:29:54,019 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:29:54,455 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:29:54,460 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:29:54,879 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 7837
+2025-02-08 01:29:55,105 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 01:29:55,282 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:29:55,321 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2926
+2025-02-08 01:29:55,508 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 01:29:55,510 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:29:55,510 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:29:55,728 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:29:55,729 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:29:55,992 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:29:55,994 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:29:55,994 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:29:55,994 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: cannot access local variable 'ferramenta' where it is not associated with a value
+2025-02-08 01:29:55,994 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:29:55,995 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:30:10,995 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:30:10,996 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:30:11,181 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:30:11,182 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:30:26,187 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:30:41,191 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:30:56,195 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:31:11,198 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:31:26,201 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:31:41,203 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:31:56,208 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:32:11,213 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:32:26,213 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:32:41,217 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:32:56,221 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:33:13,813 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:33:13,814 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:33:13,814 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:33:13,814 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:33:13,815 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:13,815 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:33:13,815 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:13,818 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:33:13,828 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:33:14,017 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:33:14,021 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:14,893 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:33:14,899 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:33:14,900 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:33:14,900 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:14,903 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:31,168 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:33:31,168 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:33:31,168 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:33:31,168 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:33:31,169 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:31,169 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:33:31,169 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:31,172 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:33:31,183 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:33:31,345 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:33:31,350 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:31,889 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:33:31,895 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:33:31,896 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:33:31,896 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:31,899 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:32,395 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:33:32,403 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:33:32,405 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:33:32,405 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:33:32,407 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:32,803 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:33:32,808 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:33:33,212 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 7837
+2025-02-08 01:33:33,458 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 01:33:33,556 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:33:33,735 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2926
+2025-02-08 01:33:33,915 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 01:33:33,916 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:33:33,917 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:33:34,143 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:33:34,144 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:33:34,404 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:33:34,407 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:33:34,407 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:33:34,407 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas viaveis com ferramentas disponiveis: cannot access local variable 'ferramenta' where it is not associated with a value
+2025-02-08 01:33:34,408 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:33:34,408 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:33:49,414 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:33:49,415 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:33:49,605 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:33:49,606 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:34:04,607 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:34:19,611 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:34:34,616 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:35:02,319 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:35:02,319 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:35:02,319 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:35:02,319 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:35:02,319 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:35:02,320 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:35:02,320 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:35:02,323 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:35:02,334 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:35:02,513 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:35:02,518 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:35:02,890 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:35:02,898 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:35:02,901 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:35:02,902 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:35:02,904 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:35:03,329 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:35:03,330 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:35:03,333 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:35:03,333 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:35:03,335 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:35:03,844 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:35:03,878 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:35:04,300 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 7837
+2025-02-08 01:35:04,528 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 01:35:04,585 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:35:04,740 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2926
+2025-02-08 01:35:04,932 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 01:35:04,934 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:35:04,934 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:35:05,117 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:35:05,118 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:35:05,413 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:35:05,416 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:35:05,416 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:35:05,416 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,416 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,416 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,417 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,418 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,419 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,419 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,419 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,419 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,419 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,420 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,420 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,420 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,421 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,422 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,423 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,424 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,425 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,426 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,427 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,428 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,428 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,428 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,429 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,429 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,430 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,431 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,431 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,431 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,432 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,432 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,433 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,433 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,433 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,433 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,434 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,435 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,436 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,437 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,438 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,439 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,440 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,441 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,442 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,443 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,444 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,445 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,445 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,445 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,445 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,445 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,446 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,447 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,447 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,447 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,447 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,447 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,448 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,448 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,448 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,448 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,448 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,449 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,450 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,451 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,452 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,453 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,454 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,455 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,456 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,457 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,458 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,459 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,460 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,461 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,461 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,461 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,461 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,466 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,466 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,466 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,466 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,467 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,468 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,469 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,469 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,469 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,469 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,469 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,470 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,471 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,472 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,473 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,473 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,473 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,473 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,473 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,474 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,475 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,476 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,476 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,476 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,476 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,476 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,477 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,477 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,477 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,477 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,477 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,478 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,478 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,478 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,480 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,485 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,485 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,485 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,486 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,486 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,486 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,486 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,486 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,487 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,488 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,489 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,490 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:35:05,491 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:35:05,492 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:35:05,493 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:35:05,493 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:35:05,493 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas por condição: 'umidade'
+2025-02-08 01:35:05,493 - CyberLavrador 2.0 - INFO - 0 tarefa(s) em condição de execução.
+2025-02-08 01:35:05,493 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:35:20,496 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:35:20,497 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:35:20,681 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:35:20,682 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:35:35,685 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:35:50,688 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:36:05,692 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:36:20,696 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:36:35,700 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:36:50,704 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:37:05,711 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:37:20,716 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:37:35,721 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:37:50,724 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:38:05,728 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:38:20,730 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:38:35,731 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:38:50,731 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:39:05,733 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:39:20,737 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:39:35,742 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:39:50,746 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:40:05,750 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:40:20,755 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:40:20,755 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:40:20,759 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 01:40:21,378 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:40:21,380 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:40:36,383 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:40:51,385 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:41:06,392 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:41:21,397 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:41:36,401 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:41:51,405 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:42:06,407 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:42:21,409 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:42:36,413 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:42:51,418 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:43:06,423 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:43:21,427 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:43:36,431 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:43:51,433 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:44:06,437 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:44:24,363 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:44:24,363 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:44:24,363 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:44:24,364 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:44:24,364 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:44:24,364 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:44:24,365 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:44:24,368 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:44:24,381 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:44:24,562 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:44:24,566 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:44:25,198 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:44:25,206 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:44:25,207 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:44:25,208 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:44:25,211 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:44:25,799 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:44:25,806 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:44:25,807 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:44:25,808 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:44:25,810 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:44:26,180 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:44:26,185 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:44:26,605 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 01:44:26,826 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 01:44:26,996 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:44:27,148 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2926
+2025-02-08 01:44:27,394 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 01:44:27,394 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:44:27,394 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:44:27,658 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:44:27,659 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:44:27,979 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:44:27,980 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:44:27,980 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:44:27,980 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,981 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,982 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,983 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,984 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,985 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,985 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,985 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,985 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,985 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,986 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,987 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,988 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,989 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,990 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:27,991 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,992 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,993 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,993 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,993 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,993 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,994 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:27,994 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:27,994 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:27,995 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:27,995 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,995 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,995 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,995 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,996 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,996 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,996 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,996 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,996 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,997 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:27,997 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:27,997 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:27,997 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:27,998 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:27,999 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:27,999 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:27,999 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:27,999 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:27,999 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,000 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,001 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,001 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,001 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,001 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,001 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,002 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,003 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:28,004 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:28,005 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:28,005 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:28,006 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,006 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,006 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,007 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,008 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,009 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,009 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,009 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,009 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,010 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,010 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,010 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,010 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,010 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,011 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,011 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,012 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,012 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,012 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:28,012 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,013 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,014 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,014 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,014 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,014 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,014 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,015 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,016 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:28,017 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:28,018 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:28,018 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:28,018 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,019 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,020 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,021 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,022 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,023 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,023 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,023 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,023 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,024 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,024 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,025 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,025 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,025 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,025 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,025 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,026 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,026 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,026 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,026 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,026 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,027 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,028 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,028 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,028 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,028 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,028 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,029 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,029 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,029 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,030 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,030 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,031 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,032 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,033 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,034 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,035 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,036 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,037 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,038 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,039 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,040 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,041 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,042 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,043 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,044 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,044 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,045 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,046 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:44:28,047 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - ERROR - Erro ao filtrar tarefas por condição: logInfo() takes 1 positional argument but 3 were given
+2025-02-08 01:44:28,048 - CyberLavrador 2.0 - INFO - 0 tarefa(s) em condição de execução.
+2025-02-08 01:44:28,049 - CyberLavrador 2.0 - INFO - Nenhuma tarefa disponível.
+2025-02-08 01:44:43,068 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:44:43,068 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:44:43,254 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:44:43,256 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:44:58,264 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:45:13,271 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:45:28,272 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:45:43,277 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:45:58,281 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:46:13,285 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:46:28,286 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:46:43,287 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:46:58,292 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:47:13,295 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:47:28,300 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:47:43,303 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:47:58,306 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:48:13,307 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:48:28,311 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:48:53,199 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 01:48:53,199 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 01:48:53,199 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 01:48:53,199 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 01:48:53,200 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:48:53,200 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 01:48:53,200 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:48:53,203 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 01:48:53,213 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 01:48:53,407 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 01:48:53,411 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:48:54,223 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 01:48:54,231 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 01:48:54,233 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 01:48:54,233 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:48:54,236 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:48:54,634 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 01:48:54,642 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 01:48:54,646 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 01:48:54,647 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 01:48:54,650 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:48:55,015 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 01:48:55,021 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 01:48:55,449 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 01:48:55,687 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 01:48:55,864 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 01:48:55,908 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2926
+2025-02-08 01:48:56,169 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 01:48:56,170 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:48:56,171 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:48:56,476 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:56,478 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:56,785 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 23886
+2025-02-08 01:48:56,799 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) com estado Aguardando no lote.
+2025-02-08 01:48:56,799 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) vencidas.
+2025-02-08 01:48:56,800 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,800 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,800 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,800 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,801 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,802 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,803 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,803 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,803 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,803 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,804 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,805 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,805 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,805 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,806 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,806 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,807 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,808 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,809 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,810 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,810 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,810 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,810 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,810 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,811 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,812 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,813 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,814 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,815 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,816 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,817 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,817 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,817 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,817 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,817 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,818 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,819 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,819 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,819 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,819 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,819 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,820 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,820 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,820 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,820 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,821 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,822 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,823 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,823 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,824 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,824 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,824 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,825 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,826 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,826 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,826 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,826 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,827 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,828 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,828 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,828 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,828 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,829 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,829 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,829 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,829 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,830 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,830 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,830 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,831 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,831 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,831 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,833 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,833 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,834 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,835 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,835 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,835 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,835 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,835 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,836 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,836 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,836 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,837 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,837 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,837 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,837 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,838 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,838 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,838 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,838 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,838 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,839 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,839 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,839 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,839 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,840 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,840 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,840 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,840 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,840 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,841 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,841 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,842 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,843 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,844 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,845 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,846 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,847 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,848 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,849 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,850 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,850 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,850 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,851 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,851 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,851 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,851 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,851 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,852 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,852 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,852 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,852 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,853 - CyberLavrador 2.0 - INFO - sensordistancia
+2025-02-08 01:48:56,853 - CyberLavrador 2.0 - INFO - sensorph
+2025-02-08 01:48:56,853 - CyberLavrador 2.0 - INFO - sensortemperatura
+2025-02-08 01:48:56,853 - CyberLavrador 2.0 - INFO - sensorumidade
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,855 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,856 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,857 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,858 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,858 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,858 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,858 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,858 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,859 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,860 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,861 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,862 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,863 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,864 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,865 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,865 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,865 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,865 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,866 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,867 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,868 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,869 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,870 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,871 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,872 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,873 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,874 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,875 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,876 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 01:48:56,877 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - DEBUG - 38 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - INFO - 38 tarefa(s) em condição de execução.
+2025-02-08 01:48:56,878 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHKXSdpttAiG8DnqJPO não encontrada: -OHKXSan15s0SoHGZ64_
+2025-02-08 01:48:57,193 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHKXSdpttAiG8DnqJPO.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:57,196 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSdpttAiG8DnqJPO
+2025-02-08 01:48:57,197 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:57,390 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSdpttAiG8DnqJPO.json HTTP/11" 200 31
+2025-02-08 01:48:57,391 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 01:48:57,575 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSdpttAiG8DnqJPO.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:57,576 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:57,576 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHKXSgcA0ocXNyBphan não encontrada: -OHKXSdpttAiG8DnqJPP
+2025-02-08 01:48:57,756 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHKXSgcA0ocXNyBphan.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:57,757 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:57,758 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSgcA0ocXNyBphan
+2025-02-08 01:48:57,971 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSgcA0ocXNyBphan.json HTTP/11" 200 31
+2025-02-08 01:48:57,972 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 01:48:58,156 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSgcA0ocXNyBphan.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:58,157 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:58,158 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHKXSjhRq682s6srkt4 não encontrada: -OHKXSgdgYoEsAKv1iDw
+2025-02-08 01:48:58,339 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSjhRq682s6srkt4
+2025-02-08 01:48:58,340 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHKXSjhRq682s6srkt4.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:58,341 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:58,627 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSjhRq682s6srkt4.json HTTP/11" 200 31
+2025-02-08 01:48:58,628 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 01:48:58,934 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHKXSjhRq682s6srkt4.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:58,935 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:58,935 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHSQ_7g4kX06Px0Lzad não encontrada: -OHSQ_4xUcnpzVZtLonP
+2025-02-08 01:48:59,121 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7g4kX06Px0Lzad
+2025-02-08 01:48:59,122 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7g4kX06Px0Lzad.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:59,124 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:59,446 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7g4kX06Px0Lzad.json HTTP/11" 200 31
+2025-02-08 01:48:59,447 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 01:48:59,753 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7g4kX06Px0Lzad.json?print=silent HTTP/11" 204 0
+2025-02-08 01:48:59,754 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:48:59,755 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHSQ_7fbKQ6SVMpBuDZ não encontrada: -OHSQ_4xUcnpzVZtLonP
+2025-02-08 01:49:00,063 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7fbKQ6SVMpBuDZ
+2025-02-08 01:49:00,064 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7fbKQ6SVMpBuDZ.json?print=silent HTTP/11" 204 0
+2025-02-08 01:49:00,065 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:49:00,367 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7fbKQ6SVMpBuDZ.json HTTP/11" 200 31
+2025-02-08 01:49:00,367 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 01:49:00,674 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHSQ_7fbKQ6SVMpBuDZ.json?print=silent HTTP/11" 204 0
+2025-02-08 01:49:00,675 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:49:15,678 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:49:15,679 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:49:15,862 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:49:15,864 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:49:30,868 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:49:45,871 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:50:00,873 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:50:15,878 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
