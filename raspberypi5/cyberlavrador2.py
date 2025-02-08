@@ -49,11 +49,8 @@ plantas = {}
 
 filaGCode = []
 historicoGCode = []
-objetoDefault = { "posicao": {
-    "X": 100,
-    "Y": 90,
-    "Z": 80,
-}}
+tarefaAtual = ""
+inicioTarefaAtual = 0
 
 def inicializaRobo() :
     # inicializa o robo, conectando o firebase com seus listeners
@@ -86,6 +83,7 @@ def inicializaRobo() :
         elif isinstance(event.data, int):
             config[event.path[1:]] = event.data
         logInfo("Configurações atualizadas do RTDB.")
+        logDebug(config)
         
     # Listener das "ferramentas" no realtime database
     def listenerFerramentas(event):
@@ -94,6 +92,7 @@ def inicializaRobo() :
         else:
             definicoesFerramental[event.path[1:]] = event.data
         logInfo("Ferramentas atualizadas do RTDB.")
+        logDebug(definicoesFerramental)
 
     # Listener das "tarefas" no realtime database
     def listenerTarefas(event):
@@ -143,7 +142,7 @@ def reestabeleceRobo():
         historicoComandos = recuperaComandos("hitorico_comandos.pkl")
         if len(historicoComandos):
             logInfo(f"Recuperados {len(historicoComandos)} comandos executados na ultima execucao")
-        processaErroGCode("Robo reiniciado", filaComandos, historicoComandos, 0, True)
+        processaErroGCode("Robo reiniciado", filaComandos, historicoComandos)
 
 def atualizaConhecimento():
     #obtem a base de conhecimento atualizada
@@ -164,11 +163,10 @@ if __name__ == "__main__":
     proximoReporteEstado = 0
     while True:
         # Registra a hora de inicio do loop principal
-        agora = time.time()
+        agora = roundtime.time()
 
         # Obtem o estado dos periféricos e a atividade do robô. E verifica se ha estado
         # de Alarme nos periféricos ou outra condicao que exija acao de recuperacao.
-
         estado = estadoRobo(GRBL, HEAD, PUMP, filaGCode, historicoGCode, dormindo)
         recuperar = False
         if estado['GRBL']['estado'] == "Alarm":

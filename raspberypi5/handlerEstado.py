@@ -1,4 +1,5 @@
 from comunicacao import enviaGCode
+from grbl import obterEstadoGRBL
 import time
 from firebase import update_realtime_db
 from config import logInfo
@@ -9,8 +10,8 @@ def estadoRobo(GRBL, HEAD, PUMP, filaComandos, historicoComandos, sleep):
     estadoHEAD = {"estado": "Desligado"}
     estadoPUMP = {"estado": "Desligado"}
     if GRBL:
-        resposta = enviaGCode(GRBL, "?")
-        estadoGRBL = resposta[1] if resposta[0] else {"estado": "Offline"}
+        resposta = obterEstadoGRBL(GRBL)
+        estadoGRBL = resposta if resposta else {"estado": "Offline"}
     if HEAD:
         resposta = enviaGCode(HEAD, "?")
         estadoHEAD = resposta[1] if resposta[0] else {"estado": "Offline"}

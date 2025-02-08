@@ -61,6 +61,12 @@ def processaSucessoGCode(resposta, filaGCode, historicoGCode, i = 0):
     avancaFila(i, filaGCode, historicoGCode)
     return filaGCode, historicoGCode
 
+def processaEnvioGCode(ser, periferico, gcode, filaGCode, i=0):
+    logDebug(f"{periferico} -->{parsedGCode[1]['gcode']}")
+    filaGCode[i]['envio'] = round(time.time())*1000
+    resposta = enviaGCode(ser, parsedGCode[1]['gcode'])
+    logDebug(f"{periferico} <--{resposta[1]}")
+    
 def recuperaComandos(filename): 
     try: 
         with open(filename, 'rb') as file:
@@ -77,6 +83,7 @@ def avancaFila(i, filaComandos, historicoComandos):
     :param historicoComandos: lista de comandos já processados
     :param verbose: flag para exibir mensagens de debug
     """
+    filaGCode[i]['conclusao'] = round(time.time())*1000
     historicoComandos.append(filaComandos[i])
     filaComandos.pop(i)
     
@@ -107,8 +114,8 @@ def parseGCode(gcode):
     
     # Verifica os parametros do comando
     elif COMANDOS_SUPORTADOS[comando]["numParams"] > len(params):
-        logError(f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]["numParams"]}).")
-        return False, f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]["numParams"]})."
+        logError(f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]['numParams']}).")
+        return False, f"Parâmetros insuficientes para {comando} (Esperados {COMANDOS_SUPORTADOS[comando]['numParams']})."
 
     ## TODO: verificar se os parametros obrigatorios estao presentes nos mcodes
 #                if parsedGCode[0] == "M12" or parsedGCode[0] == "M13":
@@ -163,7 +170,7 @@ def tiraFoto(verbose):
         cap.release()
         return False, "Failed to capture image"
 
-def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, ):
+def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, tarefaAtual):
     """
     Processa todos os comandos de um array, movendo-os para o array de historico.
 
@@ -184,7 +191,7 @@ def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, ):
         if not parsedGCode[0]:
             processaErroGCode (parsedGCode[1], filaGCode, historicoGCode)
             continue
-
+        
         # Verificar se o comando exige motores parados. Isso é necessário pois há gcodes
         # que precisam ser executados em uma posicao exata, o que se verifica com o GRBL
         # respondendo com estado "Idle". Portanto, se os motores não estao parados, encerra
@@ -216,9 +223,7 @@ def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, ):
 
             # Está implementado um protocolo simples de Send-Response, baseado no estado
             # do buffer de comandos do GRBL.
-            logDebug(f"GRBL -->{parsedGCode[1]['gcode']}")
-            resposta = enviaGCode(GRBL, parsedGCode[1]['gcode'])
-            logDebug(f"GRBL <--{resposta[1]}")
+            processaEnvioGCode(GRBL, 'GRBL', parsedGCode[1]['gcode'], filaGCode)
             GRBLBuffer = GRBLBuffer - 1
             if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
             else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
@@ -240,9 +245,7 @@ def processaFila(filaGCode, historicoGCode, GRBL, GRBLBuffer, HEAD, PUMP, ):
             # Está implementado um protocolo simples de Send-Response. Como o HEAD
             # não suporta, atualmente, nenhum comando que não seja realizado de imediato
             # não houve preocupação com o buffer de comandos.
-            logDebug(f"HEAD -->{parsedGCode[1]['gcode']}")
-            resposta = enviaGCode(HEAD, parsedGCode[1]['gcode'])
-            logDebug(f"HEAD <--{resposta[1]}")
+            processaEnvioGCode(HEAD, 'HEAD', parsedGCode[1]['gcode'], filaGCode)
             if resposta[0]: processaSucessoGCode(resposta[1], filaGCode, historicoGCode)
             else:           processaErroGCode(resposta[1], filaGCode, historicoGCode)
             continue

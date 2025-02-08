@@ -13,7 +13,8 @@ from config import logWarning
 
 terreno = "-OEy62gRLp6VMWWHs7Kt"
 pathTarefas = "/tarefas/" + terreno
-pathHistorico = "/historicos/" + terreno
+pathHistorico = "/anotacoes/" + terreno
+pathRegistros = "/ registros/" + terreno
 
 from datetime import datetime
 
@@ -45,7 +46,6 @@ def filtrarViaveis(dictTarefas, dictManejos, dictFerramental):
             
             disponivel = True
             for ferramenta, necessaria in ferramentas.items():
-                logInfo(ferramenta)
                 if necessaria and not dictFerramental[ferramenta]['instalada']:
                     disponivel = False
                     break
@@ -140,7 +140,7 @@ def obterFilaTarefas(dictManejos, tamanho = 100, dictFerramental = {}):
         try:
             #Busca a lista de tarefas, respeitando o lote de consulta
             #Apenas as tarefas com estado Aguardando interessam
-            aguardando = read_filtered_realtime_db(pathTarefas, "estado", "Aguardando", tamanho)
+            aguardando = read_filtered_realtime_db(pathTarefas, "estado", "aguardando", tamanho)
             logDebug(f"{len(aguardando)} tarefa(s) com estado Aguardando no lote.")
 
             #Filtra aquelas que podem ser realizadas pelo robo com suas ferramentase pelas condições da classe, ordenando por prazo
@@ -252,6 +252,12 @@ def anotarHistoricoTarefa(strChave, strAnotacao):
         "carimboHora": round(time.time()*1000),
         "anotacao": strAnotacao,
     })
+def registrar(strChave, parametro, valor):
+    push_realtime_db(f"{pathRegistros}/{strChave}", {
+        "parametro": parametro,
+        "carimboHora": round(time.time()*1000),
+        "valor": valor,
+    })
 
 def postergaTarefa(strChave, intNovaHora, motivo):
     update_realtime_db(f"pathTarefas/{strChave}/programa", {'prazo': intNovaHora})
@@ -265,7 +271,7 @@ def marcaFalhaTarefa(strChave, erro):
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'falha'})
     anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}: {erro}")
 
-def marcaTarefaConcluida(strChave):
+def marcaTarefaConcluida(strChave, horaInicio):
     # Anota a conclusao da tarefa
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'concluida'})
     anotarHistoricoTarefa(strChave, f"Tarefa concluida pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
