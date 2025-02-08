@@ -86,7 +86,7 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
             disponivel = True
             if not tarefa['acao']['forcar']:
                 if condicaoForaDoLimite(time.localtime().tm_hour, condicoes["hora"]): 
-                    logInfo(f"Tarefa {chave} não pode ser realizada no horário atual: {time.strftime("%H:%M:%S")}.")
+                    logInfo(f"Tarefa {chave} não pode ser realizada no horário atual: {time.strftime('%H:%M:%S')}.")
                     postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora de horário permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 if condicaoForaDoLimite(300, condicoes['luminosidade']):
@@ -255,20 +255,20 @@ def anotarHistoricoTarefa(strChave, strAnotacao):
 
 def postergaTarefa(strChave, intNovaHora, motivo):
     update_realtime_db(f"pathTarefas/{strChave}/programa", {'prazo': intNovaHora})
-    anotarHistoricoTarefa(strChave, f"Tarefa adiada para {datetime.fromtimestamp(intNovaHora/1000).strftime("%H:%M:%S %d/%m/%y")}: {motivo}")
+    anotarHistoricoTarefa(strChave, f"Tarefa adiada para {datetime.fromtimestamp(intNovaHora/1000).strftime('%H:%M:%S %d/%m/%y')}: {motivo}")
 
 def marcaTarefaProcessada(strChave):
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'processada'})
-    anotarHistoricoTarefa(strChave, f"Tarefa processada pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}")
+    anotarHistoricoTarefa(strChave, f"Tarefa processada pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
 
 def marcaFalhaTarefa(strChave, erro):
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'falha'})
-    anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}: {erro}")
+    anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}: {erro}")
 
 def marcaTarefaConcluida(strChave):
     # Anota a conclusao da tarefa
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'concluida'})
-    anotarHistoricoTarefa(strChave, f"Tarefa concluida pelo CyberLavrador em {time.strftime("%H:%M:%S %d/%m/%y")}")
+    anotarHistoricoTarefa(strChave, f"Tarefa concluida pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
     
     # Caso a tarefa tenha repeticoes, replica a tarefa para o proximo intervalo
     tarefa = read_realtime_db(f"{pathTarefas}/{strChave}")
@@ -277,4 +277,4 @@ def marcaTarefaConcluida(strChave):
         tarefa['programa']['prazo'] = round(time.time()*1000) + 86400000 * tarefa['programa']['intervalo']
         tarefa['estado'] = 'aguardando'
         push_realtime_db(pathTarefas, tarefa)
-        anotarHistoricoTarefa(tarefa['key'], f"Repeticao de tarefa criada pelo CyberLavrador 2.0 em {time.strftime("%H:%M:%S %d/%m/%y")}")
+        anotarHistoricoTarefa(tarefa['key'], f"Repeticao de tarefa criada pelo CyberLavrador 2.0 em {time.strftime('%H:%M:%S %d/%m/%y')}")
