@@ -139,8 +139,45 @@ def desativaAlarme(ser):
         logDebug(f"GRBL --> $X")
 
         # Le a resposta do GRBL
-        resposta = ser.readline().decode('utf-8').strip() #ok
-        resposta = ser.readline().decode('utf-8').strip()      
-        logDebug(f"GRBL <-- {resposta}")
+        resposta1 = ser.readline().decode('utf-8').strip() #[MSG: Caution: Unlocked]
+        resposta2 = ser.readline().decode('utf-8').strip() #ok    
+        logDebug(f"GRBL <-- {resposta1},{resposta2}")
+    except Exception as e:
+        logError(f"Erro ao destravar GRBL: {e}")
+
+def desativarMotores(ser):
+    """
+    Coloca o GRBL em sleep com o comando $SLP.
+    :param ser: porta serial para envio
+    """
+    if not ser:
+        return "Conexao serial não estabelecida."
+    try:
+        # Envia o comando para dormir
+        comando = '$SLP' + '\n'
+        ser.write(comando.encode('utf-8'))
+        logDebug(f"GRBL --> $SLP")
+        # Le a resposta do GRBL
+        resposta1 = ser.readline().decode('utf-8').strip() #ok
+        resposta2 = ser.readline().decode('utf-8').strip() #[MSG: Sleeping]
+        logDebug(f"GRBL <-- {resposta1},{resposta2}")
+    except Exception as e:
+        logError(f"Erro ao destravar GRBL: {e}")
+
+def softReset(ser): 
+    """
+    Reseta o GRBL com o comando $SLP.
+    :param ser: porta serial para envio
+    """
+    if not ser:
+        return "Conexao serial não estabelecida."
+    try:
+        # Envia o comando para destravar
+        ser.write(b'\x18')
+        logDebug(f"GRBL --> $SLP")
+        # Le a resposta do GRBL
+        resposta1 = ser.readline().decode('utf-8').strip() #Grbl 1.1h ['$' for help]
+        resposta2 = ser.readline().decode('utf-8').strip() #[MSG: '$H'|'X' to unlock]
+        logDebug(f"GRBL <-- {resposta1},{resposta2}")
     except Exception as e:
         logError(f"Erro ao destravar GRBL: {e}")

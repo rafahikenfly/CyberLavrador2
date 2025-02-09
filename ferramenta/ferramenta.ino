@@ -143,6 +143,7 @@ void reportStatus() {
     Serial.print(",");
     Serial.print(analogRead(toolPin[1]));  //Mostra o valor da porta analogica no serial monitor
   }
+  //TODO: LOOKAHEAD BUFFER |Bf:lookahead_buffer
   //Fecha mensagem
   Serial.println(">");
 }

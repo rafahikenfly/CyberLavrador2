@@ -43,6 +43,8 @@ def salvarComandos(filaGCode, tarefa):
         pickle.dump((filaGCode, tarefa), file)
     logDebug(f"FilaGCode, tarefaID e índice salvos.")
 
+def timeoutComando(filaGCode, tarefaID, i):
+    processaErroGCode('Timeout',filaGCode,tarefaID,i)
 
 def trocaFerramenta(indexFerramenta, filaGCode):
     """

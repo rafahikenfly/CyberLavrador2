@@ -2,6 +2,8 @@ from firebase import initialize_firebase
 from firebase import read_realtime_db, update_realtime_db, listen_realtime_db, read_filtered_realtime_db
 from comunicacao import conectaPorta
 from grbl import desativaAlarme
+from grbl import desativarMotores
+from grbl import softReset
 
 from config import logDebug
 from config import logInfo
@@ -19,6 +21,7 @@ from gestorListaTarefas import marcaFalhaTarefa
 from gestorComandos import processaFilaGCode
 from gestorComandos import recuperarComandos
 from gestorComandos import salvarComandos
+from gestorComandos import timeoutComando
 
 from handlerEstado import estadoRobo
 import time
@@ -52,26 +55,14 @@ posFilaGCode = 0
 dormindo = True
 
 def inicializarRobo() :
-    # inicializa o robo, conectando o firebase com seus listeners
-    # e conectando os perifericos
-
-    #TODO: utilizar configurações dos periféricos registradas no firebase
-    GRBLport = "/dev/ttyACM0"
-    HEADport = "/dev/ttyUSB0"
-    PUMPport = "/dev/ttyACM2"
-    GRBLbaudrate = 115200  # Velocidade padrao do GRBL
-    HEADbaudrate = 9600
-    PUMPbaudrate = 9600
-
-    initialize_firebase()
-
-    #conecta com os perifericos
     global GRBL
     global HEAD
     global PUMP
-    GRBL = conectaPorta(GRBLport, GRBLbaudrate, "GRBL")
-    HEAD = conectaPorta(HEADport, HEADbaudrate, "HEAD")
-    PUMP = conectaPorta(PUMPport, PUMPbaudrate, "PUMP")
+    # inicializa o robo, conectando o firebase com seus listeners
+    # e conectando os perifericos
+
+
+    initialize_firebase()
 
     # Listener das "configuracoes" no realtime database
     def listenerConfig(event):
@@ -102,37 +93,52 @@ def inicializarRobo() :
         a funcao desperta o script
         """
         global proximaConsultaTarefas
-        logInfo(f"Tarefa atualizada: {event.path}")
-        acordar = False
+        logDebug(f"Tarefa atualizada: {event.path}")
+        adiantarConsultaTarefas = False
         
         # no caso de um event.data que seja um dicionario,
         # verifica as propriedades
         if isinstance(event.data, dict):
             # verifica se deve acordar por mudanca no estado
             if 'estado' in event.data and event.data['estado'] == "aguardando":
-                acordar = True
+                adiantarConsultaTarefas = True
             # verifica se deve acordar por mudanca no prazo
             if 'programa' in event.data and 'prazo' in event.data['programa']:
                 prazo_timestamp = event.data['programa']['prazo']
                 if prazo_timestamp < round(time.time() * 1000):
-                    acordar = True
+                    adiantarConsultaTarefas = True
                     
         # no caso de um event.data que seja um string
         # verifica o final do caminho
-        elif event.path.endswith('/estado') and event.data == "Aguardando":
-            acordar = True
+        elif event.path.endswith('/estado') and event.data == "aguardando":
+            adiantarConsultaTarefas = True
         elif event.path.endswith('/prazo') and event.data < round(time.time() * 1000):
-            acordar = True
+            adiantarConsultaTarefas = True
     
         # acorda, se for o caso
-        if acordar:
+        if adiantarConsultaTarefas:
             proximaConsultaTarefas = 0
-            logInfo("Acordando para verificar tarefas...")
+            logInfo("Consultando tarefas...")
 
     # Configura os listeners
     listen_realtime_db(pathConfiguracao, listenerConfig)
     listen_realtime_db(pathFerramenta, listenerFerramentas)
     listen_realtime_db(pathTarefas, listenerTarefas)
+
+    #conecta com os perifericos
+    GRBL = conectaPorta(config['GRBLPort'], config['GRBLBaud'], "GRBL")
+    HEAD = conectaPorta(config['HEADPort'], config['HEADBaud'], "HEAD")
+    PUMP = conectaPorta(config['PUMPPort'], config['PUMPBaud'], "PUMP")
+    #TODO:TEST utilizar configurações dos periféricos registradas no firebase
+#    HEAD = conectaPorta(HEADport, HEADbaudrate, "HEAD")
+#    PUMP = conectaPorta(PUMPport, PUMPbaudrate, "PUMP")
+#    GRBLport = "/dev/ttyACM0"
+#    HEADport = "/dev/ttyUSB0"
+#    PUMPport = "/dev/ttyACM2"
+#    GRBLbaudrate = 115200  # Velocidade padrao do GRBL
+#    HEADbaudrate = 9600
+#    PUMPbaudrate = 9600
+
 
 def reestabelecerRobo():
     global filaGCode
@@ -162,7 +168,6 @@ def reestabelecerRobo():
                 tarefaAtual = {}
                 salvarComandos(filaGCode,tarefaAtual)
 
-
 def atualizarConhecimento():
     #obtem a base de conhecimento atualizada
     global manejos
@@ -175,10 +180,11 @@ def atualizarConhecimento():
     plantas = read_realtime_db(pathPlantas)
 
 def reportaEstadoRTD(estado):
-    logInfo("Enviando estado para o banco de dados")
+    global proximoReporteEstado
+    global proximaConsultaTarefas
+    logInfo("Enviado estado do robo para o RTD")
     logDebug(estado)
     update_realtime_db(pathDispositivo + "/estado", estado)
-    global proximoReporteEstado
     proximoReporteEstado = (round(agora) + config['intervaloReporteEstadoInativo']) * 1000 if dormindo else (round(agora) + config['intervaloReporteEstadoAtivo']) * 1000
     proximoReporteEstado = min(proximaConsultaTarefas,proximoReporteEstado)
 
@@ -231,12 +237,24 @@ def processarProximaTarefa():
               # marca a falha no histórico
             marcaFalhaTarefa(tarefaAtual['key'], info[1])
     else: # Se a fila de tarefas estiver vazia
-        logInfo(f"Fim da lista de tarefas")
-        dormindo = True
+        logInfo(f"Fim da lista de tarefas. Dormindo...")
+        dormir()
         return False
 
+def dormir():
+    global dormindo
+    dormindo = True
+    desativarMotores()
 
+    # TODO: quando dormir, desligar os motores e voltar para home
 
+def acordar():
+    global dormindo
+    global filaGCode
+    dormindo = False
+    softReset()
+    desativaAlarme()
+    if not len(filaGCode): processarProximaTarefa()
 
 if __name__ == "__main__":
     inicializarRobo()
@@ -261,34 +279,32 @@ if __name__ == "__main__":
         if recuperar: estado = estadoRobo(GRBL, HEAD, PUMP, filaTarefas, tarefaAtual, filaGCode, dormindo)
 
         # Verifica se ha alguma atividade em andamento. O robô está ativo
-        # se algum dos periféricos não está em estado Idle. Se todos estiverem, ou
-        # se nenhum periférico estiver instalado, ele está inativo
+        # se houver algum gcode na fila ou se algum dos periféricos não está em estado Idle.
+        # Esta última condição é importante especialmente no caso de muitos comandos
+        # enviados para o GRBL no final de uma tarefa
         ativo = False
-        #TODO: acho que a variavel Ativo nao tem mais nenhuma funcao alem de estado
+        if len(filaGCode): ativo = True
         if GRBL and estado['GRBL']['estado'] == 'Run': ativo = True
+        if HEAD and estado['HEAD']['estado'] == 'Run': ativo = True 
         #TODO: manusear os estados dos demais perifericos
-        #TODO: if HEAD and estado["HEAD"]["estado"] == "Run": ativo = True 
         #TODO: if PUMP and estado["PUMP"]["estado"] != "Idle": ativo = True 
-
-        # Verifica se deve dormir
-        # Se ha atividade em andamento,comandos na fila, ou reporte de
-        # estado necessario, deve ficar acordado.
-#        dormindo = not (ativo or len(filaGCode)>0)
 
         # Começa o loop principal após as verificações e recuperações
         logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {dormindo}. Fila Tarefa: {len(filaTarefas)}. Fila GCode: {len(filaGCode)}")
 
         # Se for necessario, reporta o estado no RTD
+        # TODO:TEST está enviando a cada loop o estado
+        # TODO: durante o processamento da fila não atualiza o estado
         if agora > proximoReporteEstado: reportaEstadoRTD(estado)
 
         if dormindo:
-        # Se estiver dormindo, quer dizer que nao ha comandos na fila
-        # nem alguma atividade em andamento. O robo vai continuara doemindo
-        # ate obter uma nova tarefa da fila. Isso acontece ou pelo decurso de
+        # Se estiver dormindo, quer dizer que nao ha comandos na fila,
+        # nem movimento nos motores ou tarefas na fila. O robo vai continuara
+        # dormindovate obter uma nova tarefa da fila, o que acontece decorrido o
         # intervalo da consulta de tarefas ou por acao do listener da chave de
-        # tarefas, que adianta a proxima consulta. De qualquer modo, isso
-        # acontece quando agora > proxima Consulta.
-            # Se necessário (por decurso de prazo e fila de tarefas vazia),
+        # tarefas, que adianta a proxima consulta. Ambas as situações são identificadas
+        # por agora > proxima Consulta.
+            # Se necessário (por prazo decorrido e fila de tarefas vazia),
             # consulta a fila de tarefas e atualiza o registro do prazo da
             # próxima consulta de fila de tarefas
             if agora > proximaConsultaTarefas and not len(filaTarefas):
@@ -301,30 +317,35 @@ if __name__ == "__main__":
                 if len(filaTarefas): # Se a consulta retornar alguma tarefa, otimiza
                                      # a fila de tarefas e acorda
                     filaTarefas = otimizarFilaTarefas()
-                    dormindo = False
-                    if not len(filaGCode): processarProximaTarefa()
+                    acordar()
                 else:
-                    # Se a consulta não retornar nenhuma tarefa, continua dormindo
-                    # TODO: quando dormir, desligar os motores e voltar para home
-                    dormindo = True
+                    logDebug(f"Nenhuma nova tarefa, continuando a dormir.")
 
-        if ativo or not dormindo:
-            # Se nao estiver dormindo, quer dizer que ha comandos na fila
-            # ou alguma atividade em andamento. Independente do caso, deve
-            # processar a fila de comandos, pois pode ser possível enviar
-            # um novo comando.
-            posFilaGCode = processaFilaGCode(filaGCode, GRBL, estado['GRBL']['lookahead_buffer'], HEAD, 99, PUMP, 99, tarefaAtual['key'], posFilaGCode)
-            
-            #TODO: timeout no caso de muita espera de um comando da fila
-            #TODO: so marcar tarefa como concluida quando o robo nao estiver mais ativo.
-            # essa condicao imposta aqui nao funciona, pois o robo esta ativo e dormindo
-            if posFilaGCode >= len(filaGCode) and ativo == False:
-                marcaTarefaConcluida(tarefaAtual['key'],minInicioTarefaAtual)
+        else:
+            # Se não está dormindo, ou há comandos na fila de gcodes ou há atividade
+            # em andamento. Independente do caso, deve processar a fila de gcodes,
+            # pois é provável que se possam enviar novos comandos. Processa um timeout
+            # no caso de um comando que trave o robo por determinado tempo
+            prevPosFilaGCode = posFilaGCode
+            posFilaGCode = processaFilaGCode(filaGCode, GRBL, estado['GRBL']['lookahead_buffer'], HEAD, estado['GRBL']['lookahead_buffer'], PUMP, 99, tarefaAtual['key'], posFilaGCode)
+            #TODO: Implementar buffer de PUMP
+            #TODO:TEST Implementar buffer de HEAD            
+
+            #TODO:TEST timeout no caso de muita espera de um comando da fila
+            # O timeout do comando gera um erro na fila no caso de a posição anterior
+            # ser igual a posicao nova mesmo após o tempo de timeout. Cada loop que
+            # avanca na fila reestabelece o timer de timeout
+            if prevPosFilaGCode != posFilaGCode:
+                gCodeTimeout = agora + config['gcodeTimeout']
+            elif agora > gCodeTimeout:
+                timeoutComando(filaGCode, tarefaAtual['key'], posFilaGCode)
+            #TODO:TEST so marcar tarefa como concluida com os periféricos em Idle
+            if posFilaGCode >= len(filaGCode) and estado['GRBL']['estado'] == 'Idle':
+                marcaTarefaConcluida(tarefaAtual['key'], minInicioTarefaAtual)
                 filaGCode = []
                 tarefaAtual = {}
                 salvarComandos(filaGCode,tarefaAtual)
                 processarProximaTarefa()
-            #TODO Implementar buffer de HEAD e PUMP
 
         # espera o intervalo de frequencia do loop principal.
         time.sleep(config['baixaFrequencia'] if dormindo else config['frequencia'])

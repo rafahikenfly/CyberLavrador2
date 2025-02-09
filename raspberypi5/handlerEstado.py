@@ -1,5 +1,6 @@
 from comunicacao import enviaGCode
 from grbl import obterEstadoGRBL
+from head import obterEstadoHEAD
 import time
 from firebase import update_realtime_db
 from config import logInfo
@@ -19,8 +20,11 @@ def estadoRobo(GRBL, HEAD, PUMP, filaTarefas, tarefaAtual, filaGCode, sleep):
             'lookahead_buffer': 0,
         }
     if HEAD:
-        resposta = enviaGCode(HEAD, "?") #TODO: criar o arquivo de comunicacao com a HEAD
-        estadoHEAD = resposta[1] if resposta[0] else {"estado": "Offline"}
+        resposta = obterEstadoHEAD(HEAD)
+        estadoHEAD = resposta if resposta else {
+            'estado': 'Offline',
+            'lookahead_buffer': 0,
+            }
     if PUMP:
         resposta = enviaGCode(PUMP, "?")
         estadoHEAD = resposta[1] if resposta[0] else {"estado": "Offline"}
