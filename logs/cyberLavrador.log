@@ -2119,3 +2119,1219 @@
 2025-02-08 01:53:00,915 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
 2025-02-08 01:53:15,918 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
 2025-02-08 01:53:30,921 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:53:45,925 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:54:00,926 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:54:15,927 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:54:15,927 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:54:15,931 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 01:54:16,530 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:54:16,531 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:54:31,532 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:54:46,536 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:55:01,540 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:55:16,544 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:55:31,549 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:55:46,551 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:56:01,553 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:56:16,557 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:56:31,561 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:56:46,566 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:57:01,569 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:57:16,571 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:57:18,701 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSalAILrPHfM1BAg
+2025-02-08 01:57:31,575 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:57:46,580 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:58:01,584 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:58:16,589 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:58:31,592 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:58:46,597 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:59:01,601 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:59:16,604 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:59:16,604 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 01:59:16,607 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 01:59:17,150 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 01:59:17,150 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 01:59:32,153 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 01:59:47,157 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:00:02,164 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:00:17,167 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:00:32,173 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:00:47,174 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:00:52,137 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSQKCCqQKxMPs3WW
+2025-02-08 02:01:02,176 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:01:17,183 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:01:32,189 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:01:47,193 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:02:02,201 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:02:17,206 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:02:32,089 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:02:47,089 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:02:56,637 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSSw5lbOSQNCxOtO
+2025-02-08 02:03:00,485 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_AaWd0mC7KXg4oU
+2025-02-08 02:03:01,064 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_GZ-kJuyF4bNvVf
+2025-02-08 02:03:01,624 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_A_ecQ3TRNiyMov
+2025-02-08 02:03:02,089 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:03:02,231 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_DYk5oQ2xKcyOUJ
+2025-02-08 02:03:02,920 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_D_4zrSjTXWcno5
+2025-02-08 02:03:17,093 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:03:32,097 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:03:47,101 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:04:02,105 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:04:08,415 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSVxiOcw3qtgABGd
+2025-02-08 02:04:12,682 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_G_XckWdnb6qhKc
+2025-02-08 02:04:13,304 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JhASzIKHmEQusg
+2025-02-08 02:04:13,855 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JhASzIKHmEQush
+2025-02-08 02:04:14,429 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MuOH_6kyDhitEK
+2025-02-08 02:04:15,110 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MvGITTxDNlBK4I
+2025-02-08 02:04:17,108 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:04:17,109 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 02:04:17,113 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:04:17,491 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 02:04:17,492 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 02:04:32,496 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:04:47,498 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:05:02,502 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:05:17,506 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:05:32,509 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:05:47,511 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:06:02,512 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:06:17,515 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:06:32,520 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:06:47,522 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:07:02,526 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:07:17,530 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:07:32,533 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:07:47,537 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:08:02,541 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:08:17,544 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:08:32,548 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:08:47,548 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:09:02,549 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:09:17,551 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:09:17,552 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 02:09:17,556 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:09:18,148 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 02:09:18,149 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 02:09:33,153 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:09:48,158 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:10:03,160 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:10:18,163 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:10:33,167 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:10:48,173 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:11:03,178 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:11:18,182 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:11:33,186 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:11:48,192 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:12:01,133 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:12:01,545 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 02:12:01,580 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 02:12:03,210 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:12:18,237 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:12:33,237 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:12:48,241 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:13:03,246 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:13:18,248 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:13:33,252 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:13:48,255 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:14:03,257 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:14:18,260 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:14:18,261 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 02:14:18,264 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:14:18,627 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 02:14:18,629 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 02:14:33,633 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:14:48,636 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:15:03,642 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:15:18,642 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:15:33,647 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:15:48,651 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:16:03,656 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:16:18,659 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:16:33,663 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:16:48,669 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:17:03,673 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:17:18,677 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:17:33,681 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:17:48,770 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:18:03,774 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:18:18,778 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:18:33,782 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:18:48,787 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:19:03,790 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:19:18,790 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:19:18,791 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 02:19:18,794 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:19:19,166 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 02:19:19,168 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 02:19:34,170 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:19:49,177 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:20:04,179 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:20:19,181 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:20:34,184 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:20:49,187 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:21:04,195 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:21:19,199 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:21:34,203 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:21:49,209 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:22:04,214 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:22:19,217 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:22:34,222 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:22:49,225 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:23:04,229 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:23:19,234 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:23:34,238 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:23:49,243 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:24:04,248 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:24:19,253 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:24:19,253 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 02:24:19,257 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 02:24:19,644 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 02:24:19,645 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 02:24:34,648 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:24:49,653 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:25:04,657 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:25:19,662 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 02:25:34,815 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 04:25:46,222 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 04:25:46,223 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 04:25:46,227 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 04:25:46,229 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 04:25:46,430 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 04:25:46,435 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 04:25:46,955 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:46,957 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:47,150 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22Aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 8383
+2025-02-08 04:25:47,151 - CyberLavrador 2.0 - DEBUG - 13 tarefa(s) com estado Aguardando no lote.
+2025-02-08 04:25:47,152 - CyberLavrador 2.0 - DEBUG - 13 tarefa(s) vencidas.
+2025-02-08 04:25:47,152 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,152 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,153 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,154 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,155 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,156 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,156 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,156 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,156 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,157 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,158 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,159 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,160 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,161 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,161 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,161 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,161 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,161 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,162 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,163 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,163 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,163 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,164 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,165 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,166 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,166 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,166 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,166 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,166 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,167 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,168 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,169 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,170 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,171 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,171 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,171 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,171 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,171 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - agua
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - arado
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - camera
+2025-02-08 04:25:47,172 - CyberLavrador 2.0 - INFO - fertilizante
+2025-02-08 04:25:47,173 - CyberLavrador 2.0 - INFO - laser
+2025-02-08 04:25:47,173 - CyberLavrador 2.0 - INFO - manual
+2025-02-08 04:25:47,173 - CyberLavrador 2.0 - INFO - medicamento
+2025-02-08 04:25:47,173 - CyberLavrador 2.0 - INFO - rocadeira
+2025-02-08 04:25:47,173 - CyberLavrador 2.0 - INFO - sensorDistancia
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - INFO - sensorPH
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - INFO - sensorTemperatura
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - INFO - sensorUmidade
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - INFO - sombrite
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - INFO - vacuo
+2025-02-08 04:25:47,174 - CyberLavrador 2.0 - DEBUG - 13 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 04:25:47,175 - CyberLavrador 2.0 - INFO - 13 tarefa(s) em condição de execução.
+2025-02-08 04:25:47,175 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHuVbBO5bDcKm-oz4eT não encontrada: -OHSQ_4xUcnpzVZtLonP
+2025-02-08 04:25:47,354 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHuVbBO5bDcKm-oz4eT.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:47,354 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:47,540 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVbBO5bDcKm-oz4eT.json HTTP/11" 200 31
+2025-02-08 04:25:47,542 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 04:25:47,724 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVbBO5bDcKm-oz4eT.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:47,725 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:47,725 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHuVgWaL_aW9khs7Nxb não encontrada: -OHSQ_Mwn-705SLhmdGI
+2025-02-08 04:25:47,913 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHuVgWaL_aW9khs7Nxb.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:47,914 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:48,099 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVgWaL_aW9khs7Nxb.json HTTP/11" 200 31
+2025-02-08 04:25:48,100 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 04:25:48,322 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVgWaL_aW9khs7Nxb.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:48,323 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:48,323 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHuVh1oq6GdOYlvYBVc não encontrada: -OHSQ_7jQEEig3L7yclX
+2025-02-08 04:25:48,505 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHuVh1oq6GdOYlvYBVc.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:48,506 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:48,678 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVh1oq6GdOYlvYBVc.json HTTP/11" 200 31
+2025-02-08 04:25:48,679 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 04:25:48,868 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVh1oq6GdOYlvYBVc.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:48,869 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:48,869 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHuVhZ4cAw4osKlHdAM não encontrada: -OHSQ_Q2Ya84dtp90-vR
+2025-02-08 04:25:49,053 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHuVhZ4cAw4osKlHdAM.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:49,054 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:49,238 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVhZ4cAw4osKlHdAM.json HTTP/11" 200 31
+2025-02-08 04:25:49,240 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 04:25:49,419 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVhZ4cAw4osKlHdAM.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:49,420 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:49,420 - CyberLavrador 2.0 - ERROR - Planta vinculada a tarefa -OHuVi4KP-I8pD2VV6YL não encontrada: -OHSQ_AbvqykuXimZI2n
+2025-02-08 04:25:49,608 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHuVi4KP-I8pD2VV6YL.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:49,609 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 04:25:49,790 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVi4KP-I8pD2VV6YL.json HTTP/11" 200 31
+2025-02-08 04:25:49,791 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 04:25:49,972 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /historicos/-OEy62gRLp6VMWWHs7Kt/-OHuVi4KP-I8pD2VV6YL.json?print=silent HTTP/11" 204 0
+2025-02-08 04:25:49,973 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 06:26:47,549 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 06:26:47,550 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 06:26:47,552 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 06:27:57,243 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 06:27:57,246 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 06:27:57,417 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 06:27:57,419 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:27:57,940 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 06:27:58,692 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 06:28:06,971 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:28:07,353 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 06:28:07,364 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 06:28:13,498 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:28:13,900 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 06:28:13,907 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 06:38:37,702 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSYuwtvAz5ufFAVa/descricao
+2025-02-08 06:39:02,075 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSYuwtvAz5ufFAVa/nome
+2025-02-08 06:48:32,520 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:48:32,894 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 06:48:33,625 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 06:48:38,336 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:48:38,708 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 06:48:38,717 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 06:48:44,323 - urllib3.connectionpool - DEBUG - Resetting dropped connection: microagricultura-fbdc5-default-rtdb.firebaseio.com
+2025-02-08 06:48:45,029 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 06:48:45,036 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 06:54:03,887 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OIPc_ZuJoGdKVZ3Arrl
+2025-02-08 06:54:03,891 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHy6caKTQmMTLT-jlpY
+2025-02-08 06:54:03,894 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHxvz8bBe8inxydCmNE
+2025-02-08 06:54:03,896 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHxkKqLhSpUyjbSfiE5
+2025-02-08 06:54:03,898 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHxZgBHoQOUhqQQzNir
+2025-02-08 06:54:03,899 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHxO5phKOOW8JxCA5uX
+2025-02-08 06:54:03,900 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHxCSHUHvXLbnMwBFTC
+2025-02-08 06:54:03,901 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHx0o4o6mPbS_EPxopL
+2025-02-08 06:54:56,003 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSQKCCqQKxMPs3WW
+2025-02-08 06:54:56,007 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSSw5lbOSQNCxOtO
+2025-02-08 06:54:56,009 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSVxiOcw3qtgABGd
+2025-02-08 06:54:56,013 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSYuwtvAz5ufFAVa
+2025-02-08 06:54:56,016 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSalAILrPHfM1BAg
+2025-02-08 06:54:56,017 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSdpttAiG8DnqJPO
+2025-02-08 06:54:56,018 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSgcA0ocXNyBphan
+2025-02-08 06:54:56,021 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSjhRq682s6srkt4
+2025-02-08 06:54:56,026 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7fbKQ6SVMpBuDZ
+2025-02-08 06:54:56,027 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Q1mJOfEObD6nru
+2025-02-08 06:54:56,030 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Q0ztn4pdOX7hVs
+2025-02-08 06:54:56,033 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MvGITTxDNlBK4I
+2025-02-08 06:54:56,035 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MuOH_6kyDhitEK
+2025-02-08 06:54:56,039 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JhASzIKHmEQush
+2025-02-08 06:54:56,041 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JhASzIKHmEQusg
+2025-02-08 06:54:56,042 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_G_XckWdnb6qhKc
+2025-02-08 06:54:56,043 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_GZ-kJuyF4bNvVf
+2025-02-08 06:54:56,045 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_D_4zrSjTXWcno5
+2025-02-08 06:54:56,048 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_DYk5oQ2xKcyOUJ
+2025-02-08 06:54:56,050 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_AaWd0mC7KXg4oU
+2025-02-08 06:54:56,051 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_A_ecQ3TRNiyMov
+2025-02-08 06:54:56,054 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7g4kX06Px0Lzad
+2025-02-08 06:54:56,056 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVi4KP-I8pD2VV6YL
+2025-02-08 06:54:56,070 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVhZ4cAw4osKlHdAM
+2025-02-08 06:54:56,072 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVh1oq6GdOYlvYBVc
+2025-02-08 06:54:56,074 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVgWaL_aW9khs7Nxb
+2025-02-08 06:54:56,075 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVbBO5bDcKm-oz4eT
+2025-02-08 06:54:56,077 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVaf0QdMw5l_vhBZR
+2025-02-08 06:54:56,079 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuVa8SGiB49-fGQNCN
+2025-02-08 06:54:56,080 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuV_bnIbDuZezUWfuf
+2025-02-08 06:54:56,081 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHuV_5H3SBlmPKV_rJ2
+2025-02-08 06:54:56,082 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_W14_gH53WAhdwz
+2025-02-08 06:54:56,083 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_W14_gH53WAhdwy
+2025-02-08 06:54:56,084 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Swk5zboMeoWyFD
+2025-02-08 06:54:56,085 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_SvV1-IFtEprBZe
+2025-02-08 06:55:39,329 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSVvZsIY1M3TFMTT
+2025-02-08 06:55:39,331 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSajtMbYi44FeL7t
+2025-02-08 06:55:39,334 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHL5NWDcrkpn8QPReVZ
+2025-02-08 06:55:39,337 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7c-pUyaXl7O0nF
+2025-02-08 06:55:39,344 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSYqXZmgQMKhfDSS
+2025-02-08 06:55:39,348 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_AZ9GlL19_WvBa7
+2025-02-08 06:55:39,350 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7emJSaef2eN4fy
+2025-02-08 06:55:39,352 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_7iNEtpjJGvlRN_
+2025-02-08 06:55:39,353 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_AY7_L1mLirZI-G
+2025-02-08 06:55:39,354 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_AbvqykuXimZI2m
+2025-02-08 06:55:39,355 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_DW6eJ3jXLUz5Pu
+2025-02-08 06:55:39,356 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_D_4zrSjTXWcno6
+2025-02-08 06:55:39,357 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_GWOn4Ry-oF4K2b
+2025-02-08 06:55:39,358 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JfY4uVjy09e5yg
+2025-02-08 06:55:39,376 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_G_XckWdnb6qhKd
+2025-02-08 06:55:39,377 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Ji7g2fJWGWINry
+2025-02-08 06:55:39,378 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MtNXDUMMIT6YLy
+2025-02-08 06:55:39,379 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Mwn-705SLhmdGH
+2025-02-08 06:55:39,380 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_PzLxZH2y5Jbr2E
+2025-02-08 06:55:39,382 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Q1mJOfEObD6nrv
+2025-02-08 06:55:39,383 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Sti-yk0xh9XsOw
+2025-02-08 06:55:39,385 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_SxnECmc5_TBvd8
+2025-02-08 06:55:39,388 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_VzrB9EattuQvHy
+2025-02-08 06:55:39,390 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_W2XuuKK5G_Yv2P
+2025-02-08 06:55:39,391 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_iT-JT4JrQ0-7iU5W
+2025-02-08 06:55:39,392 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_iTWwjZ_-yW9IVv9N
+2025-02-08 06:55:39,394 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_iU2nexdPWg-4tvAV
+2025-02-08 06:55:39,395 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_iUa_X5zdXBPavqla
+2025-02-08 06:55:39,396 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_iV7VpezDPjp8I9SN
+2025-02-08 06:55:39,398 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_kKdQVGe69QTF8V2k
+2025-02-08 06:55:39,399 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_kLDDA2jqBrx-oemB
+2025-02-08 06:55:39,400 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_kLkhirO4qK76Omx-
+2025-02-08 06:55:39,401 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OH_kMIWjvDUXInvyM5F
+2025-02-08 06:55:39,403 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHbwU5PpjsQAKOAYzhK
+2025-02-08 06:55:39,404 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHbvh50KBbZgVSTgesR
+2025-02-08 06:55:39,405 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHbxXWeECeMBsmILv_R
+2025-02-08 06:55:39,406 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHc0Ymann6GuRlwXxfE
+2025-02-08 06:55:39,407 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHcCyk8gM29B8l1BI9x
+2025-02-08 06:55:39,410 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHfuoec7clgx-X-SRgr
+2025-02-08 06:55:39,411 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHgMKocUMf4cEJtQuCx
+2025-02-08 06:55:39,412 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHiQCni70V8ZweTp-O-
+2025-02-08 06:55:39,414 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8X1PYqZkPwxJhTO_
+2025-02-08 06:55:39,431 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8WWTd_UYtNG6017L
+2025-02-08 06:55:39,432 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8XYvttsgdcw1A-aF
+2025-02-08 06:55:39,433 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8Y4S2lVwvm84udZ4
+2025-02-08 06:55:39,434 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8YaZpDa2nqbmtakp
+2025-02-08 06:55:39,435 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8csgFq_z8CpNiH7d
+2025-02-08 06:55:39,436 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8dP4lBKv5CUdK6Xc
+2025-02-08 06:55:39,438 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8duqSlxeom4d2W3y
+2025-02-08 06:55:39,439 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHk8eQKt71huHijbAHd
+2025-02-08 06:55:39,440 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHlPKFGlGLAnUBjD7Dt
+2025-02-08 06:55:39,440 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHlo6fmr0XJBtiwd-YK
+2025-02-08 06:55:39,441 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHmQXJF2Aze4LVZg4uQ
+2025-02-08 06:55:39,442 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHm_vQdnzAcPtkdOqDv
+2025-02-08 06:55:39,444 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHmadeUXQRXbgRRPgg3
+2025-02-08 06:55:39,445 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHmbMZPl-AY3JFyUZqj
+2025-02-08 06:55:39,446 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHmoU4vfCUUhT1wTjh-
+2025-02-08 06:55:39,447 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHnt1vKYZ81ADM0Pg-p
+2025-02-08 06:55:39,448 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHqj0bkUk-eb9-ob7_m
+2025-02-08 06:55:39,449 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHs58xBXH_c8tYtbFsh
+2025-02-08 06:55:39,450 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHslAvkiO59SfcvQ8k6
+2025-02-08 06:55:51,732 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSVwCeC6xnlH2LKi
+2025-02-08 06:55:51,734 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSYsTdT_9kal5j_R
+2025-02-08 06:55:51,736 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSakCar1Tup1h1ku
+2025-02-08 06:55:51,740 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSdmdFIMFV2jjDtb
+2025-02-08 06:55:51,743 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSdoUxxPk9iov4oY
+2025-02-08 06:55:51,746 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSgbnBpOZV2fIrcR
+2025-02-08 06:55:51,747 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHKXSjgoVF1Gf8zjLSb
+2025-02-08 06:55:51,749 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_DXQ3GIQ9FeNlAr
+2025-02-08 06:55:51,751 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_GYjnjfeU2fhoyr
+2025-02-08 06:55:51,753 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_JgJbQL2rEn3fj7
+2025-02-08 06:55:51,754 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_MtNXDUMMIT6YLz
+2025-02-08 06:55:51,755 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Q-h-KIXFBzYkkn
+2025-02-08 06:55:51,756 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_Su2H3i578WVN45
+2025-02-08 06:55:51,757 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHSQ_W-WmIFRj-ysL0r
+2025-02-08 22:50:28,248 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:50:28,249 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:50:28,250 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:50:28,250 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:50:28,250 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:50:28,250 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:50:28,251 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:50:28,257 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:50:28,291 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:50:28,483 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:50:28,489 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:50:29,061 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:50:29,068 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:50:29,069 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:50:29,071 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:50:29,073 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:50:29,075 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:50:29,490 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:50:29,499 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:50:29,502 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:50:29,503 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:50:29,503 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:50:29,506 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:50:29,867 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:50:29,878 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:50:29,881 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:50:30,253 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:50:30,431 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:50:30,618 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:50:30,810 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:52:22,093 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:52:22,094 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:52:22,094 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:52:22,094 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:52:22,094 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:52:22,094 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:52:22,095 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:52:22,097 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:52:22,109 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:52:22,269 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:52:22,274 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:52:22,630 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:52:22,636 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:52:22,636 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:52:22,652 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:52:22,653 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:52:22,676 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:52:23,150 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:52:23,158 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:52:23,162 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:52:23,162 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:52:23,163 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:52:23,166 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:52:23,551 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:52:23,563 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:52:23,566 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:52:23,936 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:52:24,173 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:52:24,378 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:52:24,561 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:52:24,562 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 22:52:24,563 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 22:52:24,563 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739065945000, 'GRBL': {'estado': 'Desligado'}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'filaTarefas': 0, 'tarefaAtual': {}, 'filaAtual': 0}
+2025-02-08 22:52:24,749 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 22:52:24,750 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 22:54:17,138 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:54:17,138 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:54:17,138 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:54:17,138 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:54:17,139 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:54:17,139 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:54:17,139 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:54:17,142 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:54:17,152 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:54:17,320 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:54:17,324 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:54:17,703 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:54:17,707 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:54:17,708 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:54:17,708 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:54:17,708 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:54:17,710 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:54:18,249 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:54:18,256 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:54:18,258 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:54:18,259 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:54:18,259 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:54:18,261 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:54:18,659 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:54:18,673 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:54:18,675 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:54:19,037 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:54:19,227 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:54:19,409 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:54:19,593 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:54:19,594 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 22:54:19,594 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 22:54:19,595 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066060000, 'GRBL': {'estado': 'Desligado'}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 22:54:19,869 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 22:54:19,870 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 22:56:23,715 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:56:23,715 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:56:23,715 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:56:23,715 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:56:23,716 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:56:23,716 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:56:23,716 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:56:23,720 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:56:23,729 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:56:23,899 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:56:23,904 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:56:24,270 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:56:24,275 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:56:24,276 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:56:24,276 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:56:24,277 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:56:24,279 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:56:24,695 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:56:24,701 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:56:24,702 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:56:24,702 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:56:24,703 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:56:24,705 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:56:25,103 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:56:25,118 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:56:25,120 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:56:25,555 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:56:25,748 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:56:25,932 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:56:26,116 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:56:26,118 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 22:56:26,118 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 22:56:26,118 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066186000, 'GRBL': {'estado': 'Desligado'}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 22:56:26,318 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 22:56:26,319 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 22:57:16,289 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:57:16,289 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:57:16,289 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:57:16,289 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:57:16,290 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:57:16,290 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:57:16,290 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:57:16,293 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:57:16,306 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:57:16,474 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:57:16,478 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:57:17,037 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:57:17,045 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:57:17,046 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:57:17,047 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:57:17,047 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:57:17,050 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:57:17,450 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:57:17,458 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:57:17,462 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:57:17,462 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:57:17,462 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:57:17,465 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:57:17,825 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:57:17,834 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:57:17,837 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:57:18,270 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:57:18,457 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:57:18,644 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:57:18,821 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:57:18,823 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 22:57:18,823 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 22:57:18,823 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066239000, 'GRBL': {'estado': 'Desligado'}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 22:57:19,086 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 22:57:19,087 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 22:59:26,428 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 22:59:26,428 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 22:59:26,429 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 22:59:26,429 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 22:59:26,429 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:59:26,429 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 22:59:26,429 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:59:26,433 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 22:59:26,444 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 22:59:26,608 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 22:59:26,613 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:59:26,974 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 22:59:26,981 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 22:59:26,982 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 22:59:26,983 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:59:26,983 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 22:59:26,986 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:59:27,386 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 22:59:27,395 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 22:59:27,395 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 22:59:27,398 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 22:59:27,399 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 22:59:27,403 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:59:27,760 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 22:59:27,779 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 22:59:27,781 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 22:59:28,173 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 22:59:28,420 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 22:59:28,605 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 22:59:28,789 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 22:59:28,790 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 22:59:28,791 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 22:59:28,791 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066369000, 'GRBL': {'estado': 'Desligado'}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 22:59:28,975 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 22:59:28,977 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:02:50,111 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 23:02:50,111 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 23:02:50,111 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 23:02:50,111 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 23:02:50,111 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:02:50,112 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 23:02:50,112 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:02:50,115 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 23:02:50,126 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 23:02:50,297 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 23:02:50,302 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:02:50,736 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 23:02:50,739 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 23:02:50,739 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 23:02:50,739 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 23:02:50,740 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:02:50,741 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:02:51,172 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 23:02:51,180 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 23:02:51,184 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 23:02:51,184 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:02:51,185 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 23:02:51,188 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:02:51,554 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 23:02:51,562 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 23:02:51,563 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:02:51,921 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 23:02:52,113 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 23:02:52,294 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 23:02:52,595 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 23:02:52,596 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:02:52,596 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:02:52,596 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066573000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:02:52,780 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:02:52,782 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:04:17,604 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 23:04:17,605 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 23:04:17,605 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 23:04:17,605 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 23:04:17,605 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:17,606 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 23:04:17,606 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:17,609 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 23:04:17,619 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 23:04:17,803 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 23:04:17,807 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:18,416 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 23:04:18,424 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 23:04:18,426 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 23:04:18,427 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:18,427 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 23:04:18,429 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:18,925 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 23:04:18,932 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 23:04:18,933 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 23:04:18,933 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 23:04:18,934 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:18,936 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:19,295 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 23:04:19,306 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 23:04:19,308 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:19,697 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 23:04:19,880 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 23:04:20,064 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 23:04:20,247 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 23:04:20,248 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:04:20,248 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:04:20,248 - CyberLavrador 2.0 - DEBUG - {'dormindo': True, 'hora': 1739066660000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:04:20,427 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:04:20,428 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:04:45,203 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 23:04:45,203 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 23:04:45,204 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 23:04:45,204 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 23:04:45,204 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:45,204 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 23:04:45,205 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:45,209 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 23:04:45,221 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 23:04:45,385 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 23:04:45,390 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:45,749 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 23:04:45,750 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 23:04:45,753 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 23:04:45,753 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:45,753 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 23:04:45,755 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:46,128 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 23:04:46,135 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 23:04:46,141 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 23:04:46,141 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:04:46,142 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 23:04:46,145 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:46,552 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 23:04:46,568 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 23:04:46,570 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:04:46,983 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 23:04:47,224 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 23:04:47,416 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 23:04:47,600 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 23:04:47,600 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:04:47,600 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:04:47,600 - CyberLavrador 2.0 - DEBUG - {'dormindo': True, 'hora': 1739066688000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:04:47,893 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:04:47,894 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:04:48,111 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 4
+2025-02-08 23:04:48,113 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) com estado Aguardando no lote.
+2025-02-08 23:04:48,113 - CyberLavrador 2.0 - DEBUG - 0 tarefa(s) vencidas.
+2025-02-08 23:05:03,118 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:05:03,119 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:05:03,119 - CyberLavrador 2.0 - DEBUG - {'dormindo': True, 'hora': 1739066703000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:05:03,312 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:05:03,313 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:05:18,318 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:05:33,322 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:05:38,829 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHwBruB2Gjmep09g7OI
+2025-02-08 23:05:38,829 - CyberLavrador 2.0 - INFO - Acordando para verificar tarefas...
+2025-02-08 23:05:48,325 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:05:48,508 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 631
+2025-02-08 23:05:48,509 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) com estado Aguardando no lote.
+2025-02-08 23:05:48,510 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) vencidas.
+2025-02-08 23:05:48,510 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 23:05:48,510 - CyberLavrador 2.0 - INFO - 1 tarefa(s) em condição de execução.
+2025-02-08 23:05:48,510 - CyberLavrador 2.0 - ERROR - Erro ao obter fila de tarefas: 'list' object has no attribute 'values'
+2025-02-08 23:06:03,515 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:06:18,520 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:06:33,525 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:06:59,120 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 23:06:59,120 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 23:06:59,121 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 23:06:59,121 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 23:06:59,121 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:06:59,121 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 23:06:59,121 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:06:59,124 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 23:06:59,135 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 23:06:59,308 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 23:06:59,312 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:06:59,752 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 23:06:59,759 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 23:06:59,761 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 23:06:59,762 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:06:59,762 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 23:06:59,766 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:07:00,190 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 23:07:00,198 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 23:07:00,203 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 23:07:00,203 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:07:00,203 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 23:07:00,208 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:07:00,589 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 23:07:00,600 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 23:07:00,602 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:07:00,999 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 23:07:01,219 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 23:07:01,418 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 23:07:01,601 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 23:07:01,602 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:07:01,602 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:07:01,602 - CyberLavrador 2.0 - DEBUG - {'dormindo': True, 'hora': 1739066822000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:07:01,906 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:07:01,909 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:07:02,151 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 631
+2025-02-08 23:07:02,152 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) com estado Aguardando no lote.
+2025-02-08 23:07:02,153 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) vencidas.
+2025-02-08 23:07:02,153 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 23:07:02,153 - CyberLavrador 2.0 - INFO - 1 tarefa(s) em condição de execução.
+2025-02-08 23:07:03,158 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:07:03,159 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:07:03,159 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739066823000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 1, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:07:03,523 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:07:03,523 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:10:39,498 - CyberLavrador 2.0 - INFO - Firebase iniciado.
+2025-02-08 23:10:39,498 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para GRBL: [Errno 2] could not open port /dev/ttyACM0: [Errno 2] No such file or directory: '/dev/ttyACM0'
+2025-02-08 23:10:39,498 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para HEAD: [Errno 2] could not open port /dev/ttyUSB0: [Errno 2] No such file or directory: '/dev/ttyUSB0'
+2025-02-08 23:10:39,498 - CyberLavrador 2.0 - ERROR - Erro ao estabelecer conexao serial para PUMP: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+2025-02-08 23:10:39,499 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:10:39,499 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao
+2025-02-08 23:10:39,499 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:10:39,502 - google.auth.transport.requests - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2025-02-08 23:10:39,511 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2025-02-08 23:10:39,725 - urllib3.connectionpool - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/11" 200 None
+2025-02-08 23:10:39,729 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:10:40,245 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/configuracao.json HTTP/11" 200 None
+2025-02-08 23:10:40,254 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta
+2025-02-08 23:10:40,254 - CyberLavrador 2.0 - INFO - Configurações atualizadas do RTDB.
+2025-02-08 23:10:40,255 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:10:40,255 - CyberLavrador 2.0 - DEBUG - {'baixaFrequencia': 15, 'frequencia': 1, 'headSize': 250, 'intervaloConsultaTarefas': 3600, 'intervaloReporteEstadoAtivo': 5, 'intervaloReporteEstadoInativo': 295, 'lookahead_buffer': 5, 'loteConsulta': 100, 'offsetPortaFerramenta': {'X': 50, 'Y': 0, 'Z': 0}, 'posicaoPortaFerramenta': {'X': 0, 'Y': 0, 'Z': 0}, 'terreno': '-OEy62gRLp6VMWWHs7Kt'}
+2025-02-08 23:10:40,258 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:10:40,668 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/ferramenta.json HTTP/11" 200 None
+2025-02-08 23:10:40,675 - CyberLavrador 2.0 - INFO - Monitorando alteracoes na chave: /tarefas/-OEy62gRLp6VMWWHs7Kt
+2025-02-08 23:10:40,680 - CyberLavrador 2.0 - INFO - Ferramentas atualizadas do RTDB.
+2025-02-08 23:10:40,680 - urllib3.util.retry - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2025-02-08 23:10:40,680 - CyberLavrador 2.0 - DEBUG - {'agua': {'index': 0, 'instalada': True}, 'arado': {'instalada': True}, 'camera': {'instalada': True}, 'fertilizante': {'index': 1, 'instalada': True}, 'laser': {'instalada': True}, 'manual': {'instalada': True}, 'medicamento': {'index': 2, 'instalada': True}, 'rocadeira': {'instalada': True}, 'sensordistancia': {'index': 3, 'instalada': True}, 'sensorph': {'index': 2, 'instalada': True}, 'sensortemperatura': {'index': 1, 'instalada': True}, 'sensorumidade': {'index': 0, 'instalada': True}, 'vacuo': {'instalada': True}}
+2025-02-08 23:10:40,683 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:10:41,080 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 None
+2025-02-08 23:10:41,093 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /
+2025-02-08 23:10:41,098 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): microagricultura-fbdc5-default-rtdb.firebaseio.com:443
+2025-02-08 23:10:41,469 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/manejos.json HTTP/11" 200 8343
+2025-02-08 23:10:41,654 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /conhecimento/variantes.json HTTP/11" 200 4299
+2025-02-08 23:10:41,839 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /canteiros/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2793
+2025-02-08 23:10:42,023 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /plantas/-OEy62gRLp6VMWWHs7Kt.json HTTP/11" 200 2093
+2025-02-08 23:10:42,024 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: True
+2025-02-08 23:10:42,025 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:10:42,025 - CyberLavrador 2.0 - DEBUG - {'dormindo': True, 'hora': 1739067042000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {}, 'numGCodeFila': 0}
+2025-02-08 23:10:42,210 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:10:42,227 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:10:42,413 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "GET /tarefas/-OEy62gRLp6VMWWHs7Kt.json?equalTo=%22aguardando%22&limitToFirst=100&orderBy=%22estado%22 HTTP/11" 200 631
+2025-02-08 23:10:42,414 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) com estado Aguardando no lote.
+2025-02-08 23:10:42,415 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) vencidas.
+2025-02-08 23:10:42,415 - CyberLavrador 2.0 - DEBUG - 1 tarefa(s) que podem ser realizadas com meu ferramental.
+2025-02-08 23:10:42,415 - CyberLavrador 2.0 - INFO - 1 tarefa(s) em condição de execução.
+2025-02-08 23:10:42,415 - CyberLavrador 2.0 - DEBUG - Fila de tarefas com 1 otimizada.
+2025-02-08 23:10:42,601 - CyberLavrador 2.0 - INFO - Tarefa atualizada: /-OHwBruB2Gjmep09g7OI
+2025-02-08 23:10:42,602 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /tarefas/-OEy62gRLp6VMWWHs7Kt/-OHwBruB2Gjmep09g7OI.json?print=silent HTTP/11" 204 0
+2025-02-08 23:10:42,603 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:10:42,781 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "POST /anotacoes/-OEy62gRLp6VMWWHs7Kt/-OHwBruB2Gjmep09g7OI.json HTTP/11" 200 31
+2025-02-08 23:10:42,782 - CyberLavrador 2.0 - INFO - Dados enviados para o Realtime Database
+2025-02-08 23:10:43,030 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /anotacoes/-OEy62gRLp6VMWWHs7Kt/-OHwBruB2Gjmep09g7OI.json?print=silent HTTP/11" 204 0
+2025-02-08 23:10:43,031 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:10:44,036 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:44,036 - CyberLavrador 2.0 - INFO - Enviando estado para o banco de dados
+2025-02-08 23:10:44,036 - CyberLavrador 2.0 - DEBUG - {'dormindo': False, 'hora': 1739067044000, 'GRBL': {'estado': 'Desligado', 'lookahead_buffer': 0}, 'HEAD': {'estado': 'Desligado'}, 'PUMP': {'estado': 'Desligado'}, 'numTarefasFila': 0, 'tarefaAtual': {'acao': {'forcar': False, 'instrucoes': [''], 'manejoVinculado': '-OG_ZaTZn5cZTdSMT1kd', 'varianteVinculada': '-OG_Zbwr1EaWrOuumO-g'}, 'aparencia': {'borda': '#000000', 'espessura': 5, 'fundo': '#000000', 'icone': '', 'imgURL': 'https://www.fazverde.com.br/wp-content/uploads/2016/11/regar-plantas-1.jpg'}, 'descricao': 'Tarefa agrupada a partir das tarefas -OHKXSVwCeC6xnlH2LKi, ,-OHKXSYsTdT_9kal5j_R, ', 'estado': 'aguardando', 'key': '-OHwBruB2Gjmep09g7OI', 'nome': 'Regar varredura em Canteiro Mirtilo', 'objeto': {'chave': '-OFltIB54PrkqNrOgLmU', 'tipo': 'canteiro'}, 'programa': {'intervalo': 1, 'prazo': 1738954800000, 'repeticoes': 26}}, 'numGCodeFila': 70}
+2025-02-08 23:10:44,217 - urllib3.connectionpool - DEBUG - https://microagricultura-fbdc5-default-rtdb.firebaseio.com:443 "PATCH /cartografia/-OEy62gRLp6VMWWHs7Kt/dispositivos/-OGxBHAFHCtr8V3P0-5F/estado.json?print=silent HTTP/11" 204 0
+2025-02-08 23:10:44,219 - CyberLavrador 2.0 - INFO - Dados atualizados no Realtime Database
+2025-02-08 23:10:44,219 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:45,222 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:45,222 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:46,226 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:46,227 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:47,232 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:47,233 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:48,238 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:48,239 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:49,241 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:49,241 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:50,243 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:50,243 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:51,245 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:51,246 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:52,251 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:52,252 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:53,257 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:53,257 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:54,262 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:54,262 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:55,266 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:55,267 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:56,271 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:56,271 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:57,275 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:57,276 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:58,280 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:58,280 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:10:59,285 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:10:59,286 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:00,290 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:00,291 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:01,291 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:01,291 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:02,294 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:02,295 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:03,298 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:03,299 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:04,303 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:04,303 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:05,308 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:05,309 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:06,313 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:06,314 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:07,317 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:07,318 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:08,319 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:08,319 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:09,320 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:09,321 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:10,325 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:10,325 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:11,330 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:11,331 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:12,335 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:12,336 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:13,341 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:13,342 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:14,343 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:14,344 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:15,345 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:15,345 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:16,348 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:16,349 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:17,354 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:17,354 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:18,358 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:18,359 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:19,362 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:19,363 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:20,386 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:20,387 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:21,391 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:21,392 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:22,393 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:22,393 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:23,398 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:23,399 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:24,403 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:24,403 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:25,408 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:25,408 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:26,412 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:26,412 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:27,415 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:27,416 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:28,423 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:28,424 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:29,427 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:29,427 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:30,430 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:30,430 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:31,435 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:31,436 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:32,438 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:32,438 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:33,441 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:33,442 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:34,444 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:34,444 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:35,445 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:35,445 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:36,451 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:36,452 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:37,456 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:37,457 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:38,459 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:38,460 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:39,462 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:39,462 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:40,466 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:40,466 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:41,468 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:41,468 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:42,474 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:42,474 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:43,478 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:43,479 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:44,482 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:44,483 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:45,488 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:45,488 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:46,492 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:46,492 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:47,497 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:47,497 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:48,501 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:48,502 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:49,505 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:49,506 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:50,508 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:50,508 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:51,514 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:51,514 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:52,517 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:52,517 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:53,518 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:53,519 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:54,524 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:54,525 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:55,530 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:55,530 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:56,535 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:56,536 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:57,538 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:57,538 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:58,541 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:58,541 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:11:59,545 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:11:59,545 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:00,546 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:00,547 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:01,552 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:01,553 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:02,558 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:02,559 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:03,564 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:03,564 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:04,569 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:04,569 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:05,573 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:05,573 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:06,574 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:06,575 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:07,575 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:07,576 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:08,581 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:08,582 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:09,587 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:09,587 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:10,588 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:10,588 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:11,593 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:11,593 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:12,597 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:12,598 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:13,601 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:13,601 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:14,602 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:14,602 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:15,606 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:15,607 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:16,612 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:16,612 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:17,615 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:17,615 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:18,620 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:18,620 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:19,621 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:19,622 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:20,625 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:20,626 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:21,629 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:21,629 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:22,641 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:22,642 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:23,644 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:23,645 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:24,645 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:24,646 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:25,648 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:25,649 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:26,654 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:26,654 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:27,658 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:27,659 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:28,663 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:28,664 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:29,669 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:29,669 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:30,673 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:30,673 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:31,678 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:31,679 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:32,683 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:32,684 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:33,687 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:33,688 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:34,692 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:34,693 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:35,697 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:35,698 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:36,702 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:36,702 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:37,707 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:37,708 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:38,713 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:38,713 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:39,717 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:39,717 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:40,720 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:40,721 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:41,727 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:41,727 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:42,732 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:42,732 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...
+2025-02-08 23:12:43,737 - CyberLavrador 2.0 - DEBUG - Loop principal iniciado. Ativo: False. Dormindo: False
+2025-02-08 23:12:43,738 - CyberLavrador 2.0 - INFO - Aguardando conexão com GRBL...

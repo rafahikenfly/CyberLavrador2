@@ -18,6 +18,25 @@ pathRegistros = "/ registros/" + terreno
 
 from datetime import datetime
 
+def filtrarFilaTarefas(dictTarefas,dictManejos,dictFerramentas):
+    """
+    Filtra um dicionário de tarefas com base nos critérios de prazo, condições do manejo e disponibilidade de ferramentas.
+
+    @param dict dictTarefas: dicionário de tarefas original
+    @param dict dictManejos: dicionário de manejos com as condições de execução da tarefa
+    @param dict dictFerramentas: dicionário de ferramentas com as ferramentas disponíveis
+    @return dict dictTarefas: retorna o dicionário de tarefas modificado.
+    """
+    vencidas = filtrarVencidas(dictTarefas, round(time.time()*1000))
+    logDebug(f"{len(vencidas)} tarefa(s) vencidas.")
+    if len(vencidas) == 0: return []
+    viaveis = filtrarViaveis(vencidas, dictManejos, dictFerramentas)
+    logDebug(f"{len(viaveis)} tarefa(s) que podem ser realizadas com meu ferramental.")
+    if len(viaveis) == 0: return []
+    oportunas = filtrarPorCondicao(viaveis, dictManejos)
+    logInfo(f"{len(oportunas)} tarefa(s) em condição de execução.")
+    return oportunas
+
 # Funções de processamento da fila de tarefas
 def filtrarVencidas(dictTarefas, prazo):
     """
@@ -106,7 +125,7 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
                     postergaTarefa(chave, round(time.time()*1000) + 3600000, "Tarefa fora do intervalo de umidade permitido.") # TODO: no caso da hora, postergar para a primeira hora que permitida a tarefa
                     disponivel = False
                 ## outras condições conhecidas vão aqui
-            tarefa["chave"] = chave
+            tarefa['key'] = chave
             if disponivel: tarefasDisponiveis.append(tarefa)
         return tarefasDisponiveis
     except Exception as e:
@@ -114,7 +133,7 @@ def filtrarPorCondicao(dictTarefas, dictManejos):
     return []
 
 
-def ordenarListaPorChave(lista, chave, subchave, reverso=False):
+def ordenarTarefasPorChave(lista, chave, subchave, reverso=False):
     """
     Ordena uma lista de dicionários pelo valor de uma chave específica.
     
@@ -135,30 +154,6 @@ def ordenarListaPorChave(lista, chave, subchave, reverso=False):
         return sorted(lista, key=lambda x: x[chave][subchave], reverse=reverso)
     except KeyError:
         raise KeyError(f"A chave '{chave}' não existe em algum dos dicionários fornecidos.")
-
-def obterFilaTarefas(dictManejos, tamanho = 100, dictFerramental = {}):
-        try:
-            #Busca a lista de tarefas, respeitando o lote de consulta
-            #Apenas as tarefas com estado Aguardando interessam
-            aguardando = read_filtered_realtime_db(pathTarefas, "estado", "aguardando", tamanho)
-            logDebug(f"{len(aguardando)} tarefa(s) com estado Aguardando no lote.")
-
-            #Filtra aquelas que podem ser realizadas pelo robo com suas ferramentase pelas condições da classe, ordenando por prazo
-            vencidas = filtrarVencidas(aguardando, round(time.time()*1000))
-            logDebug(f"{len(vencidas)} tarefa(s) vencidas.")
-            if len(vencidas) == 0: return []
-            viaveis = filtrarViaveis(vencidas,dictManejos,dictFerramental)
-            logDebug(f"{len(viaveis)} tarefa(s) que podem ser realizadas com meu ferramental.")
-            if len(viaveis) == 0: return []
-            oportunas = filtrarPorCondicao(viaveis,dictManejos)
-            logInfo(f"{len(oportunas)} tarefa(s) em condição de execução.")
-            return oportunas
-        except Exception as e:
-            logError(f"Erro ao obter fila de tarefas: {e}")
-            return []
-
-def otimizaFilaTarefas(listaTarefas, bufferSize = 5):
-    return ordenarListaPorChave(listaTarefas[:bufferSize],"programa","prazo")
 
 def obterInformacoesTarefa (tarefa, variantes, plantas, canteiros):
     """
@@ -209,7 +204,7 @@ def interpretarInstrucoes(variante, objeto):
     :param objeto: Dicionário com o objeto alvo da tarefa.
     :return: Um dicionário contendo gcodes processados.
     """
-    esteiraGCode = []
+    filaGCode = []
     i = 0
     loopCount = 0
     loopTotal = 0
@@ -242,9 +237,9 @@ def interpretarInstrucoes(variante, objeto):
                     i = loopGoto - 1 #o loop volta para o indice anterior, pois no final do loop passa para a proxima instrucao
                     loopCount = loopCount + loopStep
             else:
-                esteiraGCode.append(instrucao[i])
+                filaGCode.append(instrucao[i])
             i = i + 1
-    return (esteiraGCode)
+    return (filaGCode)
 
 def anotarHistoricoTarefa(strChave, strAnotacao):
     push_realtime_db(f"{pathHistorico}/{strChave}", {
@@ -271,16 +266,22 @@ def marcaFalhaTarefa(strChave, erro):
     update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'falha'})
     anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}: {erro}")
 
-def marcaTarefaConcluida(strChave, horaInicio):
+def marcaTarefaConcluida(tarefaID, minInicio):
     # Anota a conclusao da tarefa
-    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'concluida'})
-    anotarHistoricoTarefa(strChave, f"Tarefa concluida pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
+    update_realtime_db(f"{pathTarefas}/{tarefaID}", {'estado': 'concluida'})
+    anotarHistoricoTarefa(tarefaID, f"Tarefa concluida pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
     
-    # Caso a tarefa tenha repeticoes, replica a tarefa para o proximo intervalo
-    tarefa = read_realtime_db(f"{pathTarefas}/{strChave}")
+    # Registra o monitoramento de tempo de execução
+    tempoExecucao = round(time.time())/60 - minInicio
+    registrar(tarefaID,'tempoExecucao',tempoExecucao)
+
+    # Caso a tarefa tenha repeticoes, ajusta os detalhes da tarefa
+    tarefa = read_realtime_db(f"{pathTarefas}/{tarefaID}")
     if tarefa['programa']['repeticoes']:
+        intervaloSegundos = tarefa['programa']['intervalo'] * 86400000
+        proximoPrazo = round(time.time()) * 1000 + intervaloSegundos
         tarefa['programa']['repeticoes'] = tarefa['programa']['repeticoes'] - 1
-        tarefa['programa']['prazo'] = round(time.time()*1000) + 86400000 * tarefa['programa']['intervalo']
+        tarefa['programa']['prazo'] = proximoPrazo
         tarefa['estado'] = 'aguardando'
-        push_realtime_db(pathTarefas, tarefa)
-        anotarHistoricoTarefa(tarefa['key'], f"Repeticao de tarefa criada pelo CyberLavrador 2.0 em {time.strftime('%H:%M:%S %d/%m/%y')}")
+        update_realtime_db(f"{pathTarefas}/{tarefaID}", tarefa)
+        anotarHistoricoTarefa(tarefaID, f"Nova repeticao de tarefa ajustada pelo CyberLavrador 2.0 em {time.strftime('%H:%M:%S %d/%m/%y')}")
