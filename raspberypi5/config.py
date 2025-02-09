@@ -99,7 +99,7 @@ COMANDOS_SUPORTADOS = {
         'periferico': 'HEAD',
         'descricao': 'Liga o motor rotativo da cabeça [por P segundos]: M3 [P{}]',
         'idleMotor': True,
-        'numParams': 2,
+        'numParams': 1, #TODO: mudar para 2 
     },
     'M4': {
         'periferico': 'HEAD',
@@ -123,7 +123,7 @@ COMANDOS_SUPORTADOS = {
         'periferico': 'PUMP',
         'descricao': 'Liga o bombeamento de fluido no relay I [por P segundos]. M7 I{} [P{}]',
         'idleMotor': True,   
-        'numParams': 2,
+        'numParams': 1, #TODO: mudar para 2 
     },
 #    'M8': {
 #    },

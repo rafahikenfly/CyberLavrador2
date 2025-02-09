@@ -14,7 +14,7 @@ from config import logWarning
 terreno = "-OEy62gRLp6VMWWHs7Kt"
 pathTarefas = "/tarefas/" + terreno
 pathHistorico = "/anotacoes/" + terreno
-pathRegistros = "/ registros/" + terreno
+pathRegistros = "/registros/" + terreno
 
 from datetime import datetime
 
@@ -241,8 +241,8 @@ def interpretarInstrucoes(variante, objeto):
             i = i + 1
     return (filaGCode)
 
-def anotarHistoricoTarefa(strChave, strAnotacao):
-    push_realtime_db(f"{pathHistorico}/{strChave}", {
+def anotarHistoricoTarefa(tarefaID, strAnotacao):
+    push_realtime_db(f"{pathHistorico}/{tarefaID}", {
         "autor": "Cyberlavrador 2.0",
         "carimboHora": round(time.time()*1000),
         "anotacao": strAnotacao,
@@ -258,13 +258,13 @@ def postergaTarefa(strChave, intNovaHora, motivo):
     update_realtime_db(f"pathTarefas/{strChave}/programa", {'prazo': intNovaHora})
     anotarHistoricoTarefa(strChave, f"Tarefa adiada para {datetime.fromtimestamp(intNovaHora/1000).strftime('%H:%M:%S %d/%m/%y')}: {motivo}")
 
-def marcaTarefaProcessada(strChave):
-    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'processada'})
-    anotarHistoricoTarefa(strChave, f"Tarefa processada pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
+def marcaTarefaProcessada(tarefaID):
+    update_realtime_db(f"{pathTarefas}/{tarefaID}", {'estado': 'processada'})
+    anotarHistoricoTarefa(tarefaID, f"Tarefa processada pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}")
 
-def marcaFalhaTarefa(strChave, erro):
-    update_realtime_db(f"{pathTarefas}/{strChave}", {'estado': 'falha'})
-    anotarHistoricoTarefa(strChave, f"Tarefa falhou pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}: {erro}")
+def marcaFalhaTarefa(tarefaID, erro):
+    update_realtime_db(f"{pathTarefas}/{tarefaID}", {'estado': 'falha'})
+    anotarHistoricoTarefa(tarefaID, f"Tarefa falhou pelo CyberLavrador em {time.strftime('%H:%M:%S %d/%m/%y')}: {erro}")
 
 def marcaTarefaConcluida(tarefaID, minInicio):
     # Anota a conclusao da tarefa

@@ -19,7 +19,7 @@ def estadoRobo(GRBL, HEAD, PUMP, filaTarefas, tarefaAtual, filaGCode, sleep):
             'lookahead_buffer': 0,
         }
     if HEAD:
-        resposta = enviaGCode(HEAD, "?")
+        resposta = enviaGCode(HEAD, "?") #TODO: criar o arquivo de comunicacao com a HEAD
         estadoHEAD = resposta[1] if resposta[0] else {"estado": "Offline"}
     if PUMP:
         resposta = enviaGCode(PUMP, "?")

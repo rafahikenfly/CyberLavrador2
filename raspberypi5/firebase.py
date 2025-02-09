@@ -23,17 +23,17 @@ def initialize_firebase():
 def push_realtime_db(path, data, updateKey = True, verbose = False):
     ref = db.reference(path)
     newRef = ref.push(data)
-    logInfo("Dados enviados para o Realtime Database")
+    logInfo(f"Dados enviados para RTD {path}")
     if verbose: logDebug(data)
     if updateKey:
         data['key'] = newRef.key
-        update_realtime_db(path, data)
+        update_realtime_db(f"{path}/{data['key']}", data)
     return newRef.key
 
 def update_realtime_db(path, data, verbose = False):
     ref = db.reference(path)
     ref.update(data)
-    logInfo("Dados atualizados no Realtime Database")
+    logInfo(f"Dados atualizados no RTD {path}")
     if verbose: logDebug(data)
 
 def write_realtime_db(path, data, verbose):

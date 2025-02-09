@@ -16,9 +16,9 @@ from gestorListaTarefas import marcaTarefaProcessada
 from gestorListaTarefas import marcaTarefaConcluida
 from gestorListaTarefas import marcaFalhaTarefa
 
-from raspberypi5.gestorComandos import processaFilaGCode
-from raspberypi5.gestorComandos import recuperarComandos
-from raspberypi5.gestorComandos import salvarComandos
+from gestorComandos import processaFilaGCode
+from gestorComandos import recuperarComandos
+from gestorComandos import salvarComandos
 
 from handlerEstado import estadoRobo
 import time
@@ -135,13 +135,33 @@ def inicializarRobo() :
     listen_realtime_db(pathTarefas, listenerTarefas)
 
 def reestabelecerRobo():
+    global filaGCode
+    global tarefaAtual
+    global dormindo
+    global minInicioTarefaAtual
+    # Recupera a lista de comandos e a tarefa que estava sendo processada. Se ha uma lista
+    # significa que houve um erro durante a execucao da tarefa.
     recover = recuperarComandos("comandos.pkl")
     if len(recover[0]):
         logInfo(f"Recuperados {len(recover[0])} comandos da execucao da tarefa {recover[1]}")
-        global filaGCode
-        global tarefaAtual
-        filaGCode = recover[0]
-        tarefaAtual = recover[1]
+        # Tenta identificar a tarefa que teve problema e descobrir se ela ainda esta
+        # com o estado de processada. No meio tempo, ela pode ter sido realizada, ou
+        # ate mesmo apagada
+        if 'key' in recover[1]:
+            tarefaAtualizada = read_realtime_db(f"{pathTarefas}/{recover[1]['key']}")
+            if tarefaAtualizada and tarefaAtualizada['estado'] == 'processada':
+                filaGCode = recover[0]
+                tarefaAtual = tarefaAtualizada
+                if len(filaGCode):
+                    dormindo = False
+                    minInicioTarefaAtual = round(time.time())/60
+            else:
+                # se a tarefa nao foi identificada
+                logInfo(f"Execucao da tarefa {recover[1]['key']} deprecada")
+                filaGCode = []
+                tarefaAtual = {}
+                salvarComandos(filaGCode,tarefaAtual)
+
 
 def atualizarConhecimento():
     #obtem a base de conhecimento atualizada
@@ -159,7 +179,7 @@ def reportaEstadoRTD(estado):
     logDebug(estado)
     update_realtime_db(pathDispositivo + "/estado", estado)
     global proximoReporteEstado
-    proximoReporteEstado = round(agora) * 1000 + config['intervaloReporteEstadoInativo'] if dormindo else round(agora) * 1000 + + config['intervaloReporteEstadoAtivo']
+    proximoReporteEstado = (round(agora) + config['intervaloReporteEstadoInativo']) * 1000 if dormindo else (round(agora) + config['intervaloReporteEstadoAtivo']) * 1000
     proximoReporteEstado = min(proximaConsultaTarefas,proximoReporteEstado)
 
 def obterFilaTarefas():
@@ -188,12 +208,14 @@ def otimizarFilaTarefas():
     return returnArr
 
 def processarProximaTarefa():
+    global dormindo
+    global filaGCode
+    global tarefaAtual
+    global minInicioTarefaAtual
     if len(filaTarefas): # Se a fila de tarefas não estiver vazia, recupera 
                          # a primeira tarefa da fila e registra o horário de
                          # início do processamento, para registrar o tempo
                          # de execução quando a tarefa for concluída
-        global tarefaAtual
-        global minInicioTarefaAtual
         tarefaAtual = filaTarefas[0]
         minInicioTarefaAtual = round(time.time())/60
         filaTarefas.pop(0)
@@ -202,15 +224,15 @@ def processarProximaTarefa():
         info = obterInformacoesTarefa(tarefaAtual, variantes, plantas, canteiros)
         if info[0]: # Se a tarefa tem informações completas, interpreta as
                     # instruções da variante da tarefa
-            global filaGCode
             filaGCode = interpretarInstrucoes(info[1], info[2])
             marcaTarefaProcessada(tarefaAtual['key'])
-            salvarComandos(tarefaAtual['key'])
+            salvarComandos(filaGCode, tarefaAtual)
         else: # Se a tarefa não tem informações completas,
               # marca a falha no histórico
             marcaFalhaTarefa(tarefaAtual['key'], info[1])
     else: # Se a fila de tarefas estiver vazia
         logInfo(f"Fim da lista de tarefas")
+        dormindo = True
         return False
 
 
@@ -242,6 +264,7 @@ if __name__ == "__main__":
         # se algum dos periféricos não está em estado Idle. Se todos estiverem, ou
         # se nenhum periférico estiver instalado, ele está inativo
         ativo = False
+        #TODO: acho que a variavel Ativo nao tem mais nenhuma funcao alem de estado
         if GRBL and estado['GRBL']['estado'] == 'Run': ativo = True
         #TODO: manusear os estados dos demais perifericos
         #TODO: if HEAD and estado["HEAD"]["estado"] == "Run": ativo = True 
@@ -253,7 +276,7 @@ if __name__ == "__main__":
 #        dormindo = not (ativo or len(filaGCode)>0)
 
         # Começa o loop principal após as verificações e recuperações
-        logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {dormindo}")
+        logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {dormindo}. Fila Tarefa: {len(filaTarefas)}. Fila GCode: {len(filaGCode)}")
 
         # Se for necessario, reporta o estado no RTD
         if agora > proximoReporteEstado: reportaEstadoRTD(estado)
@@ -282,17 +305,24 @@ if __name__ == "__main__":
                     if not len(filaGCode): processarProximaTarefa()
                 else:
                     # Se a consulta não retornar nenhuma tarefa, continua dormindo
+                    # TODO: quando dormir, desligar os motores e voltar para home
                     dormindo = True
 
-        else:
+        if ativo or not dormindo:
             # Se nao estiver dormindo, quer dizer que ha comandos na fila
             # ou alguma atividade em andamento. Independente do caso, deve
             # processar a fila de comandos, pois pode ser possível enviar
             # um novo comando.
             posFilaGCode = processaFilaGCode(filaGCode, GRBL, estado['GRBL']['lookahead_buffer'], HEAD, 99, PUMP, 99, tarefaAtual['key'], posFilaGCode)
-            if posFilaGCode >= len(filaGCode):
-                marcaTarefaConcluida(minInicioTarefaAtual)
+            
+            #TODO: timeout no caso de muita espera de um comando da fila
+            #TODO: so marcar tarefa como concluida quando o robo nao estiver mais ativo.
+            # essa condicao imposta aqui nao funciona, pois o robo esta ativo e dormindo
+            if posFilaGCode >= len(filaGCode) and ativo == False:
+                marcaTarefaConcluida(tarefaAtual['key'],minInicioTarefaAtual)
+                filaGCode = []
                 tarefaAtual = {}
+                salvarComandos(filaGCode,tarefaAtual)
                 processarProximaTarefa()
             #TODO Implementar buffer de HEAD e PUMP
 

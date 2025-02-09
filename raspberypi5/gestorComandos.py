@@ -13,7 +13,7 @@ from config import logInfo
 from config import logError
 from config import logWarning
 
-def processaErroGCode(erro, filaGCode, tarefaErro, i = 0):
+def processaErroGCode(erro, filaGCode, tarefaErroID, i = 0):
     """
     Processa um erro de comando, pulando para a próxima tarefa da fila (se existente) e registrando a falha.
     :param filaGCode: lista de comandos a serem processados
@@ -22,25 +22,25 @@ def processaErroGCode(erro, filaGCode, tarefaErro, i = 0):
     :param int i=0: índice do comando que falhou
     """
     # Reporta erro no debug e banco de dados
-    logError(f"Erro na execução da tarefa {tarefaErro}, executando {filaGCode[i]['instrucao']}: {erro}")
-    marcaFalhaTarefa(tarefaErro['key'], erro)
+    logError(f"Erro na execução da tarefa {tarefaErroID}, executando {filaGCode[i]}: {erro}")
+    marcaFalhaTarefa(tarefaErroID, erro)
     
 def recuperarComandos(filename): 
     try: 
         with open(filename, 'rb') as file:
-            filaGCode, tarefaID = pickle.load(file)
-            return filaGCode, tarefaID
+            filaGCode, tarefa = pickle.load(file)
+            return filaGCode, tarefa
     except:
         return [], ""
 
-def salvarComandos(filaGCode, tarefaID):
+def salvarComandos(filaGCode, tarefa):
     """
     Salva filaComandos.
     :param filaComandos: lista de comandos a serem processados
     :param historicoComandos: lista de comandos já processados
     """
     with open("comandos.pkl", 'wb') as file:
-        pickle.dump((filaGCode, tarefaID), file)
+        pickle.dump((filaGCode, tarefa), file)
     logDebug(f"FilaGCode, tarefaID e índice salvos.")
 
 
@@ -91,7 +91,7 @@ def processaFilaGCode(filaGCode, GRBL, GRBLBuffer, HEAD, HEADBuffer, PUMP, PUMPB
     """
     if not GRBL:
         logInfo(f"Aguardando conexão com GRBL...")
-        return False
+        return i
 
     for j in range(i,len(filaGCode)):
         gcode = filaGCode[j].strip()
@@ -153,17 +153,17 @@ def processaFilaGCode(filaGCode, GRBL, GRBLBuffer, HEAD, HEADBuffer, PUMP, PUMPB
             elif COMANDOS_SUPORTADOS[params[0]]['periferico'] == 'PUMP':
                 # No caso dos comandos que são enviados para o PUMP, as condições que são verificadas
                 # são:
-                # - PUMP desconectado      --> aguarda o próximo loop (espera reestabelecer conexão)
+                # TODO: - PUMP desconectado      --> aguarda o próximo loop (espera reestabelecer conexão)
                 # TODO: PUMP TOOL incompativel --> inclui uma rotina de troca de ferramenta
-                if not PUMP:
-                    logInfo(f"Aguardando conexão com PUMP...")
-                    break
+ #               if not PUMP:
+ #                   logInfo(f"Aguardando conexão com PUMP...")
+ #                   break
                 if not PUMPBuffer:
                     logInfo(f"Buffer de comandos do PUMP cheio...")
                     break
                 else:
                     logDebug(f"PUMP -->{gcode}")
-                    resposta = enviaGCode(PUMP, gcode)
+                    resposta = [True, 'bypass'] #TODO: implementar PUMP
                     logDebug(f"PUMP <--{resposta[1]}")
                     if not resposta[0]:
                         processaErroGCode(resposta[1], filaGCode, tarefaID, i)
@@ -173,7 +173,7 @@ def processaFilaGCode(filaGCode, GRBL, GRBLBuffer, HEAD, HEADBuffer, PUMP, PUMPB
                 # TODO: qualquer comando da camera está tirando foto
                 # TODO: enviar para a camera
                 logDebug(f"CAMERA -->{gcode}")
-                resposta = tiraFoto()
+                resposta = tiraFoto(True)
                 logDebug(f"CAMERA <--{resposta[1]}")
                 if not resposta[0]:
                     processaErroGCode(resposta[1], filaGCode, tarefaID, i)
