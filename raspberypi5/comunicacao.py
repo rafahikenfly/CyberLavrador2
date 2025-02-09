@@ -33,17 +33,18 @@ def fechaConexaoGRBL(ser):
 # Comunicação e interpretação
 def enviaGCode(ser, gcode):
     """
-    Envia comandos G-code ao GRBL.
+    Envia comandos G-code no serial.
 
     :param ser: porta serial para envio
     :param gcode: string a ser enviada
-    :return [ok?, resposta]
+    :return list: [ok?, resposta]
     """
     if not ser:
         return False, "Conexao serial não estabelecida."
 
     try:
-        gcode.strip() + '\n'  # Adiciona uma nova linha ao comando
+        gcode.strip()
+        gcode = gcode + '\n'  # Adiciona uma nova linha ao comando
         ser.write(gcode.encode('utf-8'))  # Envia o comando
         time.sleep(0.5) #delay da resposta
         response = ser.readline().decode('utf-8').strip()  # Le a resposta

@@ -25,7 +25,7 @@ def processaErroGCode(erro, filaGCode, tarefaErro, i = 0):
     logError(f"Erro na execução da tarefa {tarefaErro}, executando {filaGCode[i]['instrucao']}: {erro}")
     marcaFalhaTarefa(tarefaErro['key'], erro)
     
-def recuperaComandos(filename): 
+def recuperarComandos(filename): 
     try: 
         with open(filename, 'rb') as file:
             filaGCode, tarefaID = pickle.load(file)
@@ -33,7 +33,7 @@ def recuperaComandos(filename):
     except:
         return [], ""
 
-def salvaComandos(filaGCode, tarefaID):
+def salvarComandos(filaGCode, tarefaID):
     """
     Salva filaComandos.
     :param filaComandos: lista de comandos a serem processados

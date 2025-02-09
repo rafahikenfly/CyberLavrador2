@@ -16,9 +16,9 @@ from gestorListaTarefas import marcaTarefaProcessada
 from gestorListaTarefas import marcaTarefaConcluida
 from gestorListaTarefas import marcaFalhaTarefa
 
-from commandManager import processaFilaGCode
-from commandManager import recuperaComandos
-from commandManager import processaErroGCode
+from raspberypi5.gestorComandos import processaFilaGCode
+from raspberypi5.gestorComandos import recuperarComandos
+from raspberypi5.gestorComandos import salvarComandos
 
 from handlerEstado import estadoRobo
 import time
@@ -135,7 +135,7 @@ def inicializarRobo() :
     listen_realtime_db(pathTarefas, listenerTarefas)
 
 def reestabelecerRobo():
-    recover = recuperaComandos("comandos.pkl")
+    recover = recuperarComandos("comandos.pkl")
     if len(recover[0]):
         logInfo(f"Recuperados {len(recover[0])} comandos da execucao da tarefa {recover[1]}")
         global filaGCode
@@ -205,6 +205,7 @@ def processarProximaTarefa():
             global filaGCode
             filaGCode = interpretarInstrucoes(info[1], info[2])
             marcaTarefaProcessada(tarefaAtual['key'])
+            salvarComandos(tarefaAtual['key'])
         else: # Se a tarefa não tem informações completas,
               # marca a falha no histórico
             marcaFalhaTarefa(tarefaAtual['key'], info[1])
