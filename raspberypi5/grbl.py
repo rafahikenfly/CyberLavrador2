@@ -5,6 +5,8 @@ from config import logWarning
 
 from comunicacao import obterEstado
 
+import time
+
 # GRBLStatus = ["Idle", "Run", "Hold", "Jog", "Alarm", "Door", "Check", "Home", "Sleep"]
 
 def interpretaErroGRBL(message):
@@ -137,6 +139,7 @@ def desativaAlarme(ser):
         comando = '$X' + '\n'
         ser.write(comando.encode('utf-8'))
         logDebug(f"GRBL --> $X")
+        time.sleep(0.5) #delay da resposta
 
         # Le a resposta do GRBL
         resposta1 = ser.readline().decode('utf-8').strip() #[MSG: Caution: Unlocked]
@@ -154,13 +157,14 @@ def desativarMotores(ser):
         return "Conexao serial não estabelecida."
     try:
         # Envia o comando para dormir
-        comando = '$SLP' + '\n'
-        ser.write(comando.encode('utf-8'))
+        ser.write(b'$SLP\n')
         logDebug(f"GRBL --> $SLP")
+        time.sleep(0.5) #delay da resposta
+
         # Le a resposta do GRBL
-        resposta1 = ser.readline().decode('utf-8').strip() #ok
-        resposta2 = ser.readline().decode('utf-8').strip() #[MSG: Sleeping]
-        logDebug(f"GRBL <-- {resposta1},{resposta2}")
+        while ser.in_waiting:
+            response = ser.readline().decode().strip()
+            logDebug(f"GRBL <-- {response}")
     except Exception as e:
         logError(f"Erro ao destravar GRBL: {e}")
 
@@ -174,10 +178,12 @@ def softReset(ser):
     try:
         # Envia o comando para destravar
         ser.write(b'\x18')
-        logDebug(f"GRBL --> $SLP")
+        logDebug(f"GRBL --> ctrl-x")
+        time.sleep(1) #delay da resposta
         # Le a resposta do GRBL
-        resposta1 = ser.readline().decode('utf-8').strip() #Grbl 1.1h ['$' for help]
-        resposta2 = ser.readline().decode('utf-8').strip() #[MSG: '$H'|'X' to unlock]
-        logDebug(f"GRBL <-- {resposta1},{resposta2}")
+        while ser.in_waiting > 0:  # Check if data is available to read
+            data = ser.readline().decode('utf-8', errors='ignore').strip()
+            logDebug(f"GRBL <-- {data}")
+        
     except Exception as e:
         logError(f"Erro ao destravar GRBL: {e}")

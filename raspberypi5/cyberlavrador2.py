@@ -129,16 +129,6 @@ def inicializarRobo() :
     GRBL = conectaPorta(config['GRBLPort'], config['GRBLBaud'], "GRBL")
     HEAD = conectaPorta(config['HEADPort'], config['HEADBaud'], "HEAD")
     PUMP = conectaPorta(config['PUMPPort'], config['PUMPBaud'], "PUMP")
-    #TODO:TEST utilizar configurações dos periféricos registradas no firebase
-#    HEAD = conectaPorta(HEADport, HEADbaudrate, "HEAD")
-#    PUMP = conectaPorta(PUMPport, PUMPbaudrate, "PUMP")
-#    GRBLport = "/dev/ttyACM0"
-#    HEADport = "/dev/ttyUSB0"
-#    PUMPport = "/dev/ttyACM2"
-#    GRBLbaudrate = 115200  # Velocidade padrao do GRBL
-#    HEADbaudrate = 9600
-#    PUMPbaudrate = 9600
-
 
 def reestabelecerRobo():
     global filaGCode
@@ -182,10 +172,10 @@ def atualizarConhecimento():
 def reportaEstadoRTD(estado):
     global proximoReporteEstado
     global proximaConsultaTarefas
+    global config
     logInfo("Enviado estado do robo para o RTD")
-    logDebug(estado)
     update_realtime_db(pathDispositivo + "/estado", estado)
-    proximoReporteEstado = (round(agora) + config['intervaloReporteEstadoInativo']) * 1000 if dormindo else (round(agora) + config['intervaloReporteEstadoAtivo']) * 1000
+    proximoReporteEstado = (round(agora) + config['intervaloReporteEstadoInativo']) if dormindo else (round(agora) + config['intervaloReporteEstadoAtivo'])
     proximoReporteEstado = min(proximaConsultaTarefas,proximoReporteEstado)
 
 def obterFilaTarefas():
@@ -244,7 +234,7 @@ def processarProximaTarefa():
 def dormir():
     global dormindo
     dormindo = True
-    desativarMotores()
+    desativarMotores(GRBL)
 
     # TODO: quando dormir, desligar os motores e voltar para home
 
@@ -252,8 +242,7 @@ def acordar():
     global dormindo
     global filaGCode
     dormindo = False
-    softReset()
-    desativaAlarme()
+    softReset(GRBL)
     if not len(filaGCode): processarProximaTarefa()
 
 if __name__ == "__main__":
@@ -290,11 +279,9 @@ if __name__ == "__main__":
         #TODO: if PUMP and estado["PUMP"]["estado"] != "Idle": ativo = True 
 
         # Começa o loop principal após as verificações e recuperações
-        logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {dormindo}. Fila Tarefa: {len(filaTarefas)}. Fila GCode: {len(filaGCode)}")
+        logDebug(f"Loop principal iniciado. Ativo: {ativo}. Dormindo: {dormindo}. Fila Tarefa: {len(filaTarefas)}. Fila GCode: {posFilaGCode}/{len(filaGCode)}")
 
         # Se for necessario, reporta o estado no RTD
-        # TODO:TEST está enviando a cada loop o estado
-        # TODO: durante o processamento da fila não atualiza o estado
         if agora > proximoReporteEstado: reportaEstadoRTD(estado)
 
         if dormindo:
@@ -329,7 +316,6 @@ if __name__ == "__main__":
             prevPosFilaGCode = posFilaGCode
             posFilaGCode = processaFilaGCode(filaGCode, GRBL, estado['GRBL']['lookahead_buffer'], HEAD, estado['GRBL']['lookahead_buffer'], PUMP, 99, tarefaAtual['key'], posFilaGCode)
             #TODO: Implementar buffer de PUMP
-            #TODO:TEST Implementar buffer de HEAD            
 
             #TODO:TEST timeout no caso de muita espera de um comando da fila
             # O timeout do comando gera um erro na fila no caso de a posição anterior
@@ -339,13 +325,22 @@ if __name__ == "__main__":
                 gCodeTimeout = agora + config['gcodeTimeout']
             elif agora > gCodeTimeout:
                 timeoutComando(filaGCode, tarefaAtual['key'], posFilaGCode)
-            #TODO:TEST so marcar tarefa como concluida com os periféricos em Idle
-            if posFilaGCode >= len(filaGCode) and estado['GRBL']['estado'] == 'Idle':
-                marcaTarefaConcluida(tarefaAtual['key'], minInicioTarefaAtual)
-                filaGCode = []
-                tarefaAtual = {}
-                salvarComandos(filaGCode,tarefaAtual)
-                processarProximaTarefa()
+                
+            if posFilaGCode >= len(filaGCode):
+                # Se for a ultima instrucao da fila, aguarda que todos
+                # os perifericos esstejam                                  inativos
+                # antes de marcar a tarefa como concluda e reiniciar a
+                # fila de Gcodes 
+                estado = estadoRobo(GRBL, HEAD, PUMP, filaTarefas, tarefaAtual, filaGCode, dormindo)
+                if estado['GRBL']['estado'] == 'Idle':
+                    marcaTarefaConcluida(tarefaAtual['key'], minInicioTarefaAtual)
+                    filaGCode = []
+                    posFilaGCode = 0
+                    tarefaAtual = {}
+                    salvarComandos(filaGCode,tarefaAtual)
+                    processarProximaTarefa()
+                else:
+                    logInfo(f"Aguardando motores para concluir tarefa {tarefaAtual['key']}")
 
         # espera o intervalo de frequencia do loop principal.
         time.sleep(config['baixaFrequencia'] if dormindo else config['frequencia'])
